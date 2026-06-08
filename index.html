@@ -312,7 +312,7 @@ function renderGrocery(){
   var h='';
   h += '<div class="callout"><div><span class="weekof">Week of:</span> '+esc(WEEK.label)+'</div>'+
        '<p style="margin:8px 0 0">Covers all dinners + a next-day lunch from each. Updates automatically when you swap a dinner. Pantry staples (oil, salt, pepper, soy sauce) assumed on hand.</p></div>';
-  h += '<div class="toolbar"><span class="progress" id="progress"></span><button class="btn" id="reset">Reset list</button></div>';
+  h += '<div class="toolbar"><span class="progress" id="progress"></span><div style="display:flex;gap:8px"><button class="btn" id="filter">Hide found</button><button class="btn" id="reset">Reset list</button></div></div>';
 
   CAT_ORDER.forEach(function(cat){
     var inCat=items.filter(function(it){return it.cat===cat;});
@@ -335,13 +335,31 @@ function renderGrocery(){
   boxes.forEach(function(b){
     var k=b.getAttribute('data-key');
     try{ if(localStorage.getItem(k)==='1') b.checked=true; }catch(e){}
-    b.addEventListener('change',function(){ try{localStorage.setItem(k,b.checked?'1':'0');}catch(e){} prog(); });
+    b.addEventListener('change',function(){ try{localStorage.setItem(k,b.checked?'1':'0');}catch(e){} prog(); applyFilter(); });
   });
   document.getElementById('reset').addEventListener('click',function(){
     boxes.forEach(function(b){ b.checked=false; try{localStorage.removeItem(b.getAttribute('data-key'));}catch(e){} });
-    prog();
+    prog(); applyFilter();
   });
-  prog();
+
+  // "Hide found" filter — show only items still to pick up
+  var FILTER_KEY='mp:filter', filterBtn=document.getElementById('filter');
+  function filterOn(){ try{return localStorage.getItem(FILTER_KEY)==='1';}catch(e){return false;} }
+  function applyFilter(){
+    var on=filterOn();
+    filterBtn.textContent = on ? 'Show all' : 'Hide found';
+    boxes.forEach(function(b){ var l=b.closest('.item'); if(l) l.style.display=(on && b.checked)?'none':''; });
+    p.querySelectorAll('.grocery-cat').forEach(function(cat){
+      var anyVisible=Array.prototype.slice.call(cat.querySelectorAll('.item')).some(function(l){return l.style.display!=='none';});
+      cat.style.display=anyVisible?'':'none';
+    });
+  }
+  filterBtn.addEventListener('click',function(){
+    try{ localStorage.setItem(FILTER_KEY, filterOn()?'0':'1'); }catch(e){}
+    applyFilter();
+  });
+
+  prog(); applyFilter();
 }
 
 /* ---- Tabs ---- */
