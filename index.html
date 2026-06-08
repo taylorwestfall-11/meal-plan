@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#2f7d5b">
+<title>Meal Plan & Groceries</title>
+<style>
+  :root{
+    --bg:#f6f5f1; --card:#ffffff; --ink:#23241f; --muted:#6b6f68;
+    --accent:#2f7d5b; --accent-soft:#e3f0e9; --line:#e6e4dd;
+    --warn-bg:#fff4e0; --warn-ink:#8a5a12; --warn-line:#f0d9a8;
+    --lunch-bg:#eef4fb; --lunch-ink:#34597e; --lunch-line:#cfe0f1;
+    --radius:16px;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#16170f; --card:#22241c; --ink:#ececdf; --muted:#a3a89b;
+      --accent:#7fcaa3; --accent-soft:#23362c; --line:#34372c;
+      --warn-bg:#3a2f17; --warn-ink:#f0cd87; --warn-line:#5a4a23;
+      --lunch-bg:#1d2a39; --lunch-ink:#a9cdef; --lunch-line:#33485f;
+    }
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0}
+  body{background:var(--bg);color:var(--ink);
+    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding-bottom:48px}
+  .wrap{max-width:760px;margin:0 auto;padding:0 14px}
+  header{background:var(--accent);color:#fff;padding:calc(18px + env(safe-area-inset-top,0)) 14px 16px}
+  header .wrap{padding:0 4px}
+  header h1{margin:0;font-size:1.22rem;letter-spacing:.2px}
+  header .sub{opacity:.9;font-size:.85rem;margin-top:2px}
+  .tabs{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:6px;padding:8px 14px}
+  .tabs button{flex:1;appearance:none;border:1px solid var(--line);background:var(--card);color:var(--muted);font-size:.98rem;font-weight:600;padding:11px 8px;border-radius:12px;cursor:pointer;transition:.15s}
+  .tabs button .count{font-weight:600;opacity:.75;font-size:.82em}
+  .tabs button[aria-selected="true"]{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 2px 8px rgba(47,125,91,.25)}
+  main{padding-top:14px}
+  .panel{display:none}.panel.active{display:block;animation:fade .2s ease}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+  .callout{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:12px;padding:12px 14px;margin:0 0 14px;font-size:.92rem;color:var(--muted)}
+  .callout b{color:var(--ink)} .weekof{font-weight:600;color:var(--ink)}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:16px;margin:0 0 14px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .day-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
+  .day-h .day{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--accent)}
+  .day-h .dish{font-size:1.16rem;font-weight:700}
+  .meta{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px;align-items:center}
+  .pill{font-size:.74rem;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
+  .pill.polo{background:#fde9ef;color:#b03a63}
+  @media (prefers-color-scheme: dark){.pill.polo{background:#3a2330;color:#f0a8c4}}
+  .optline{display:flex;align-items:center;gap:10px;margin:2px 0 12px;flex-wrap:wrap}
+  .swapbtn{appearance:none;border:1px solid var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:.85rem;padding:8px 13px;border-radius:10px;cursor:pointer}
+  .swapbtn:active{transform:scale(.97)}
+  .optdots{font-size:.78rem;color:var(--muted)}
+  .reqbtn{appearance:none;border:1px dashed var(--line);background:transparent;color:var(--muted);font-size:.8rem;padding:7px 11px;border-radius:10px;cursor:pointer;text-decoration:none;display:inline-block}
+  .card h4{margin:14px 0 6px;font-size:.78rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
+  .card p{margin:6px 0}.card ol,.card ul{margin:6px 0;padding-left:22px}.card li{margin:3px 0}
+  .swap{background:var(--warn-bg);border:1px solid var(--warn-line);color:var(--warn-ink);border-radius:10px;padding:10px 12px;margin:12px 0;font-size:.9rem}
+  .lunch{background:var(--lunch-bg);border:1px solid var(--lunch-line);color:var(--lunch-ink);border-radius:10px;padding:10px 12px;margin:12px 0;font-size:.9rem}
+  .lunch b{color:var(--lunch-ink)}
+  .table-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 0 14px;border:1px solid var(--line);border-radius:12px}
+  table{border-collapse:collapse;width:100%;font-size:.88rem;background:var(--card)}
+  th,td{padding:9px 11px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+  th{background:var(--accent-soft);color:var(--accent);font-size:.74rem;text-transform:uppercase;letter-spacing:.4px}
+  tr:last-child td{border-bottom:none}
+  h2.sec{font-size:1.05rem;margin:22px 2px 10px}
+  .grocery-cat{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:0 0 4px;margin:0 0 12px;overflow:hidden}
+  .grocery-cat > h3{margin:0;padding:11px 12px;font-size:.82rem;text-transform:uppercase;letter-spacing:.6px;color:var(--accent)}
+  .item{display:flex;align-items:flex-start;gap:12px;padding:11px 12px;border-top:1px solid var(--line);cursor:pointer}
+  .item input{appearance:none;flex:0 0 auto;width:24px;height:24px;margin-top:1px;border:2px solid var(--accent);border-radius:7px;background:var(--card);position:relative;cursor:pointer;transition:.12s}
+  .item input:checked{background:var(--accent)}
+  .item input:checked::after{content:"";position:absolute;left:7px;top:3px;width:6px;height:11px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg)}
+  .item .txt{flex:1}.item .txt .name{font-weight:600}.item .txt .det{font-size:.82rem;color:var(--muted);margin-top:1px}
+  .item input:checked ~ .txt{opacity:.5}.item input:checked ~ .txt .name{text-decoration:line-through}
+  .infobox{background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;margin:0 0 14px;font-size:.88rem;color:var(--muted)}
+  .infobox b{color:var(--ink)}
+  .toolbar{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0 2px 12px}
+  .toolbar .progress{font-size:.85rem;color:var(--muted)}
+  .btn{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--accent);font-weight:600;font-size:.85rem;padding:8px 14px;border-radius:10px;cursor:pointer}
+  .btn:active{transform:scale(.97)}
+  footer{text-align:center;color:var(--muted);font-size:.78rem;margin:26px 0 8px;padding:0 14px}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <h1>🍽️ Weekly Meal Plan & Groceries</h1>
+  <div class="sub">Family of 3 · <span id="weekof-h">this week</span></div>
+</div></header>
+
+<nav class="tabs" role="tablist">
+  <button id="tab-plan" role="tab" aria-selected="true">📅 Meal Plan</button>
+  <button id="tab-grocery" role="tab" aria-selected="false">🛒 Groceries <span class="count" id="grocery-count"></span></button>
+</nav>
+
+<main class="wrap">
+  <section class="panel active" id="panel-plan" role="tabpanel"></section>
+  <section class="panel" id="panel-grocery" role="tabpanel"></section>
+</main>
+
+<footer>Tap 🔄 Swap on any dinner to change it — the grocery list updates to match. Checkmarks save on this device.</footer>
+
+<script>
+/* =====================================================================
+   WEEK DATA  —  to refresh each week, edit this object only.
+   Each dinner has options[]; option 0 is the default, 1–2 are swaps.
+   Bump `version` weekly to start the grocery checkboxes fresh.
+   ===================================================================== */
+var REQUEST_EMAIL = "taylorwestfall@gmail.com";
+var WEEK = {
+  label: "____________",
+  version: "2026-06-08",
+  intro: "Polo nights Tue–Thu (≤20 min, eat then go). Mon, Fri & Sat are covered by other plans.",
+  portions: "Quantities scaled ~1.6× so each dinner makes a next-day lunch from leftovers.",
+  meals: [
+    { id:"tue", day:"Tuesday", polo:true, options:[
+      { title:"Sheet-Pan Kielbasa & Peppers", protein:"Pork", time:"~20 min",
+        included:"Sliced kielbasa roasted with bell peppers and onion on one sheet pan · microwave rice on the side.",
+        swapNote:"Kielbasa runs spicy/smoky. <b>Sub bratwurst</b> sliced the same way — milder, same cook time, same pan. Grab a small pack so the 13-yr-old's portion is bratwurst.",
+        steps:["Oven 425°F. Slice kielbasa into ½\" coins; peppers & onion into strips.","Toss with oil, salt, pepper on a sheet pan.","Roast 15–18 min, shaking once.","Microwave rice in the last 2 min."],
+        lunchTitle:"Kielbasa & Pepper Rice Bowl",
+        lunch:"Reheat leftover kielbasa, peppers, and rice together. Splash of hot sauce for the adults.",
+        groceries:[
+          {name:"Kielbasa — 2 rings (~28 oz)", det:"Tue · sheet-pan kielbasa", cat:"Meat & Seafood"},
+          {name:"Bratwurst — pack of 4–5", det:"milder swap for the teen", cat:"Meat & Seafood"},
+          {name:"Red bell pepper — 2", det:"Tue", cat:"Produce"},
+          {name:"Yellow bell pepper — 1", det:"Tue", cat:"Produce"},
+          {name:"Yellow onion — 1 large", det:"Tue", cat:"Produce"},
+          {name:"Microwave jasmine rice — 3 pouches", det:"Tue", cat:"Pantry"}
+        ]},
+      { title:"Smoked Sausage & Potato Skillet", protein:"Pork", time:"~20 min",
+        included:"Sliced smoked sausage seared with baby potatoes, peppers and onion all in one skillet.",
+        swapNote:"Pick a <b>mild</b> smoked sausage (skip andouille/hot) so it's teen-friendly.",
+        steps:["Microwave halved baby potatoes 5 min to soften.","Sear sliced sausage in a skillet until browned.","Add potatoes, peppers, onion; season; cook 8–10 min until edges crisp."],
+        lunchTitle:"Sausage & Potato Hash",
+        lunch:"Reheat in a skillet; crack an egg on top if you want.",
+        groceries:[
+          {name:"Mild smoked sausage — 2 packs", det:"Tue · sausage & potato skillet", cat:"Meat & Seafood"},
+          {name:"Baby potatoes — 1.5 lbs", det:"Tue · bulk-buy item", cat:"Produce"},
+          {name:"Red bell pepper — 2", det:"Tue", cat:"Produce"},
+          {name:"Sweet onion — 1", det:"Tue · bulk-buy item", cat:"Produce"}
+        ]},
+      { title:"Honey-Garlic Pork Tenderloin Bites", protein:"Pork", time:"~20 min",
+        included:"Bite-size pork tenderloin seared in a honey-garlic glaze · rice · quick steamed broccoli.",
+        steps:["Cube pork tenderloin; sear in a hot skillet 4–5 min.","Add honey + soy + garlic; toss to glaze 2 min.","Serve over rice with steamed broccoli."],
+        lunchTitle:"Pork Rice Bowl",
+        lunch:"Reheat pork and rice; add broccoli and a drizzle of the glaze.",
+        groceries:[
+          {name:"Pork tenderloin — 1.5 lbs", det:"Tue · honey-garlic pork", cat:"Meat & Seafood"},
+          {name:"Broccoli — ~12 oz", det:"Tue · bulk-buy item", cat:"Produce"},
+          {name:"Honey", det:"restock if low", cat:"Pantry"},
+          {name:"Microwave jasmine rice — 3 pouches", det:"Tue", cat:"Pantry"}
+        ]}
+    ]},
+    { id:"wed", day:"Wednesday", polo:true, options:[
+      { title:"Beef & Broccoli Stir-Fry", protein:"Beef", time:"~15 min",
+        included:"Pre-sliced beef stir-fried with broccoli in a jarred sauce · microwave rice.",
+        steps:["Heat oil on high. Sear beef 2 min — don't crowd it. Remove.","Add broccoli + 2 Tbsp water, cover 3 min.","Beef back in, add sauce, toss 1 min.","Microwave rice alongside."],
+        lunchTitle:"Beef & Broccoli Rice Bowl",
+        lunch:"Reheat beef, broccoli, and rice together. A splash of soy sauce wakes it up.",
+        groceries:[
+          {name:"Pre-sliced beef stir-fry strips — 2 lbs", det:"Wed · beef & broccoli", cat:"Meat & Seafood"},
+          {name:"Broccoli florets — ~20 oz", det:"Wed · bulk-buy item", cat:"Produce"},
+          {name:"Jarred stir-fry sauce — 1 bottle (mild)", det:"teriyaki or garlic-ginger", cat:"Pantry"},
+          {name:"Microwave jasmine rice — 3 pouches", det:"Wed", cat:"Pantry"}
+        ]},
+      { title:"Ground Beef Taco Rice Skillet", protein:"Beef", time:"~20 min",
+        included:"Seasoned ground beef and rice cooked in one skillet, topped with cheese · side of peppers or corn.",
+        steps:["Brown ground beef; drain.","Add taco seasoning + rice + 2 cups water/broth; simmer 12–15 min.","Top with cheese; rest 1 min."],
+        lunchTitle:"Beef Taco Bowl",
+        lunch:"Reheat; add fresh cheese and a dollop of sour cream.",
+        groceries:[
+          {name:"Ground beef — 2 lbs", det:"Wed · taco rice skillet", cat:"Meat & Seafood"},
+          {name:"Bell pepper (any color) — 1", det:"Wed · bulk-buy item", cat:"Produce"},
+          {name:"Shredded cheese — 1 bag", det:"Wed", cat:"Dairy & Eggs"},
+          {name:"Taco seasoning — 1 packet", det:"Wed", cat:"Pantry"},
+          {name:"White rice — 1.5 cups dry (or 3 pouches)", det:"Wed", cat:"Pantry"}
+        ]},
+      { title:"Philly-Style Beef & Pepper Bowls", protein:"Beef", time:"~18 min",
+        included:"Thin beef with peppers and sweet onion, melted provolone, over rice (or in rolls).",
+        steps:["Sear beef strips in a hot skillet.","Add peppers + onion, cook 5 min until soft.","Lay provolone over the top to melt; serve over rice or in hoagie rolls."],
+        lunchTitle:"Philly Beef Bowl",
+        lunch:"Reheat beef and peppers over rice; add a slice of provolone.",
+        groceries:[
+          {name:"Pre-sliced beef stir-fry strips — 2 lbs", det:"Wed · philly bowls", cat:"Meat & Seafood"},
+          {name:"Bell pepper (any color) — 2", det:"Wed · bulk-buy item", cat:"Produce"},
+          {name:"Sweet onion — 1", det:"Wed · bulk-buy item", cat:"Produce"},
+          {name:"Provolone slices — 1 pack", det:"Wed", cat:"Dairy & Eggs"},
+          {name:"Microwave jasmine rice — 3 pouches", det:"Wed (or hoagie rolls)", cat:"Pantry"}
+        ]}
+    ]},
+    { id:"thu", day:"Thursday", polo:true, options:[
+      { title:"Garlic Shrimp Tacos", protein:"Shrimp", time:"~12 min",
+        included:"Garlic-butter shrimp folded into warm tortillas · cabbage slaw with lime · squeeze of crema.",
+        steps:["Pat thawed shrimp dry; toss with garlic powder, salt, pepper.","Skillet with butter on med-high — shrimp 2 min per side.","Warm tortillas 20 sec.","Slaw: bagged mix + lime juice + pinch of salt."],
+        lunchTitle:"Shrimp Taco Bowl",
+        lunch:"Reheat shrimp gently (30-sec bursts so they don't rubber up) over rice or in a tortilla with slaw and lime.",
+        groceries:[
+          {name:"Shrimp, peeled & deveined — 1.5 lbs", det:"Thu · garlic shrimp tacos · frozen ok", cat:"Meat & Seafood"},
+          {name:"Bagged coleslaw mix — 2 bags", det:"just cabbage, undressed", cat:"Produce"},
+          {name:"Lime — 2", det:"Thu · bulk-buy item", cat:"Produce"},
+          {name:"Flour tortillas, street-taco size — 2 packs", det:"or 1 large 18-ct", cat:"Bread & Bakery"},
+          {name:"Sour cream or crema — medium", det:"optional", cat:"Dairy & Eggs"},
+          {name:"Butter — 1 stick", det:"Thu", cat:"Dairy & Eggs"},
+          {name:"Garlic powder", det:"restock if low", cat:"Spices"}
+        ]},
+      { title:"Garlic-Butter Shrimp Rice Bowls", protein:"Shrimp", time:"~15 min",
+        included:"Garlic-butter shrimp over rice with steamed broccoli and a squeeze of lemon.",
+        steps:["Cook shrimp in garlic butter, 2 min per side.","Steam broccoli 3–4 min.","Serve over rice; finish with lemon."],
+        lunchTitle:"Shrimp Rice Bowl",
+        lunch:"Reheat shrimp gently over rice with the broccoli.",
+        groceries:[
+          {name:"Shrimp, peeled & deveined — 1.5 lbs", det:"Thu · shrimp rice bowls · frozen ok", cat:"Meat & Seafood"},
+          {name:"Broccoli — ~12 oz", det:"Thu · bulk-buy item", cat:"Produce"},
+          {name:"Lemon — 1", det:"Thu · bulk-buy item", cat:"Produce"},
+          {name:"Butter — 1 stick", det:"Thu", cat:"Dairy & Eggs"},
+          {name:"Microwave jasmine rice — 3 pouches", det:"Thu", cat:"Pantry"},
+          {name:"Garlic powder", det:"restock if low", cat:"Spices"}
+        ]},
+      { title:"Sheet-Pan Lemon Shrimp & Veggies", protein:"Shrimp", time:"~15 min",
+        included:"Shrimp roasted with zucchini, peppers and lemon on one sheet pan.",
+        steps:["Oven 425°F. Toss shrimp + sliced zucchini + peppers with oil, garlic, lemon.","Spread on a sheet pan; roast 10–12 min.","Squeeze fresh lemon over the top."],
+        lunchTitle:"Lemon Shrimp & Veg Bowl",
+        lunch:"Reheat gently over rice; brightens up with extra lemon.",
+        groceries:[
+          {name:"Shrimp, peeled & deveined — 1.5 lbs", det:"Thu · sheet-pan shrimp · frozen ok", cat:"Meat & Seafood"},
+          {name:"Zucchini — 2", det:"Thu · bulk-buy item", cat:"Produce"},
+          {name:"Bell pepper (any color) — 1", det:"Thu · bulk-buy item", cat:"Produce"},
+          {name:"Lemon — 2", det:"Thu · bulk-buy item", cat:"Produce"},
+          {name:"Garlic powder", det:"restock if low", cat:"Spices"}
+        ]}
+    ]}
+  ],
+  staples:[]   // always-on items independent of swaps (none this week)
+};
+
+/* ===================== APP ===================== */
+var CAT_ORDER = ["Meat & Seafood","Produce","Dairy & Eggs","Bread & Bakery","Pantry","Spices"];
+var V = WEEK.version;
+function esc(s){return (s||"").replace(/&(?!\w+;)/g,"&amp;");}
+function getOpt(id){ try{var v=localStorage.getItem("opt:"+V+":"+id);return v?(+v):0;}catch(e){return 0;} }
+function setOpt(id,i){ try{localStorage.setItem("opt:"+V+":"+id,String(i));}catch(e){} }
+function active(meal){ return meal.options[ getOpt(meal.id) % meal.options.length ]; }
+
+/* ---- Meal Plan tab ---- */
+function renderPlan(){
+  var p = document.getElementById('panel-plan');
+  var h = '';
+  h += '<div class="callout"><div><span class="weekof">Week of:</span> '+esc(WEEK.label)+'</div>'+
+       '<p style="margin:8px 0 0"><b>This week:</b> '+esc(WEEK.intro)+'</p>'+
+       '<p style="margin:6px 0 0"><b>Portions:</b> '+esc(WEEK.portions)+'</p></div>';
+
+  // At a glance
+  h += '<div class="table-scroll"><table><thead><tr><th>Day</th><th>Dinner</th><th>Protein</th><th>Time</th><th>Next-Day Lunch</th></tr></thead><tbody>';
+  WEEK.meals.forEach(function(m){
+    var o = active(m);
+    h += '<tr><td>'+m.day.slice(0,3)+'</td><td>'+esc(o.title)+'</td><td>'+esc(o.protein)+'</td><td>'+esc(o.time)+'</td><td>'+esc(o.lunchTitle||'—')+'</td></tr>';
+  });
+  h += '</tbody></table></div>';
+
+  // Day cards
+  WEEK.meals.forEach(function(m){
+    var idx = getOpt(m.id)%m.options.length, o = m.options[idx], n = m.options.length;
+    h += '<article class="card">';
+    h += '<div class="day-h"><span class="day">'+m.day+'</span><span class="dish">'+esc(o.title)+'</span></div>';
+    h += '<div class="meta"><span class="pill">'+esc(o.protein)+'</span><span class="pill">'+esc(o.time)+'</span>'+(m.polo?'<span class="pill polo">Polo night</span>':'')+'</div>';
+    h += '<div class="optline"><button class="swapbtn" data-swap="'+m.id+'">🔄 Swap dinner</button>'+
+         '<span class="optdots">Option '+(idx+1)+' of '+n+'</span></div>';
+    h += '<p><b>What\'s included:</b> '+esc(o.included)+'</p>';
+    if(o.swapNote) h += '<div class="swap">⚠️ <b>Teen-friendly:</b> '+o.swapNote+'</div>';
+    h += '<h4>How to make it ('+esc(o.time)+')</h4><ol>';
+    o.steps.forEach(function(s){ h += '<li>'+esc(s)+'</li>'; });
+    h += '</ol>';
+    h += '<h4>Ingredients</h4><ul>';
+    o.groceries.forEach(function(g){ h += '<li>'+esc(g.name)+'</li>'; });
+    h += '</ul>';
+    if(o.lunch) h += '<div class="lunch">🥡 <b>Next-day lunch → '+esc(o.lunchTitle)+'.</b> '+esc(o.lunch)+'</div>';
+    var subj = encodeURIComponent("Meal swap request: "+m.day);
+    var body = encodeURIComponent("We'd like something different for "+m.day+" (currently "+o.title+"). Ideas welcome:");
+    h += '<a class="reqbtn" href="mailto:'+REQUEST_EMAIL+'?subject='+subj+'&body='+body+'">✏️ None of these? Request a different option</a>';
+    h += '</article>';
+  });
+
+  h += '<h2 class="sec">Protein Spread</h2><div class="table-scroll"><table><thead><tr>';
+  WEEK.meals.forEach(function(m){ h += '<th>'+m.day.slice(0,3)+'</th>'; });
+  h += '</tr></thead><tbody><tr>';
+  WEEK.meals.forEach(function(m){ h += '<td>'+esc(active(m).protein)+'</td>'; });
+  h += '</tr></tbody></table></div><p style="font-size:.88rem;color:var(--muted);margin:0 2px">Swaps keep each night\'s protein, so the weekly variety stays intact ✓</p>';
+
+  p.innerHTML = h;
+  p.querySelectorAll('[data-swap]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var id=b.getAttribute('data-swap'), m=WEEK.meals.filter(function(x){return x.id===id;})[0];
+      setOpt(id, (getOpt(id)+1)%m.options.length);
+      renderPlan(); renderGrocery();
+    });
+  });
+}
+
+/* ---- Grocery tab ---- */
+function collectGroceries(){
+  var items=[];
+  WEEK.meals.forEach(function(m){
+    var idx=getOpt(m.id)%m.options.length;
+    active(m).groceries.forEach(function(g,gi){
+      items.push({name:g.name,det:g.det,cat:g.cat,key:"gro:"+V+":"+m.id+":"+idx+":"+gi});
+    });
+  });
+  (WEEK.staples||[]).forEach(function(g,gi){ items.push({name:g.name,det:g.det,cat:g.cat,key:"gro:"+V+":staple:"+gi}); });
+  return items;
+}
+function renderGrocery(){
+  var p=document.getElementById('panel-grocery'), items=collectGroceries();
+  var h='';
+  h += '<div class="callout"><div><span class="weekof">Week of:</span> '+esc(WEEK.label)+'</div>'+
+       '<p style="margin:8px 0 0">Covers all dinners + a next-day lunch from each. Updates automatically when you swap a dinner. Pantry staples (oil, salt, pepper, soy sauce) assumed on hand.</p></div>';
+  h += '<div class="toolbar"><span class="progress" id="progress"></span><button class="btn" id="reset">Reset list</button></div>';
+
+  CAT_ORDER.forEach(function(cat){
+    var inCat=items.filter(function(it){return it.cat===cat;});
+    if(!inCat.length) return;
+    h += '<div class="grocery-cat"><h3>'+esc(cat)+'</h3>';
+    inCat.forEach(function(it){
+      h += '<label class="item"><input type="checkbox" data-key="'+it.key+'"><span class="txt"><span class="name">'+esc(it.name)+'</span>'+(it.det?'<span class="det">'+esc(it.det)+'</span>':'')+'</span></label>';
+    });
+    h += '</div>';
+  });
+  h += '<div class="infobox"><b>Already have (don\'t buy):</b> olive oil, salt, pepper, neutral cooking oil — assumed stocked.</div>';
+  p.innerHTML=h;
+
+  var boxes=Array.prototype.slice.call(p.querySelectorAll('.item input'));
+  function prog(){
+    var done=boxes.filter(function(b){return b.checked;}).length;
+    document.getElementById('progress').textContent=done+' of '+boxes.length+' checked';
+    var c=document.getElementById('grocery-count'); c.textContent=done>0?'('+done+'/'+boxes.length+')':'';
+  }
+  boxes.forEach(function(b){
+    var k=b.getAttribute('data-key');
+    try{ if(localStorage.getItem(k)==='1') b.checked=true; }catch(e){}
+    b.addEventListener('change',function(){ try{localStorage.setItem(k,b.checked?'1':'0');}catch(e){} prog(); });
+  });
+  document.getElementById('reset').addEventListener('click',function(){
+    boxes.forEach(function(b){ b.checked=false; try{localStorage.removeItem(b.getAttribute('data-key'));}catch(e){} });
+    prog();
+  });
+  prog();
+}
+
+/* ---- Tabs ---- */
+var tabs={plan:document.getElementById('tab-plan'),grocery:document.getElementById('tab-grocery')};
+var panels={plan:document.getElementById('panel-plan'),grocery:document.getElementById('panel-grocery')};
+function showTab(name){
+  for(var k in tabs){var on=(k===name);tabs[k].setAttribute('aria-selected',on?'true':'false');panels[k].classList.toggle('active',on);}
+  try{localStorage.setItem('mp:lasttab',name);}catch(e){}
+  window.scrollTo(0,0);
+}
+tabs.plan.addEventListener('click',function(){showTab('plan');});
+tabs.grocery.addEventListener('click',function(){showTab('grocery');});
+
+/* ---- Init ---- */
+document.getElementById('weekof-h').textContent = WEEK.label.indexOf('_')>=0 ? 'this week' : ('Week of '+WEEK.label);
+renderPlan(); renderGrocery();
+try{var last=localStorage.getItem('mp:lasttab'); if(last&&tabs[last]) showTab(last);}catch(e){}
+</script>
+</body>
+</html>
