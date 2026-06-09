@@ -78,7 +78,7 @@
   .item input{appearance:none;flex:0 0 auto;width:24px;height:24px;margin-top:1px;border:2px solid var(--accent);border-radius:7px;background:var(--card);position:relative;cursor:pointer;transition:.12s}
   .item input:checked{background:var(--accent)}
   .item input:checked::after{content:"";position:absolute;left:7px;top:3px;width:6px;height:11px;border:solid #fff;border-width:0 3px 3px 0;transform:rotate(45deg)}
-  .item .txt{flex:1}.item .txt .name{font-weight:600}.item .txt .det{font-size:.82rem;color:var(--muted);margin-top:1px}
+  .item .txt{flex:1}.item .txt .name{font-weight:600;display:block}.item .txt .det{font-size:.82rem;color:var(--muted);margin-top:1px}
   .item input:checked ~ .txt{opacity:.5}.item input:checked ~ .txt .name{text-decoration:line-through}
   .infobox{background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:12px 14px;margin:0 0 14px;font-size:.88rem;color:var(--muted)}
   .infobox b{color:var(--ink)}
@@ -338,8 +338,39 @@ function collectGroceries(){
   (WEEK.staples||[]).forEach(function(g,gi){ items.push({name:g.name,det:g.det,cat:g.cat,key:"gro:"+V+":staple:"+gi}); });
   return items;
 }
+function uniqArr(a){ var seen={},r=[]; a.forEach(function(x){ if(!seen[x]){seen[x]=1;r.push(x);} }); return r; }
+function combineQtys(qtys){
+  if(!qtys.length) return "";
+  if(qtys.length===1) return qtys[0];
+  var nums=[], unit=null, ok=true;
+  for(var i=0;i<qtys.length;i++){
+    var m=qtys[i].match(/^(\d+(?:\.\d+)?)\s*(.*)$/);
+    if(!m){ ok=false; break; }
+    nums.push(parseFloat(m[1]));
+    var u=(m[2]||"").trim().toLowerCase();
+    if(unit===null) unit=u; else if(unit!==u){ ok=false; break; }
+  }
+  if(ok){ var sum=nums.reduce(function(a,b){return a+b;},0); return (Math.round(sum*100)/100)+(unit?" "+unit:""); }
+  return qtys.join(" + ");
+}
+function mergeGroceries(items){
+  var map={}, order=[];
+  items.forEach(function(it){
+    var d=it.name.indexOf(" — ");
+    var base=d>=0?it.name.slice(0,d).trim():it.name.trim();
+    var qty=d>=0?it.name.slice(d+3).trim():"";
+    var gk=it.cat+"||"+base.toLowerCase();
+    if(!map[gk]){ map[gk]={base:base,cat:it.cat,qtys:[],dets:[]}; order.push(gk); }
+    if(qty) map[gk].qtys.push(qty);
+    if(it.det) map[gk].dets.push(it.det);
+  });
+  return order.map(function(gk){
+    var g=map[gk], q=combineQtys(g.qtys);
+    return { name:g.base+(q?" — "+q:""), det:uniqArr(g.dets).join(" · "), cat:g.cat, key:"grom:"+V+":"+gk };
+  });
+}
 function renderGrocery(){
-  var p=document.getElementById('panel-grocery'), items=collectGroceries();
+  var p=document.getElementById('panel-grocery'), items=mergeGroceries(collectGroceries());
   var h='';
   h += '<div class="callout"><div><span class="weekof">Week of:</span> '+esc(WEEK.label)+'</div>'+
        '<p style="margin:8px 0 0">Covers all dinners + a next-day lunch from each. Updates automatically when you swap a dinner. Pantry staples (oil, salt, pepper, soy sauce) assumed on hand.</p></div>';
