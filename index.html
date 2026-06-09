@@ -434,9 +434,16 @@ var THEMES = {
     "--lunch-bg":"#1d2a39","--lunch-ink":"#a9cdef","--lunch-line":"#33485f",
     "--header-bg":"#1d1e22","--tab-on":"#18190f"
   }},
+  niners: { name:"SF 49ers", dot:"#aa0000", vars:{
+    "--bg":"#faf6ec","--card":"#ffffff","--ink":"#1b1b1b","--muted":"#6d6456",
+    "--accent":"#aa0000","--accent-soft":"#f0e4c6","--line":"#e7ddc6",
+    "--warn-bg":"#fff4e0","--warn-ink":"#8a5a12","--warn-line":"#f0d9a8",
+    "--lunch-bg":"#f4edd9","--lunch-ink":"#6b5a1f","--lunch-line":"#e2d4ab",
+    "--header-bg":"#aa0000","--tab-on":"#ffffff"
+  }},
   green: { name:"Forest Green", dot:"#2f7d5b", vars:null } /* null = original stylesheet (auto light/dark) */
 };
-var THEME_ORDER = ["terracotta","green","slate","berry","charcoal"];
+var THEME_ORDER = ["terracotta","green","slate","berry","charcoal","niners"];
 var THEME_KEYS = ["--bg","--card","--ink","--muted","--accent","--accent-soft","--line","--warn-bg","--warn-ink","--warn-line","--lunch-bg","--lunch-ink","--lunch-line","--header-bg","--tab-on"];
 function applyTheme(name){
   var t = THEMES[name] || THEMES.terracotta, root = document.documentElement;
