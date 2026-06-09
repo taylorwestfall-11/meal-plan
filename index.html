@@ -31,7 +31,7 @@
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   html,body{margin:0}
   body{background:var(--bg);color:var(--ink);
-    font:16px/1.55 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding-bottom:48px}
+    font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding-bottom:48px}
   .wrap{max-width:760px;margin:0 auto;padding:0 14px}
   header{background:var(--accent);color:#fff;padding:calc(18px + env(safe-area-inset-top,0)) 14px 16px}
   header .wrap{padding:0 4px}
@@ -84,8 +84,19 @@
   .toolbar .progress{font-size:.85rem;color:var(--muted)}
   .btn{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--accent);font-weight:600;font-size:.85rem;padding:8px 14px;border-radius:10px;cursor:pointer}
   .btn:active{transform:scale(.97)}
-  .theme-btn{appearance:none;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.16);color:#fff;font-size:1.15rem;width:42px;height:42px;border-radius:12px;cursor:pointer;line-height:1;flex:0 0 auto}
-  .theme-btn:active{transform:scale(.95)}
+  .hcontrols{display:flex;justify-content:flex-end;gap:8px;margin-bottom:4px}
+  .hmenu-wrap{position:relative}
+  .hbtn{appearance:none;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.16);color:#fff;font-size:1rem;font-weight:700;min-width:42px;height:42px;padding:0 11px;border-radius:12px;cursor:pointer;line-height:1}
+  .hbtn:active{transform:scale(.95)}
+  .hbtn[aria-pressed="true"]{background:#fff;color:var(--accent)}
+  .apptitle{text-align:center;margin:2px 0 0}
+  header .sub{text-align:center}
+  /* Easy-read mode: dyslexia / ADHD-friendly typography */
+  body.easyread{font-family:"Atkinson Hyperlegible","Verdana","Tahoma","Segoe UI",sans-serif;line-height:1.9;letter-spacing:.02em;word-spacing:.06em}
+  body.easyread .card p,body.easyread .card li,body.easyread .lunch,body.easyread .swap,body.easyread .item .txt .name{font-size:1.06rem}
+  body.easyread em{font-style:normal;font-weight:600}
+  body.easyread .card ol,body.easyread .card ul{padding-left:24px}
+  body.easyread .card li{margin:6px 0}
   .theme-menu{position:absolute;right:0;top:48px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 28px rgba(0,0,0,.2);padding:8px;z-index:30;min-width:180px}
   .theme-menu .theme-opt{display:flex;align-items:center;gap:11px;width:100%;appearance:none;border:none;background:transparent;color:var(--ink);font-size:.95rem;font-weight:600;padding:11px 10px;border-radius:10px;cursor:pointer;text-align:left}
   .theme-menu .theme-opt:active{background:var(--accent-soft)}
@@ -96,15 +107,16 @@
 </style>
 </head>
 <body>
-<header><div class="wrap" style="display:flex;align-items:flex-start;justify-content:space-between;gap:10px">
-  <div>
-    <h1>🍽️ Weekly Meal Plan & Groceries</h1>
-    <div class="sub">Family of 3 · <span id="weekof-h">this week</span></div>
+<header><div class="wrap">
+  <div class="hcontrols">
+    <button id="easyBtn" class="hbtn" aria-label="Easy-read mode" aria-pressed="false" title="Easy-read mode (dyslexia / ADHD friendly)">Aa</button>
+    <div class="hmenu-wrap">
+      <button id="themeBtn" class="hbtn" aria-label="Change color theme" title="Change color theme">🎨</button>
+      <div id="themeMenu" class="theme-menu" hidden></div>
+    </div>
   </div>
-  <div style="position:relative;flex:0 0 auto">
-    <button id="themeBtn" class="theme-btn" aria-label="Change color theme" title="Change color theme">🎨</button>
-    <div id="themeMenu" class="theme-menu" hidden></div>
-  </div>
+  <h1 class="apptitle">🍽️ Weekly Meal Plan &amp; Groceries</h1>
+  <div class="sub">Family of 3 · <span id="weekof-h">this week</span></div>
 </div></header>
 
 <nav class="tabs" role="tablist">
@@ -127,7 +139,7 @@
    ===================================================================== */
 var REQUEST_EMAIL = "taylorwestfall@gmail.com";
 var WEEK = {
-  label: "____________",
+  label: "June 7–13, 2026",
   version: "2026-06-08",
   intro: "Polo nights Tue–Thu (≤20 min, eat then go). Mon, Fri & Sat are covered by other plans.",
   portions: "Quantities scaled ~1.6× so each dinner makes a next-day lunch from leftovers.",
@@ -266,8 +278,7 @@ function renderPlan(){
   var p = document.getElementById('panel-plan');
   var h = '';
   h += '<div class="callout"><div><span class="weekof">Week of:</span> '+esc(WEEK.label)+'</div>'+
-       '<p style="margin:8px 0 0"><b>This week:</b> '+esc(WEEK.intro)+'</p>'+
-       '<p style="margin:6px 0 0"><b>Portions:</b> '+esc(WEEK.portions)+'</p></div>';
+       '<p style="margin:8px 0 0"><b>This week:</b> '+esc(WEEK.intro)+'</p></div>';
 
   // At a glance
   h += '<div class="table-scroll"><table><thead><tr><th>Day</th><th>Dinner</th><th>Protein</th><th>Time</th><th>Next-Day Lunch</th></tr></thead><tbody>';
@@ -294,9 +305,6 @@ function renderPlan(){
     o.groceries.forEach(function(g){ h += '<li>'+esc(g.name)+'</li>'; });
     h += '</ul>';
     if(o.lunch) h += '<div class="lunch">🥡 <b>Next-day lunch → '+esc(o.lunchTitle)+'.</b> '+esc(o.lunch)+'</div>';
-    var subj = encodeURIComponent("Meal swap request: "+m.day);
-    var body = encodeURIComponent("We'd like something different for "+m.day+" (currently "+o.title+"). Ideas welcome:");
-    h += '<a class="reqbtn" href="mailto:'+REQUEST_EMAIL+'?subject='+subj+'&body='+body+'">✏️ None of these? Request a different option</a>';
     h += '</article>';
   });
 
@@ -402,9 +410,21 @@ var THEMES = {
     "--warn-bg":"#fff4e0","--warn-ink":"#8a5a12","--warn-line":"#f0d9a8",
     "--lunch-bg":"#eef3ee","--lunch-ink":"#4a6b54","--lunch-line":"#d3e3d6"
   }},
+  slate: { name:"Slate Blue", dot:"#3a6ea5", vars:{
+    "--bg":"#f4f6f8","--card":"#ffffff","--ink":"#1f2933","--muted":"#5a6b7a",
+    "--accent":"#3a6ea5","--accent-soft":"#e4edf5","--line":"#dde4ec",
+    "--warn-bg":"#fff4e0","--warn-ink":"#8a5a12","--warn-line":"#f0d9a8",
+    "--lunch-bg":"#eef3ee","--lunch-ink":"#4a6b54","--lunch-line":"#d3e3d6"
+  }},
+  berry: { name:"Berry Plum", dot:"#8d3b66", vars:{
+    "--bg":"#f8f3f6","--card":"#ffffff","--ink":"#2a2230","--muted":"#7a6b75",
+    "--accent":"#8d3b66","--accent-soft":"#f1e2eb","--line":"#ece0e6",
+    "--warn-bg":"#fff4e0","--warn-ink":"#8a5a12","--warn-line":"#f0d9a8",
+    "--lunch-bg":"#eef3ee","--lunch-ink":"#4a6b54","--lunch-line":"#d3e3d6"
+  }},
   green: { name:"Forest Green", dot:"#2f7d5b", vars:null } /* null = original stylesheet (auto light/dark) */
 };
-var THEME_ORDER = ["terracotta","green"];
+var THEME_ORDER = ["terracotta","green","slate","berry"];
 var THEME_KEYS = ["--bg","--card","--ink","--muted","--accent","--accent-soft","--line","--warn-bg","--warn-ink","--warn-line","--lunch-bg","--lunch-ink","--lunch-line"];
 function applyTheme(name){
   var t = THEMES[name] || THEMES.terracotta, root = document.documentElement;
@@ -425,6 +445,15 @@ function applyTheme(name){
   document.addEventListener("click", function(e){ if(!menu.hidden && !menu.contains(e.target) && e.target!==btn) menu.hidden=true; });
   var saved="terracotta"; try{ var s=localStorage.getItem("mp:theme"); if(s && THEMES[s]) saved=s; }catch(e){}
   applyTheme(saved);
+})();
+
+/* ---- Easy-read mode (dyslexia / ADHD-friendly) ---- */
+(function initEasy(){
+  var b=document.getElementById("easyBtn");
+  function applyEasy(on){ document.body.classList.toggle("easyread",!!on); b.setAttribute("aria-pressed",on?"true":"false"); try{localStorage.setItem("mp:easyread",on?"1":"0");}catch(e){} }
+  b.addEventListener("click",function(){ applyEasy(!document.body.classList.contains("easyread")); });
+  var on=false; try{ on=localStorage.getItem("mp:easyread")==="1"; }catch(e){}
+  applyEasy(on);
 })();
 
 /* ---- Init ---- */
