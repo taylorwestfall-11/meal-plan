@@ -18,6 +18,7 @@
     --accent:#2f7d5b; --accent-soft:#e3f0e9; --line:#e6e4dd;
     --warn-bg:#fff4e0; --warn-ink:#8a5a12; --warn-line:#f0d9a8;
     --lunch-bg:#eef4fb; --lunch-ink:#34597e; --lunch-line:#cfe0f1;
+    --header-bg:var(--accent); --tab-on:#ffffff;
     --radius:16px;
   }
   @media (prefers-color-scheme: dark){
@@ -26,6 +27,7 @@
       --accent:#7fcaa3; --accent-soft:#23362c; --line:#34372c;
       --warn-bg:#3a2f17; --warn-ink:#f0cd87; --warn-line:#5a4a23;
       --lunch-bg:#1d2a39; --lunch-ink:#a9cdef; --lunch-line:#33485f;
+      --header-bg:#1b2018; --tab-on:#16170f;
     }
   }
   *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
@@ -33,14 +35,14 @@
   body{background:var(--bg);color:var(--ink);
     font:16px/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding-bottom:48px}
   .wrap{max-width:760px;margin:0 auto;padding:0 14px}
-  header{background:var(--accent);color:#fff;padding:calc(18px + env(safe-area-inset-top,0)) 14px 16px}
+  header{background:var(--header-bg);color:#fff;padding:calc(18px + env(safe-area-inset-top,0)) 14px 16px}
   header .wrap{padding:0 4px}
   header h1{margin:0;font-size:1.22rem;letter-spacing:.2px}
   header .sub{opacity:.9;font-size:.85rem;margin-top:2px}
   .tabs{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:6px;padding:8px 14px}
   .tabs button{flex:1;appearance:none;border:1px solid var(--line);background:var(--card);color:var(--muted);font-size:.98rem;font-weight:600;padding:11px 8px;border-radius:12px;cursor:pointer;transition:.15s}
   .tabs button .count{font-weight:600;opacity:.75;font-size:.82em}
-  .tabs button[aria-selected="true"]{background:var(--accent);color:#fff;border-color:var(--accent);box-shadow:0 2px 8px rgba(47,125,91,.25)}
+  .tabs button[aria-selected="true"]{background:var(--accent);color:var(--tab-on);border-color:var(--accent);box-shadow:0 2px 8px rgba(47,125,91,.25)}
   main{padding-top:14px}
   .panel{display:none}.panel.active{display:block;animation:fade .2s ease}
   @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
@@ -408,24 +410,34 @@ var THEMES = {
     "--bg":"#faf6f0","--card":"#ffffff","--ink":"#2b2622","--muted":"#7a6f64",
     "--accent":"#c1623d","--accent-soft":"#f6e6dc","--line":"#ece2d6",
     "--warn-bg":"#fff4e0","--warn-ink":"#8a5a12","--warn-line":"#f0d9a8",
-    "--lunch-bg":"#eef3ee","--lunch-ink":"#4a6b54","--lunch-line":"#d3e3d6"
+    "--lunch-bg":"#eef3ee","--lunch-ink":"#4a6b54","--lunch-line":"#d3e3d6",
+    "--header-bg":"#c1623d","--tab-on":"#ffffff"
   }},
   slate: { name:"Slate Blue", dot:"#3a6ea5", vars:{
     "--bg":"#f4f6f8","--card":"#ffffff","--ink":"#1f2933","--muted":"#5a6b7a",
     "--accent":"#3a6ea5","--accent-soft":"#e4edf5","--line":"#dde4ec",
     "--warn-bg":"#fff4e0","--warn-ink":"#8a5a12","--warn-line":"#f0d9a8",
-    "--lunch-bg":"#eef3ee","--lunch-ink":"#4a6b54","--lunch-line":"#d3e3d6"
+    "--lunch-bg":"#eef3ee","--lunch-ink":"#4a6b54","--lunch-line":"#d3e3d6",
+    "--header-bg":"#3a6ea5","--tab-on":"#ffffff"
   }},
   berry: { name:"Berry Plum", dot:"#8d3b66", vars:{
     "--bg":"#f8f3f6","--card":"#ffffff","--ink":"#2a2230","--muted":"#7a6b75",
     "--accent":"#8d3b66","--accent-soft":"#f1e2eb","--line":"#ece0e6",
     "--warn-bg":"#fff4e0","--warn-ink":"#8a5a12","--warn-line":"#f0d9a8",
-    "--lunch-bg":"#eef3ee","--lunch-ink":"#4a6b54","--lunch-line":"#d3e3d6"
+    "--lunch-bg":"#eef3ee","--lunch-ink":"#4a6b54","--lunch-line":"#d3e3d6",
+    "--header-bg":"#8d3b66","--tab-on":"#ffffff"
+  }},
+  charcoal: { name:"Charcoal + Amber", dot:"#e0a32e", vars:{
+    "--bg":"#16171a","--card":"#232428","--ink":"#ececdf","--muted":"#a1a69a",
+    "--accent":"#e0a32e","--accent-soft":"#3a3320","--line":"#34362e",
+    "--warn-bg":"#3a2f17","--warn-ink":"#f0cd87","--warn-line":"#5a4a23",
+    "--lunch-bg":"#1d2a39","--lunch-ink":"#a9cdef","--lunch-line":"#33485f",
+    "--header-bg":"#1d1e22","--tab-on":"#18190f"
   }},
   green: { name:"Forest Green", dot:"#2f7d5b", vars:null } /* null = original stylesheet (auto light/dark) */
 };
-var THEME_ORDER = ["terracotta","green","slate","berry"];
-var THEME_KEYS = ["--bg","--card","--ink","--muted","--accent","--accent-soft","--line","--warn-bg","--warn-ink","--warn-line","--lunch-bg","--lunch-ink","--lunch-line"];
+var THEME_ORDER = ["terracotta","green","slate","berry","charcoal"];
+var THEME_KEYS = ["--bg","--card","--ink","--muted","--accent","--accent-soft","--line","--warn-bg","--warn-ink","--warn-line","--lunch-bg","--lunch-ink","--lunch-line","--header-bg","--tab-on"];
 function applyTheme(name){
   var t = THEMES[name] || THEMES.terracotta, root = document.documentElement;
   if(t.vars){ THEME_KEYS.forEach(function(k){ root.style.setProperty(k, t.vars[k]); }); }
