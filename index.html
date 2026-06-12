@@ -52,6 +52,7 @@
   .day-h{display:flex;flex-wrap:wrap;align-items:baseline;gap:8px}
   .day-h .day{font-size:.8rem;font-weight:700;text-transform:uppercase;letter-spacing:.6px;color:var(--accent)}
   .day-h .dish{font-size:1.16rem;font-weight:700}
+  .day-h .dish .dish-sides{font-weight:500;color:var(--muted)}
   .meta{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px;align-items:center}
   .pill{font-size:.74rem;font-weight:600;padding:3px 9px;border-radius:999px;background:var(--accent-soft);color:var(--accent)}
   .pill.polo{background:#fde9ef;color:#b03a63}
@@ -147,7 +148,7 @@ var WEEK = {
   portions: "Quantities scaled ~1.6× so each dinner makes a next-day lunch from leftovers.",
   meals: [
     { id:"tue", day:"Tuesday", polo:true, options:[
-      { title:"Sheet-Pan Kielbasa & Peppers", protein:"Pork", time:"~20 min",
+      { title:"Sheet-Pan Kielbasa & Peppers", sides:"white rice", protein:"Pork", time:"~20 min",
         included:"Sliced kielbasa roasted with bell peppers and onion on one sheet pan · microwave rice on the side.",
         swapNote:"Kielbasa runs spicy/smoky. <b>Sub bratwurst</b> sliced the same way — milder, same cook time, same pan. Grab a small pack so the 13-yr-old's portion is bratwurst.",
         steps:["Oven 425°F. Slice kielbasa into ½\" coins; peppers & onion into strips.","Toss with oil, salt, pepper on a sheet pan.","Roast 15–18 min, shaking once.","Microwave rice in the last 2 min."],
@@ -173,7 +174,7 @@ var WEEK = {
           {name:"Red bell pepper — 2", det:"Tue", cat:"Produce"},
           {name:"Sweet onion — 1", det:"Tue · bulk-buy item", cat:"Produce"}
         ]},
-      { title:"Honey-Garlic Pork Tenderloin Bites", protein:"Pork", time:"~20 min",
+      { title:"Honey-Garlic Pork Tenderloin Bites", sides:"rice & broccoli", protein:"Pork", time:"~20 min",
         included:"Bite-size pork tenderloin seared in a honey-garlic glaze · rice · quick steamed broccoli.",
         steps:["Cube pork tenderloin; sear in a hot skillet 4–5 min.","Add honey + soy + garlic; toss to glaze 2 min.","Serve over rice with steamed broccoli."],
         lunchTitle:"Pork Rice Bowl",
@@ -186,7 +187,7 @@ var WEEK = {
         ]}
     ]},
     { id:"wed", day:"Wednesday", polo:true, options:[
-      { title:"Beef & Broccoli Stir-Fry", protein:"Beef", time:"~15 min",
+      { title:"Beef & Broccoli Stir-Fry", sides:"white rice", protein:"Beef", time:"~15 min",
         included:"Pre-sliced beef stir-fried with broccoli in a jarred sauce · microwave rice.",
         steps:["Heat oil on high. Sear beef 2 min — don't crowd it. Remove.","Add broccoli + 2 Tbsp water, cover 3 min.","Beef back in, add sauce, toss 1 min.","Microwave rice alongside."],
         lunchTitle:"Beef & Broccoli Rice Bowl",
@@ -197,7 +198,7 @@ var WEEK = {
           {name:"Jarred stir-fry sauce — 1 bottle (mild)", det:"teriyaki or garlic-ginger", cat:"Pantry"},
           {name:"Microwave jasmine rice — 3 pouches", det:"Wed", cat:"Pantry"}
         ]},
-      { title:"Ground Beef Taco Rice Skillet", protein:"Beef", time:"~20 min",
+      { title:"Ground Beef Taco Rice Skillet", sides:"peppers or corn", protein:"Beef", time:"~20 min",
         included:"Seasoned ground beef and rice cooked in one skillet, topped with cheese · side of peppers or corn.",
         steps:["Brown ground beef; drain.","Add taco seasoning + rice + 2 cups water/broth; simmer 12–15 min.","Top with cheese; rest 1 min."],
         lunchTitle:"Beef Taco Bowl",
@@ -209,7 +210,7 @@ var WEEK = {
           {name:"Taco seasoning — 1 packet", det:"Wed", cat:"Pantry"},
           {name:"White rice — 1.5 cups dry (or 3 pouches)", det:"Wed", cat:"Pantry"}
         ]},
-      { title:"Philly-Style Beef & Pepper Bowls", protein:"Beef", time:"~18 min",
+      { title:"Philly-Style Beef & Pepper Bowls", sides:"rice", protein:"Beef", time:"~18 min",
         included:"Thin beef with peppers and sweet onion, melted provolone, over rice (or in rolls).",
         steps:["Sear beef strips in a hot skillet.","Add peppers + onion, cook 5 min until soft.","Lay provolone over the top to melt; serve over rice or in hoagie rolls."],
         lunchTitle:"Philly Beef Bowl",
@@ -223,7 +224,7 @@ var WEEK = {
         ]}
     ]},
     { id:"thu", day:"Thursday", polo:true, options:[
-      { title:"Garlic Shrimp Tacos", protein:"Shrimp", time:"~12 min",
+      { title:"Garlic Shrimp Tacos", sides:"cabbage slaw", protein:"Shrimp", time:"~12 min",
         included:"Garlic-butter shrimp folded into warm tortillas · cabbage slaw with lime · squeeze of crema.",
         steps:["Pat thawed shrimp dry; toss with garlic powder, salt, pepper.","Skillet with butter on med-high — shrimp 2 min per side.","Warm tortillas 20 sec.","Slaw: bagged mix + lime juice + pinch of salt."],
         lunchTitle:"Shrimp Taco Bowl",
@@ -237,7 +238,7 @@ var WEEK = {
           {name:"Butter — 1 stick", det:"Thu", cat:"Dairy & Eggs"},
           {name:"Garlic powder", det:"restock if low", cat:"Spices"}
         ]},
-      { title:"Garlic-Butter Shrimp Rice Bowls", protein:"Shrimp", time:"~15 min",
+      { title:"Garlic-Butter Shrimp Rice Bowls", sides:"broccoli", protein:"Shrimp", time:"~15 min",
         included:"Garlic-butter shrimp over rice with steamed broccoli and a squeeze of lemon.",
         steps:["Cook shrimp in garlic butter, 2 min per side.","Steam broccoli 3–4 min.","Serve over rice; finish with lemon."],
         lunchTitle:"Shrimp Rice Bowl",
@@ -286,7 +287,7 @@ function renderPlan(){
   h += '<div class="table-scroll"><table><thead><tr><th>Day</th><th>Dinner</th><th>Protein</th><th>Time</th><th>Next-Day Lunch</th></tr></thead><tbody>';
   WEEK.meals.forEach(function(m){
     var o = active(m);
-    h += '<tr><td>'+m.day.slice(0,3)+'</td><td>'+esc(o.title)+'</td><td>'+esc(o.protein)+'</td><td>'+esc(o.time)+'</td><td>'+esc(o.lunchTitle||'—')+'</td></tr>';
+    h += '<tr><td>'+m.day.slice(0,3)+'</td><td>'+esc(o.title)+(o.sides?' with '+esc(o.sides):'')+'</td><td>'+esc(o.protein)+'</td><td>'+esc(o.time)+'</td><td>'+esc(o.lunchTitle||'—')+'</td></tr>';
   });
   h += '</tbody></table></div>';
 
@@ -294,7 +295,7 @@ function renderPlan(){
   WEEK.meals.forEach(function(m){
     var idx = getOpt(m.id)%m.options.length, o = m.options[idx], n = m.options.length;
     h += '<article class="card">';
-    h += '<div class="day-h"><span class="day">'+m.day+'</span><span class="dish">'+esc(o.title)+'</span></div>';
+    h += '<div class="day-h"><span class="day">'+m.day+'</span><span class="dish">'+esc(o.title)+(o.sides?' <span class="dish-sides">with '+esc(o.sides)+'</span>':'')+'</span></div>';
     h += '<div class="meta"><span class="pill">'+esc(o.protein)+'</span><span class="pill">'+esc(o.time)+'</span>'+(m.polo?'<span class="pill polo">Polo night</span>':'')+'</div>';
     h += '<div class="optline"><button class="swapbtn" data-swap="'+m.id+'">🔄 Swap dinner</button>'+
          '<span class="optdots">Option '+(idx+1)+' of '+n+'</span></div>';
