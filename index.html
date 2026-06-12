@@ -62,6 +62,9 @@
   .swapbtn{appearance:none;border:1px solid var(--accent);background:var(--accent-soft);color:var(--accent);font-weight:700;font-size:.85rem;padding:8px 13px;border-radius:10px;cursor:pointer}
   .swapbtn:active{transform:scale(.97)}
   .optdots{font-size:.78rem;color:var(--muted)}
+  .likebtn{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--muted);font-weight:600;font-size:.85rem;padding:8px 13px;border-radius:10px;cursor:pointer}
+  .likebtn:active{transform:scale(.97)}
+  .likebtn[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
   .reqbtn{appearance:none;border:1px dashed var(--line);background:transparent;color:var(--muted);font-size:.8rem;padding:7px 11px;border-radius:10px;cursor:pointer;text-decoration:none;display:inline-block}
   .card h4{margin:14px 0 6px;font-size:.78rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
   .step-group{margin:6px 0 0}
@@ -153,9 +156,9 @@ var WEEK = {
   meals: [
     { id:"tue", day:"Tuesday", polo:true, options:[
       { title:"Sheet-Pan Kielbasa & Peppers", sides:"white rice", protein:"Pork", time:"~20 min",
-        included:"Sliced kielbasa roasted with bell peppers and onion on one sheet pan · microwave rice on the side.",
+        included:"Sliced kielbasa roasted with bell peppers and onion on one sheet pan · white rice on the side.",
         swapNote:"Kielbasa runs spicy/smoky. <b>Sub bratwurst</b> sliced the same way — milder, same cook time, same pan. Grab a small pack so the 13-yr-old's portion is bratwurst.",
-        steps:[{part:"Kielbasa & peppers",do:["Oven 425°F. Slice kielbasa into ½\" coins; cut peppers & onion into strips.","Toss with oil, salt, pepper on a sheet pan.","Roast 15–18 min, shaking once."]},{part:"White rice",do:["Microwave the rice pouch in the last 2 min."]}],
+        steps:[{part:"Kielbasa & peppers",do:["Oven 425°F. Slice kielbasa into ½\" coins; cut peppers & onion into strips.","Toss with oil, salt, pepper on a sheet pan.","Roast 15–18 min, shaking once."]},{part:"Rice (rice cooker)",do:["Rinse 2 cups jasmine rice; add to the rice cooker with water to its line (~1:1.25).","Start it first so it's ready when the sheet pan is."]}],
         lunchTitle:"Kielbasa & Pepper Rice Bowl",
         lunch:"Reheat leftover kielbasa, peppers, and rice together. Splash of hot sauce for the adults.",
         groceries:[
@@ -164,7 +167,7 @@ var WEEK = {
           {name:"Red bell pepper — 2", det:"Tue", cat:"Produce"},
           {name:"Yellow bell pepper — 1", det:"Tue", cat:"Produce"},
           {name:"Yellow onion — 1 large", det:"Tue", cat:"Produce"},
-          {name:"Microwave jasmine rice — 3 pouches", det:"Tue", cat:"Pantry"}
+          {name:"Jasmine rice — 2 cups dry", det:"Tue", cat:"Pantry"}
         ]},
       { title:"Smoked Sausage & Potato Skillet", protein:"Pork", time:"~20 min",
         included:"Sliced smoked sausage seared with baby potatoes, peppers and onion all in one skillet.",
@@ -180,27 +183,27 @@ var WEEK = {
         ]},
       { title:"Honey-Garlic Pork Tenderloin Bites", sides:"rice & broccoli", protein:"Pork", time:"~20 min",
         included:"Bite-size pork tenderloin seared in a honey-garlic glaze · rice · quick steamed broccoli.",
-        steps:[{part:"Pork",do:["Cube the pork tenderloin; sear in a hot skillet 4–5 min.","Add honey + soy + garlic; toss to glaze 2 min."]},{part:"Rice",do:["Microwave or cook the rice."]},{part:"Broccoli",do:["Steam the broccoli 3–4 min, then plate everything together."]}],
+        steps:[{part:"Pork",do:["Cube the pork tenderloin; sear in a hot skillet 4–5 min.","Add honey + soy + garlic; toss to glaze 2 min."]},{part:"Rice (rice cooker)",do:["Rinse 2 cups jasmine rice; add to the rice cooker with water to its line (~1:1.25). Start it first."]},{part:"Broccoli",do:["Steam the broccoli 3–4 min, then plate everything together."]}],
         lunchTitle:"Pork Rice Bowl",
         lunch:"Reheat pork and rice; add broccoli and a drizzle of the glaze.",
         groceries:[
           {name:"Pork tenderloin — 1.5 lbs", det:"Tue · honey-garlic pork", cat:"Meat & Seafood"},
           {name:"Broccoli — ~12 oz", det:"Tue · bulk-buy item", cat:"Produce"},
           {name:"Honey", det:"restock if low", cat:"Pantry"},
-          {name:"Microwave jasmine rice — 3 pouches", det:"Tue", cat:"Pantry"}
+          {name:"Jasmine rice — 2 cups dry", det:"Tue", cat:"Pantry"}
         ]}
     ]},
     { id:"wed", day:"Wednesday", polo:true, options:[
       { title:"Beef & Broccoli Stir-Fry", sides:"white rice", protein:"Beef", time:"~15 min",
-        included:"Pre-sliced beef stir-fried with broccoli in a jarred sauce · microwave rice.",
-        steps:[{part:"Beef & broccoli",do:["Heat oil on high. Sear the beef 2 min — don't crowd it. Remove.","Add broccoli + 2 Tbsp water, cover 3 min.","Return the beef, add sauce, toss 1 min."]},{part:"White rice",do:["Microwave the rice pouches alongside."]}],
+        included:"Pre-sliced beef stir-fried with broccoli in a jarred sauce · white rice.",
+        steps:[{part:"Beef & broccoli",do:["Heat oil on high. Sear the beef 2 min — don't crowd it. Remove.","Add broccoli + 2 Tbsp water, cover 3 min.","Return the beef, add sauce, toss 1 min."]},{part:"Rice (rice cooker)",do:["Rinse 2 cups jasmine rice; add to the rice cooker with water to its line (~1:1.25). Start it first so it's ready."]}],
         lunchTitle:"Beef & Broccoli Rice Bowl",
         lunch:"Reheat beef, broccoli, and rice together. A splash of soy sauce wakes it up.",
         groceries:[
           {name:"Pre-sliced beef stir-fry strips — 2 lbs", det:"Wed · beef & broccoli", cat:"Meat & Seafood"},
           {name:"Broccoli florets — ~20 oz", det:"Wed · bulk-buy item", cat:"Produce"},
           {name:"Jarred stir-fry sauce — 1 bottle (mild)", det:"teriyaki or garlic-ginger", cat:"Pantry"},
-          {name:"Microwave jasmine rice — 3 pouches", det:"Wed", cat:"Pantry"}
+          {name:"Jasmine rice — 2 cups dry", det:"Wed", cat:"Pantry"}
         ]},
       { title:"Ground Beef Taco Rice Skillet", sides:"peppers or corn", protein:"Beef", time:"~20 min",
         included:"Seasoned ground beef and rice cooked in one skillet, topped with cheese · side of peppers or corn.",
@@ -212,11 +215,11 @@ var WEEK = {
           {name:"Bell pepper (any color) — 1", det:"Wed · bulk-buy item", cat:"Produce"},
           {name:"Shredded cheese — 1 bag", det:"Wed", cat:"Dairy & Eggs"},
           {name:"Taco seasoning — 1 packet", det:"Wed", cat:"Pantry"},
-          {name:"White rice — 1.5 cups dry (or 3 pouches)", det:"Wed", cat:"Pantry"}
+          {name:"White rice — 1.5 cups dry", det:"Wed · cooked in the skillet", cat:"Pantry"}
         ]},
       { title:"Philly-Style Beef & Pepper Bowls", sides:"rice", protein:"Beef", time:"~18 min",
         included:"Thin beef with peppers and sweet onion, melted provolone, over rice (or in rolls).",
-        steps:[{part:"Beef & peppers",do:["Sear the beef strips in a hot skillet.","Add peppers + onion; cook 5 min until soft.","Lay provolone over the top to melt."]},{part:"Serve",do:["Spoon over rice (or pile into hoagie rolls)."]}],
+        steps:[{part:"Beef & peppers",do:["Sear the beef strips in a hot skillet.","Add peppers + onion; cook 5 min until soft.","Lay provolone over the top to melt."]},{part:"Rice (rice cooker)",do:["Rinse 2 cups jasmine rice; add to the rice cooker with water to its line and start it (skip if using hoagie rolls)."]},{part:"Serve",do:["Spoon over the rice (or pile into hoagie rolls)."]}],
         lunchTitle:"Philly Beef Bowl",
         lunch:"Reheat beef and peppers over rice; add a slice of provolone.",
         groceries:[
@@ -224,7 +227,7 @@ var WEEK = {
           {name:"Bell pepper (any color) — 2", det:"Wed · bulk-buy item", cat:"Produce"},
           {name:"Sweet onion — 1", det:"Wed · bulk-buy item", cat:"Produce"},
           {name:"Provolone slices — 1 pack", det:"Wed", cat:"Dairy & Eggs"},
-          {name:"Microwave jasmine rice — 3 pouches", det:"Wed (or hoagie rolls)", cat:"Pantry"}
+          {name:"Jasmine rice — 2 cups dry (or hoagie rolls)", det:"Wed", cat:"Pantry"}
         ]}
     ]},
     { id:"thu", day:"Thursday", polo:true, options:[
@@ -244,7 +247,7 @@ var WEEK = {
         ]},
       { title:"Garlic-Butter Shrimp Rice Bowls", sides:"broccoli", protein:"Shrimp", time:"~15 min",
         included:"Garlic-butter shrimp over rice with steamed broccoli and a squeeze of lemon.",
-        steps:[{part:"Shrimp",do:["Cook the shrimp in garlic butter, 2 min per side."]},{part:"Broccoli",do:["Steam the broccoli 3–4 min."]},{part:"Rice & assemble",do:["Serve the shrimp and broccoli over rice; finish with a squeeze of lemon."]}],
+        steps:[{part:"Shrimp",do:["Cook the shrimp in garlic butter, 2 min per side."]},{part:"Broccoli",do:["Steam the broccoli 3–4 min."]},{part:"Rice (rice cooker)",do:["Rinse 2 cups jasmine rice; add to the rice cooker with water to its line and start it first."]},{part:"Assemble",do:["Serve the shrimp and broccoli over the rice; finish with a squeeze of lemon."]}],
         lunchTitle:"Shrimp Rice Bowl",
         lunch:"Reheat shrimp gently over rice with the broccoli.",
         groceries:[
@@ -252,7 +255,7 @@ var WEEK = {
           {name:"Broccoli — ~12 oz", det:"Thu · bulk-buy item", cat:"Produce"},
           {name:"Lemon — 1", det:"Thu · bulk-buy item", cat:"Produce"},
           {name:"Butter — 1 stick", det:"Thu", cat:"Dairy & Eggs"},
-          {name:"Microwave jasmine rice — 3 pouches", det:"Thu", cat:"Pantry"},
+          {name:"Jasmine rice — 2 cups dry", det:"Thu", cat:"Pantry"},
           {name:"Garlic powder", det:"restock if low", cat:"Spices"}
         ]},
       { title:"Sheet-Pan Lemon Shrimp & Veggies", protein:"Shrimp", time:"~15 min",
@@ -277,6 +280,9 @@ var CAT_ORDER = ["Meat & Seafood","Produce","Dairy & Eggs","Bread & Bakery","Pan
 var V = WEEK.version;
 function esc(s){return (s||"").replace(/&(?!\w+;)/g,"&amp;");}
 function mpImgFallback(img){ if(img.src.slice(-4)==='.jpg'){ img.src=img.src.slice(0,-4)+'.png'; } else { img.remove(); } }
+function mpGetLikes(){ try{ return JSON.parse(localStorage.getItem('mp:likes')||'{}'); }catch(e){ return {}; } }
+function mpIsLiked(slug){ return !!mpGetLikes()[slug]; }
+function mpToggleLike(slug,title){ var o=mpGetLikes(); if(o[slug]){ delete o[slug]; } else { o[slug]=title; } try{ localStorage.setItem('mp:likes', JSON.stringify(o)); }catch(e){} }
 function getOpt(id){ try{var v=localStorage.getItem("opt:"+V+":"+id);return v?(+v):0;}catch(e){return 0;} }
 function setOpt(id,i){ try{localStorage.setItem("opt:"+V+":"+id,String(i));}catch(e){} }
 function active(meal){ return meal.options[ getOpt(meal.id) % meal.options.length ]; }
@@ -304,7 +310,9 @@ function renderPlan(){
     var imgsrc = o.img || ('images/'+(o.title||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')+'.jpg');
     h += '<img class="meal-photo" src="'+esc(imgsrc)+'" alt="'+esc(o.title)+'" loading="lazy" onerror="mpImgFallback(this)">';
     h += '<div class="meta"><span class="pill">'+esc(o.protein)+'</span><span class="pill">'+esc(o.time)+'</span>'+(m.polo?'<span class="pill polo">Polo night</span>':'')+'</div>';
+    var likeSlug = (o.title||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
     h += '<div class="optline"><button class="swapbtn" data-swap="'+m.id+'">🔄 Swap dinner</button>'+
+         '<button class="likebtn" data-like="'+likeSlug+'" data-title="'+esc(o.title)+'" aria-pressed="false">♡ Like</button>'+
          '<span class="optdots">Option '+(idx+1)+' of '+n+'</span></div>';
     h += '<p><b>What\'s included:</b> '+esc(o.included)+'</p>';
     if(o.swapNote) h += '<div class="swap">⚠️ <b>Teen-friendly:</b> '+o.swapNote+'</div>';
@@ -338,6 +346,12 @@ function renderPlan(){
       setOpt(id, (getOpt(id)+1)%m.options.length);
       renderPlan(); renderGrocery();
     });
+  });
+  p.querySelectorAll('[data-like]').forEach(function(b){
+    var slug=b.getAttribute('data-like');
+    function paint(){ var on=mpIsLiked(slug); b.setAttribute('aria-pressed', on?'true':'false'); b.textContent=on?'♥ Liked':'♡ Like'; }
+    paint();
+    b.addEventListener('click', function(){ mpToggleLike(slug, b.getAttribute('data-title')); paint(); });
   });
 }
 
