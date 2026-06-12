@@ -276,6 +276,7 @@ var WEEK = {
 var CAT_ORDER = ["Meat & Seafood","Produce","Dairy & Eggs","Bread & Bakery","Pantry","Spices"];
 var V = WEEK.version;
 function esc(s){return (s||"").replace(/&(?!\w+;)/g,"&amp;");}
+function mpImgFallback(img){ if(img.src.slice(-4)==='.jpg'){ img.src=img.src.slice(0,-4)+'.png'; } else { img.remove(); } }
 function getOpt(id){ try{var v=localStorage.getItem("opt:"+V+":"+id);return v?(+v):0;}catch(e){return 0;} }
 function setOpt(id,i){ try{localStorage.setItem("opt:"+V+":"+id,String(i));}catch(e){} }
 function active(meal){ return meal.options[ getOpt(meal.id) % meal.options.length ]; }
@@ -301,7 +302,7 @@ function renderPlan(){
     h += '<article class="card">';
     h += '<div class="day-h"><span class="day">'+m.day+'</span><span class="dish">'+esc(o.title)+(o.sides?' <span class="dish-sides">with '+esc(o.sides)+'</span>':'')+'</span></div>';
     var imgsrc = o.img || ('images/'+(o.title||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')+'.jpg');
-    h += '<img class="meal-photo" src="'+esc(imgsrc)+'" alt="'+esc(o.title)+'" loading="lazy" onerror="this.remove()">';
+    h += '<img class="meal-photo" src="'+esc(imgsrc)+'" alt="'+esc(o.title)+'" loading="lazy" onerror="mpImgFallback(this)">';
     h += '<div class="meta"><span class="pill">'+esc(o.protein)+'</span><span class="pill">'+esc(o.time)+'</span>'+(m.polo?'<span class="pill polo">Polo night</span>':'')+'</div>';
     h += '<div class="optline"><button class="swapbtn" data-swap="'+m.id+'">🔄 Swap dinner</button>'+
          '<span class="optdots">Option '+(idx+1)+' of '+n+'</span></div>';
