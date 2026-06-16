@@ -65,6 +65,10 @@
   .likebtn{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--muted);font-weight:600;font-size:.85rem;padding:8px 13px;border-radius:10px;cursor:pointer}
   .likebtn:active{transform:scale(.97)}
   .likebtn[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+  .compbtn{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--muted);font-weight:600;font-size:.85rem;padding:8px 13px;border-radius:10px;cursor:pointer}
+  .compbtn:active{transform:scale(.97)}
+  .compbtn[aria-pressed="true"]{border-color:var(--accent);color:var(--accent);background:var(--accent-soft)}
+  .pill.comp{background:var(--accent-soft);color:var(--accent)}
   .reqbtn{appearance:none;border:1px dashed var(--line);background:transparent;color:var(--muted);font-size:.8rem;padding:7px 11px;border-radius:10px;cursor:pointer;text-decoration:none;display:inline-block}
   .card h4{margin:14px 0 6px;font-size:.78rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
   .step-group{margin:6px 0 0}
@@ -151,7 +155,7 @@ var REQUEST_EMAIL = "taylorwestfall@gmail.com";
 var WEEK = {
   label: "June 7–13, 2026",
   version: "2026-06-08",
-  intro: "Polo nights Tue–Thu (≤20 min, eat then go). Mon, Fri & Sat are covered by other plans.",
+  intro: "Sun & Mon already handled. Tue–Thu are polo nights (≤20 min, eat then go); Fri is a chicken night; Sat is the Hawaiian smoked pork-butt family event.",
   portions: "Quantities scaled ~1.6× so each dinner makes a next-day lunch from leftovers.",
   meals: [
     { id:"tue", day:"Tuesday", polo:true, options:[
@@ -193,7 +197,7 @@ var WEEK = {
           {name:"Jasmine rice — 2 cups dry", det:"Tue", cat:"Pantry"}
         ]}
     ]},
-    { id:"wed", day:"Wednesday", polo:true, options:[
+    { id:"wed", day:"Wednesday", polo:true, company:true, options:[
       { title:"Beef & Broccoli Stir-Fry", sides:"white rice", protein:"Beef", time:"~15 min",
         included:"Pre-sliced beef stir-fried with broccoli in a jarred sauce · white rice.",
         steps:[{part:"Beef & broccoli",do:["Heat oil on high. Sear the beef 2 min — don't crowd it. Remove.","Add broccoli + 2 Tbsp water, cover 3 min.","Return the beef, add sauce, toss 1 min."]},{part:"Rice (rice cooker)",do:["Rinse 2 cups jasmine rice; add to the rice cooker with water to its line (~1:1.25). Start it first so it's ready."]}],
@@ -270,6 +274,60 @@ var WEEK = {
           {name:"Lemon — 2", det:"Thu · bulk-buy item", cat:"Produce"},
           {name:"Garlic powder", det:"restock if low", cat:"Spices"}
         ]}
+    ]},
+    { id:"fri", day:"Friday", polo:false, options:[
+      { title:"Baked Lemon-Herb Chicken Thighs", sides:"roasted potatoes & green beans", protein:"Chicken", time:"~40 min",
+        included:"Lemon-herb baked chicken thighs with roasted baby potatoes and green beans.",
+        steps:[{part:"Chicken",do:["Oven 425°F. Pat thighs dry; rub with olive oil, lemon, garlic, salt and herbs.","Bake 30–35 min until 175°F and the skin is crisp."]},{part:"Roasted potatoes",do:["Halve baby potatoes; toss with oil + salt; roast alongside the chicken ~30 min."]},{part:"Green beans",do:["Toss green beans with a little oil; add to the oven for the last 12–15 min."]}],
+        lunchTitle:"Chicken & Potato Plate",
+        lunch:"Reheat — the thighs stay juicy; squeeze fresh lemon over the top.",
+        groceries:[
+          {name:"Bone-in chicken thighs — 2.5 lbs", det:"Fri · lemon-herb chicken", cat:"Meat & Seafood"},
+          {name:"Baby potatoes — 1.5 lbs", det:"Fri · bulk-buy item", cat:"Produce"},
+          {name:"Green beans — 1 lb", det:"Fri", cat:"Produce"},
+          {name:"Lemon — 1", det:"Fri · bulk-buy item", cat:"Produce"},
+          {name:"Fresh herbs or Italian seasoning", det:"restock if low", cat:"Spices"}
+        ]},
+      { title:"Honey-Mustard Chicken & Roasted Veggies", sides:"roasted vegetables", protein:"Chicken", time:"~40 min",
+        included:"Chicken baked in a honey-mustard glaze with a tray of roasted vegetables.",
+        steps:[{part:"Chicken",do:["Oven 400°F. Whisk honey + Dijon mustard + garlic; coat the chicken.","Bake 30–35 min until cooked through."]},{part:"Roasted veggies",do:["Toss chopped broccoli, peppers and onion with oil + salt; roast alongside ~25 min."]}],
+        lunchTitle:"Honey-Mustard Chicken Bowl",
+        lunch:"Slice over rice or greens with the roasted veggies.",
+        groceries:[
+          {name:"Chicken thighs or breasts — 2.5 lbs", det:"Fri · honey-mustard chicken", cat:"Meat & Seafood"},
+          {name:"Broccoli — ~12 oz", det:"Fri · bulk-buy item", cat:"Produce"},
+          {name:"Bell pepper (any color) — 2", det:"Fri · bulk-buy item", cat:"Produce"},
+          {name:"Honey & Dijon mustard", det:"restock if low", cat:"Pantry"}
+        ]},
+      { title:"Chicken Fajita Rice Bowls", sides:"rice", protein:"Chicken", time:"~30 min",
+        included:"Sautéed fajita chicken with peppers and onion over rice.",
+        steps:[{part:"Chicken & peppers",do:["Slice chicken; sauté with fajita seasoning until cooked.","Add sliced peppers and onion; cook until tender-crisp."]},{part:"Rice (rice cooker)",do:["Rinse 2 cups jasmine rice; add to the rice cooker with water to its line and start it first."]},{part:"Assemble",do:["Spoon the chicken and peppers over the rice; add cheese or salsa if you like."]}],
+        lunchTitle:"Fajita Rice Bowl",
+        lunch:"Reheat over the rice; add a squeeze of lime.",
+        groceries:[
+          {name:"Chicken breasts — 2 lbs", det:"Fri · fajita bowls", cat:"Meat & Seafood"},
+          {name:"Bell pepper (any color) — 3", det:"Fri · bulk-buy item", cat:"Produce"},
+          {name:"Sweet onion — 1", det:"Fri · bulk-buy item", cat:"Produce"},
+          {name:"Fajita seasoning — 1 packet", det:"Fri", cat:"Spices"},
+          {name:"Jasmine rice — 2 cups dry", det:"Fri", cat:"Pantry"}
+        ]}
+    ]},
+    { id:"sat", day:"Saturday", polo:false, options:[
+      { title:"Hawaiian-Style Smoked Pork Butt with Pineapple", sides:"", protein:"Pork", time:"smoke ~8–10 hrs",
+        included:"Pork shoulder rubbed island-style and smoked low-and-slow, basted with pineapple, then pulled and piled on Hawaiian rolls with grilled pineapple. Family-event sized. (Adapted from a Hawaiian smoked pork-butt recipe — the Reddit link couldn't be opened.)",
+        steps:[{part:"Rub & prep (night before)",do:["Mix the rub: brown sugar, Hawaiian or kosher salt, smoked paprika, garlic & onion powder, black pepper, ground ginger.","Pat the pork butt dry and coat all over with the rub; wrap and refrigerate overnight.","Optional: inject with pineapple juice for extra flavor."]},{part:"Smoke",do:["Smoker to 225–250°F with a fruit wood (guava, apple, or cherry).","Smoke until ~165°F internal (~6 hrs), spritzing with pineapple juice each hour.","Wrap in foil with a splash of pineapple juice; continue to 200–203°F (~3–4 more hrs).","Rest wrapped 45–60 min, then pull."]},{part:"Pineapple",do:["Grill fresh pineapple rings 2–3 min per side until caramelized; chop some into the pulled pork."]},{part:"Serve",do:["Pile the pork on Hawaiian rolls with grilled pineapple and a drizzle of the juices. Great with rice or a crunchy slaw."]}],
+        lunchTitle:"Kalua-Style Pork Bowls",
+        lunch:"Leftover pulled pork over rice with pineapple and a quick slaw.",
+        groceries:[
+          {name:"Bone-in pork butt (shoulder) — 8 lbs", det:"Sat · smoked pork butt (family event)", cat:"Meat & Seafood"},
+          {name:"Fresh pineapple — 1 whole", det:"Sat · grill + chop in", cat:"Produce"},
+          {name:"Pineapple juice — 1 can/bottle", det:"Sat · inject & spritz", cat:"Pantry"},
+          {name:"Brown sugar — 1 cup", det:"Sat · rub", cat:"Pantry"},
+          {name:"Hawaiian or kosher salt", det:"Sat · rub", cat:"Spices"},
+          {name:"Smoked paprika + garlic/onion powder + ground ginger", det:"Sat · rub", cat:"Spices"},
+          {name:"Hawaiian sweet rolls — 2 packs", det:"Sat · serve", cat:"Bread & Bakery"},
+          {name:"Wood chunks (guava, apple, or cherry)", det:"Sat · smoker", cat:"Pantry"}
+        ]}
     ]}
   ],
   staples:[]   // always-on items independent of swaps (none this week)
@@ -283,6 +341,9 @@ function mpImgFallback(img){ if(img.src.slice(-4)==='.jpg'){ img.src=img.src.sli
 function mpGetLikes(){ try{ return JSON.parse(localStorage.getItem('mp:likes')||'{}'); }catch(e){ return {}; } }
 function mpIsLiked(slug){ return !!mpGetLikes()[slug]; }
 function mpToggleLike(slug,title){ var o=mpGetLikes(); if(o[slug]){ delete o[slug]; } else { o[slug]=title; } try{ localStorage.setItem('mp:likes', JSON.stringify(o)); }catch(e){} }
+function isCompany(m){ if(!m||!m.company) return false; try{ return localStorage.getItem('mp:company:'+m.id)==='1'; }catch(e){ return false; } }
+function setCompany(id,on){ try{ localStorage.setItem('mp:company:'+id, on?'1':'0'); }catch(e){} }
+function scaleQty(q,f){ var m=String(q).match(/^(~?)(\d+(?:\.\d+)?)(.*)$/); if(!m) return q+' ×'+f; var n=Math.round(parseFloat(m[2])*f*100)/100; return m[1]+n+m[3]; }
 function getOpt(id){ try{var v=localStorage.getItem("opt:"+V+":"+id);return v?(+v):0;}catch(e){return 0;} }
 function setOpt(id,i){ try{localStorage.setItem("opt:"+V+":"+id,String(i));}catch(e){} }
 function active(meal){ return meal.options[ getOpt(meal.id) % meal.options.length ]; }
@@ -309,11 +370,13 @@ function renderPlan(){
     h += '<div class="day-h"><span class="day">'+m.day+'</span><span class="dish">'+esc(o.title)+(o.sides?' <span class="dish-sides">with '+esc(o.sides)+'</span>':'')+'</span></div>';
     var imgsrc = o.img || ('images/'+(o.title||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')+'.jpg');
     h += '<img class="meal-photo" src="'+esc(imgsrc)+'" alt="'+esc(o.title)+'" loading="lazy" onerror="mpImgFallback(this)">';
-    h += '<div class="meta"><span class="pill">'+esc(o.protein)+'</span><span class="pill">'+esc(o.time)+'</span>'+(m.polo?'<span class="pill polo">Polo night</span>':'')+'</div>';
+    h += '<div class="meta"><span class="pill">'+esc(o.protein)+'</span><span class="pill">'+esc(o.time)+'</span>'+(m.polo?'<span class="pill polo">Polo night</span>':'')+((m.company&&isCompany(m))?'<span class="pill comp">👥 Cooking for 6</span>':'')+'</div>';
     var likeSlug = (o.title||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
-    h += '<div class="optline"><button class="swapbtn" data-swap="'+m.id+'">🔄 Swap dinner</button>'+
+    h += '<div class="optline">'+
+         (n>1?'<button class="swapbtn" data-swap="'+m.id+'">🔄 Swap dinner</button>':'')+
+         (m.company?'<button class="compbtn" data-company="'+m.id+'" aria-pressed="'+(isCompany(m)?'true':'false')+'">'+(isCompany(m)?'👥 For 6':'👥 For 3')+'</button>':'')+
          '<button class="likebtn" data-like="'+likeSlug+'" data-title="'+esc(o.title)+'" aria-pressed="false">♡ Like</button>'+
-         '<span class="optdots">Option '+(idx+1)+' of '+n+'</span></div>';
+         (n>1?'<span class="optdots">Option '+(idx+1)+' of '+n+'</span>':'')+'</div>';
     h += '<p><b>What\'s included:</b> '+esc(o.included)+'</p>';
     if(o.swapNote) h += '<div class="swap">⚠️ <b>Teen-friendly:</b> '+o.swapNote+'</div>';
     h += '<h4>How to make it ('+esc(o.time)+')</h4>';
@@ -353,15 +416,24 @@ function renderPlan(){
     paint();
     b.addEventListener('click', function(){ mpToggleLike(slug, b.getAttribute('data-title')); paint(); });
   });
+  p.querySelectorAll('[data-company]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var id=b.getAttribute('data-company'), m=WEEK.meals.filter(function(x){return x.id===id;})[0];
+      setCompany(id, !isCompany(m));
+      renderPlan(); renderGrocery();
+    });
+  });
 }
 
 /* ---- Grocery tab ---- */
 function collectGroceries(){
   var items=[];
   WEEK.meals.forEach(function(m){
-    var idx=getOpt(m.id)%m.options.length;
+    var idx=getOpt(m.id)%m.options.length, comp=isCompany(m);
     active(m).groceries.forEach(function(g,gi){
-      items.push({name:g.name,det:g.det,cat:g.cat,key:"gro:"+V+":"+m.id+":"+idx+":"+gi});
+      var name=g.name;
+      if(comp){ var d=name.indexOf(" — "); if(d>=0){ name=name.slice(0,d)+" — "+scaleQty(name.slice(d+3),2); } }
+      items.push({name:name,det:(g.det||'')+(comp?" · for 6":""),cat:g.cat,key:"gro:"+V+":"+m.id+":"+idx+":"+gi+(comp?":c":"")});
     });
   });
   (WEEK.staples||[]).forEach(function(g,gi){ items.push({name:g.name,det:g.det,cat:g.cat,key:"gro:"+V+":staple:"+gi}); });
