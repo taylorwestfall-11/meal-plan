@@ -1,0 +1,10 @@
+{
+  "_note": "Dish rotation history: dish title -> last-used date (YYYY-MM-DD). The Sunday job avoids repeating a dinner within ~30 days (wider gap when more variety is available), keeps favorites (likes.json) appearing at least ~monthly, and appends each week's default dinners here after publishing.",
+  "lastUsed": {
+    "Sheet-Pan Kielbasa & Peppers": "2026-06-09",
+    "Beef & Broccoli Stir-Fry": "2026-06-10",
+    "Garlic Shrimp Tacos": "2026-06-11",
+    "Baked Lemon-Herb Chicken Thighs": "2026-06-12",
+    "Hawaiian-Style Smoked Pork Butt with Pineapple": "2026-06-13"
+  }
+}

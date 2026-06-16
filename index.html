@@ -124,7 +124,6 @@
 <header><div class="wrap">
   <div class="hcontrols">
     <button id="easyBtn" class="hbtn" aria-label="Easy-read mode" aria-pressed="false" title="Easy-read mode (dyslexia / ADHD friendly)">Aa</button>
-    <button id="favBtn" class="hbtn" aria-label="Copy my liked meals" title="Copy your ♥ favorites to send to the planner">♥</button>
     <div class="hmenu-wrap">
       <button id="themeBtn" class="hbtn" aria-label="Change color theme" title="Change color theme">🎨</button>
       <div id="themeMenu" class="theme-menu" hidden></div>
@@ -616,7 +615,20 @@ function applyTheme(name){
   var on=false; try{ on=localStorage.getItem("mp:easyread")==="1"; }catch(e){}
   applyEasy(on);
 })();
-(function(){ var fb=document.getElementById('favBtn'); if(fb) fb.addEventListener('click', mpCopyLikes); })();
+/* ---- Silent weekly auto-push of likes from the device (no manual send) ---- */
+var LIKES_ENDPOINT = ""; /* Google Form formResponse URL — set once the form exists */
+var LIKES_ENTRY = "";    /* the form field name, e.g. "entry.123456789" */
+(function autoPushLikes(){
+  if(!LIKES_ENDPOINT || !LIKES_ENTRY) return;            // not configured yet — no-op
+  var o = mpGetLikes(); if(!Object.keys(o).length) return;
+  var WEEK_MS = 7*24*3600*1000, now = Date.now(), last = 0;
+  try{ last = +(localStorage.getItem('mp:likes:lastpush')||0); }catch(e){}
+  if(now - last < WEEK_MS) return;                       // already pushed within the week
+  var fd = new FormData(); fd.append(LIKES_ENTRY, JSON.stringify(o));
+  fetch(LIKES_ENDPOINT, {method:'POST', mode:'no-cors', body:fd})
+    .then(function(){ try{ localStorage.setItem('mp:likes:lastpush', String(now)); }catch(e){} })
+    .catch(function(){});
+})();
 
 /* ---- Init ---- */
 document.getElementById('weekof-h').textContent = WEEK.label.indexOf('_')>=0 ? 'this week' : ('Week of '+WEEK.label);
