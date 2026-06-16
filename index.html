@@ -124,6 +124,7 @@
 <header><div class="wrap">
   <div class="hcontrols">
     <button id="easyBtn" class="hbtn" aria-label="Easy-read mode" aria-pressed="false" title="Easy-read mode (dyslexia / ADHD friendly)">Aa</button>
+    <button id="favBtn" class="hbtn" aria-label="Copy my liked meals" title="Copy your ♥ favorites to send to the planner">♥</button>
     <div class="hmenu-wrap">
       <button id="themeBtn" class="hbtn" aria-label="Change color theme" title="Change color theme">🎨</button>
       <div id="themeMenu" class="theme-menu" hidden></div>
@@ -344,6 +345,15 @@ function mpToggleLike(slug,title){ var o=mpGetLikes(); if(o[slug]){ delete o[slu
 function isCompany(m){ if(!m||!m.company) return false; try{ return localStorage.getItem('mp:company:'+m.id)==='1'; }catch(e){ return false; } }
 function setCompany(id,on){ try{ localStorage.setItem('mp:company:'+id, on?'1':'0'); }catch(e){} }
 function scaleQty(q,f){ var m=String(q).match(/^(~?)(\d+(?:\.\d+)?)(.*)$/); if(!m) return q+' ×'+f; var n=Math.round(parseFloat(m[2])*f*100)/100; return m[1]+n+m[3]; }
+function mpToast(msg){ var t=document.getElementById('mpToast'); if(!t){ t=document.createElement('div'); t.id='mpToast'; t.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#23241f;color:#fff;padding:11px 16px;border-radius:10px;font-size:.9rem;z-index:100;opacity:0;transition:.25s;max-width:90%;text-align:center;box-shadow:0 6px 20px rgba(0,0,0,.3)'; document.body.appendChild(t); } t.textContent=msg; t.style.opacity='1'; clearTimeout(t._h); t._h=setTimeout(function(){ t.style.opacity='0'; }, 3000); }
+function mpCopyLikes(){
+  var o=mpGetLikes(), keys=Object.keys(o);
+  if(!keys.length){ mpToast('Tap ♥ Like on a few meals first, then copy.'); return; }
+  var text='Meal-plan likes: '+JSON.stringify(o);
+  function ok(){ mpToast('Copied your '+keys.length+' favorite'+(keys.length>1?'s':'')+' — paste into your meal-plan chat.'); }
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(ok, function(){ mpToast(text); }); }
+  else { mpToast(text); }
+}
 function getOpt(id){ try{var v=localStorage.getItem("opt:"+V+":"+id);return v?(+v):0;}catch(e){return 0;} }
 function setOpt(id,i){ try{localStorage.setItem("opt:"+V+":"+id,String(i));}catch(e){} }
 function active(meal){ return meal.options[ getOpt(meal.id) % meal.options.length ]; }
@@ -606,6 +616,7 @@ function applyTheme(name){
   var on=false; try{ on=localStorage.getItem("mp:easyread")==="1"; }catch(e){}
   applyEasy(on);
 })();
+(function(){ var fb=document.getElementById('favBtn'); if(fb) fb.addEventListener('click', mpCopyLikes); })();
 
 /* ---- Init ---- */
 document.getElementById('weekof-h').textContent = WEEK.label.indexOf('_')>=0 ? 'this week' : ('Week of '+WEEK.label);
