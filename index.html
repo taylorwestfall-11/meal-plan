@@ -613,8 +613,8 @@ function applyTheme(name){
   applyEasy(on);
 })();
 /* ---- Silent weekly auto-push of likes from the device (no manual send) ---- */
-var LIKES_ENDPOINT = ""; /* Google Form formResponse URL — set once the form exists */
-var LIKES_ENTRY = "";    /* the form field name, e.g. "entry.123456789" */
+var LIKES_ENDPOINT = "https://docs.google.com/forms/d/e/1FAIpQLSfMMMtBfjUps2tDzBaMx98QPgINR__d39Io9Gh1NlUzZ55KLA/formResponse";
+var LIKES_ENTRY = "entry.1875468196";
 (function autoPushLikes(){
   if(!LIKES_ENDPOINT || !LIKES_ENTRY) return;            // not configured yet — no-op
   var o = mpGetLikes(); if(!Object.keys(o).length) return;
