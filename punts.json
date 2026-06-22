@@ -1,0 +1,4 @@
+{
+  "_note": "Punted dishes (slug -> title) the family chose to SKIP this week but want NEXT week. The app's '⏭ Punt' button records these on the device and syncs them via the weekly Google Form push (combined likes+punts payload, v2 shape). The Friday meal-plan-weekly-refresh job force-includes any dish listed here as a DEFAULT in the upcoming week (respecting variety / no-back-to-back / polo / teen rules), then RESETS this file to an empty 'punted' map. Until the Form responses CSV read-side is wired, this file is the authoritative source the job reads — populate it from a punt if syncing manually.",
+  "punted": {}
+}
