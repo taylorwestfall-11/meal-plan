@@ -1,4 +1,5 @@
 {
-  "_note": "Punted dishes (slug -> title) the family chose to SKIP this week but want NEXT week. The app's '⏭ Punt' button records these on the device and syncs them via the weekly Google Form push (combined likes+punts payload, v2 shape). The Friday meal-plan-weekly-refresh job force-includes any dish listed here as a DEFAULT in the upcoming week (respecting variety / no-back-to-back / polo / teen rules), then RESETS this file to an empty 'punted' map. Until the Form responses CSV read-side is wired, this file is the authoritative source the job reads — populate it from a punt if syncing manually.",
-  "punted": {}
+  "_note": "Punted dishes (slug -> title) the family chose to SKIP one week but want the NEXT week. The app's '⏭ Punt' button records these on-device and syncs them to the Google Form (combined likes+punts payload, v2 shape). STEP 1c of the Friday meal-plan-weekly-refresh job reads the published Form-responses CSV, and if its latest submission is newer than 'lastIngested', sets 'punted' to that submission's punts and updates 'lastIngested'. STEP 2 force-includes every dish in 'punted' as a DEFAULT next week (overriding the 30-day rotation gap, respecting variety/polo/teen rules), then resets 'punted' to {} while PRESERVING '_note' and 'lastIngested'. Don't delete this file.",
+  "punted": {},
+  "lastIngested": ""
 }

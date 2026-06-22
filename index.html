@@ -720,6 +720,18 @@ function mpPushPrefs(force){
 }
 mpPushPrefs(false);
 
+/* ---- Punts auto-clear on a new week ---- */
+/* Punts mean "add NEXT week." Once a new week's plan loads (version changed), the punts
+   have been honored, so clear them on the device — otherwise they'd keep re-syncing. */
+(function clearStalePunts(){
+  try{
+    if(localStorage.getItem('mp:punts:ver') !== V){
+      localStorage.removeItem('mp:punts');
+      localStorage.setItem('mp:punts:ver', V);
+    }
+  }catch(e){}
+})();
+
 /* ---- Init ---- */
 document.getElementById('weekof-h').textContent = WEEK.label.indexOf('_')>=0 ? 'this week' : ('Week of '+WEEK.label);
 renderPlan(); renderGrocery();
