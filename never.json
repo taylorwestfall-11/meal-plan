@@ -1,0 +1,5 @@
+{
+  "_note": "Dishes the family chose to NEVER suggest again (slug -> title). The app's '🚫 Never' button records these on-device and syncs them to the Google Form (combined likes+punts+never payload, v3 shape). The Friday meal-plan-weekly-refresh job reads the published Form-responses CSV and, if its latest submission is newer than lastIngested, merges that submission's 'never' entries into this file (never remove entries here — they are permanent exclusions). STEP 2 of the job hard-excludes every dish whose slug OR title appears here from all options (default AND swaps), overriding likes and punts. The app also fetches this file on load so a never-again choice made on one phone shows on every phone after the next sync. Don't delete this file.",
+  "never": {},
+  "lastIngested": ""
+}

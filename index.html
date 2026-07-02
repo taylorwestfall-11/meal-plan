@@ -71,6 +71,13 @@
   .puntbtn{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--muted);font-weight:600;font-size:.85rem;padding:8px 13px;border-radius:10px;cursor:pointer}
   .puntbtn:active{transform:scale(.97)}
   .puntbtn[aria-pressed="true"]{border-color:var(--warn-line);color:var(--warn-ink);background:var(--warn-bg)}
+  .neverbtn{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--muted);font-weight:600;font-size:.85rem;padding:8px 13px;border-radius:10px;cursor:pointer}
+  .neverbtn:active{transform:scale(.97)}
+  .neverbtn[aria-pressed="true"]{border-color:#d9534f;color:#c0392b;background:#fbe6e4}
+  @media (prefers-color-scheme: dark){.neverbtn[aria-pressed="true"]{border-color:#7a3330;color:#f0a8a2;background:#3a201e}}
+  .card.is-never{opacity:.72}
+  .never-tag{display:inline-block;font-size:.72rem;font-weight:700;color:#c0392b;background:#fbe6e4;border-radius:999px;padding:2px 9px;margin-left:2px}
+  @media (prefers-color-scheme: dark){.never-tag{color:#f0a8a2;background:#3a201e}}
   .pill.comp{background:var(--accent-soft);color:var(--accent)}
   .reqbtn{appearance:none;border:1px dashed var(--line);background:transparent;color:var(--muted);font-size:.8rem;padding:7px 11px;border-radius:10px;cursor:pointer;text-decoration:none;display:inline-block}
   .card h4{margin:14px 0 6px;font-size:.78rem;text-transform:uppercase;letter-spacing:.5px;color:var(--muted)}
@@ -441,14 +448,21 @@ var WEEK = {
 /* ===================== APP ===================== */
 var CAT_ORDER = ["Meat & Seafood","Produce","Dairy & Eggs","Bread & Bakery","Pantry","Spices"];
 var V = WEEK.version;
+/* Shared decisions pulled from the repo JSONs on load (see mpLoadShared) so likes,
+   punts and never-again made on ANY device show up here too. Updated by the weekly
+   job from the Google Form, so this reflects everyone's choices after each sync. */
+var SHARED = { likes:{}, punts:{}, never:{} };
 function esc(s){return (s||"").replace(/&(?!\w+;)/g,"&amp;");}
 function mpImgFallback(img){ if(img.src.slice(-4)==='.jpg'){ img.src=img.src.slice(0,-4)+'.png'; } else { img.remove(); } }
 function mpGetLikes(){ try{ return JSON.parse(localStorage.getItem('mp:likes')||'{}'); }catch(e){ return {}; } }
-function mpIsLiked(slug){ return !!mpGetLikes()[slug]; }
+function mpIsLiked(slug){ return !!mpGetLikes()[slug] || !!SHARED.likes[slug]; }
 function mpToggleLike(slug,title){ var o=mpGetLikes(); if(o[slug]){ delete o[slug]; } else { o[slug]=title; } try{ localStorage.setItem('mp:likes', JSON.stringify(o)); }catch(e){} }
 function mpGetPunts(){ try{ return JSON.parse(localStorage.getItem('mp:punts')||'{}'); }catch(e){ return {}; } }
-function mpIsPunted(slug){ return !!mpGetPunts()[slug]; }
+function mpIsPunted(slug){ return !!mpGetPunts()[slug] || !!SHARED.punts[slug]; }
 function mpSetPunt(slug,title,on){ var o=mpGetPunts(); if(on){ o[slug]=title; } else { delete o[slug]; } try{ localStorage.setItem('mp:punts', JSON.stringify(o)); }catch(e){} }
+function mpGetNever(){ try{ return JSON.parse(localStorage.getItem('mp:never')||'{}'); }catch(e){ return {}; } }
+function mpIsNever(slug){ return !!mpGetNever()[slug] || !!SHARED.never[slug]; }
+function mpSetNever(slug,title,on){ var o=mpGetNever(); if(on){ o[slug]=title; } else { delete o[slug]; } try{ localStorage.setItem('mp:never', JSON.stringify(o)); }catch(e){} }
 function isCompany(m){ if(!m||!m.company) return false; try{ return localStorage.getItem('mp:company:'+m.id)==='1'; }catch(e){ return false; } }
 function setCompany(id,on){ try{ localStorage.setItem('mp:company:'+id, on?'1':'0'); }catch(e){} }
 function scaleQty(q,f){ var m=String(q).match(/^(~?)(\d+(?:\.\d+)?)(.*)$/); if(!m) return q+' ×'+f; var n=Math.round(parseFloat(m[2])*f*100)/100; return m[1]+n+m[3]; }
@@ -483,17 +497,19 @@ function renderPlan(){
   // Day cards
   WEEK.meals.forEach(function(m){
     var idx = getOpt(m.id)%m.options.length, o = m.options[idx], n = m.options.length;
-    h += '<article class="card">';
-    h += '<div class="day-h"><span class="day">'+m.day+'</span><span class="dish">'+esc(o.title)+(o.sides?' <span class="dish-sides">with '+esc(o.sides)+'</span>':'')+'</span></div>';
+    var slug = (o.title||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
+    var neverOn = mpIsNever(slug);
+    h += '<article class="card'+(neverOn?' is-never':'')+'">';
+    h += '<div class="day-h"><span class="day">'+m.day+'</span><span class="dish">'+esc(o.title)+(o.sides?' <span class="dish-sides">with '+esc(o.sides)+'</span>':'')+(neverOn?' <span class="never-tag">🚫 won\'t suggest again</span>':'')+'</span></div>';
     var imgsrc = o.img || ('images/'+(o.title||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'')+'.jpg');
     h += '<img class="meal-photo" src="'+esc(imgsrc)+'" alt="'+esc(o.title)+'" loading="lazy" onerror="mpImgFallback(this)">';
     h += '<div class="meta"><span class="pill">'+esc(o.protein)+'</span><span class="pill">'+esc(o.time)+'</span>'+(m.polo?'<span class="pill polo">Polo night</span>':'')+((m.company&&isCompany(m))?'<span class="pill comp">👥 Cooking for 6</span>':'')+'</div>';
-    var likeSlug = (o.title||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-+|-+$/g,'');
     h += '<div class="optline">'+
          (n>1?'<button class="swapbtn" data-swap="'+m.id+'">🔄 Swap dinner</button>':'')+
          (m.company?'<button class="compbtn" data-company="'+m.id+'" aria-pressed="'+(isCompany(m)?'true':'false')+'">'+(isCompany(m)?'👥 For 6':'👥 For 3')+'</button>':'')+
-         '<button class="likebtn" data-like="'+likeSlug+'" data-title="'+esc(o.title)+'" aria-pressed="false">♡ Like</button>'+
-         '<button class="puntbtn" data-punt="'+m.id+'" data-pslug="'+likeSlug+'" data-ptitle="'+esc(o.title)+'" aria-pressed="false" title="Skip this dish this week, save it for next week">⏭ Punt</button>'+
+         '<button class="likebtn" data-like="'+slug+'" data-title="'+esc(o.title)+'" aria-pressed="false">♡ Like</button>'+
+         '<button class="puntbtn" data-punt="'+m.id+'" data-pslug="'+slug+'" data-ptitle="'+esc(o.title)+'" aria-pressed="false" title="Skip this dish this week, save it for next week">⏭ Punt</button>'+
+         '<button class="neverbtn" data-never="'+m.id+'" data-nslug="'+slug+'" data-ntitle="'+esc(o.title)+'" aria-pressed="false" title="Never suggest this dish again">🚫 Never</button>'+
          (n>1?'<span class="optdots">Option '+(idx+1)+' of '+n+'</span>':'')+'</div>';
     h += '<p><b>What\'s included:</b> '+esc(o.included)+'</p>';
     if(o.swapNote) h += '<div class="swap">⚠️ <b>Teen-friendly:</b> '+o.swapNote+'</div>';
@@ -549,6 +565,25 @@ function renderPlan(){
         mpPushPrefs(true);
       } else {
         mpToast('Un-punted "'+title+'".');
+      }
+      renderPlan(); renderGrocery();
+    });
+  });
+  p.querySelectorAll('[data-never]').forEach(function(b){
+    var slug=b.getAttribute('data-nslug');
+    function paint(){ var on=mpIsNever(slug); b.setAttribute('aria-pressed', on?'true':'false'); b.textContent=on?'🚫 Won\'t suggest':'🚫 Never'; }
+    paint();
+    b.addEventListener('click', function(){
+      var id=b.getAttribute('data-never'), title=b.getAttribute('data-ntitle');
+      var m=WEEK.meals.filter(function(x){return x.id===id;})[0];
+      var on=!mpIsNever(slug);
+      mpSetNever(slug, title, on);
+      if(on){
+        if(m.options.length>1){ setOpt(id, (getOpt(id)+1)%m.options.length); mpToast('Got it — won\'t suggest "'+title+'" again. Showing another option for this week.'); }
+        else { mpToast('Got it — won\'t suggest "'+title+'" again.'); }
+        mpPushPrefs(true);
+      } else {
+        mpToast('"'+title+'" is back in the rotation.');
       }
       renderPlan(); renderGrocery();
     });
@@ -743,26 +778,41 @@ function applyTheme(name){
   var on=false; try{ on=localStorage.getItem("mp:easyread")==="1"; }catch(e){}
   applyEasy(on);
 })();
-/* ---- Sync likes + punts from the device to the planner's Google Form ----
-   Payload shape v2: {"v":2,"likes":{slug:title},"punts":{slug:title}}. The reader
-   (when wired) should: if parsed.v===2 use parsed.likes/parsed.punts, else treat the
-   whole object as the likes map (back-compat with older bare-likes posts).
-   Likes push at most weekly; a punt force-pushes immediately (it's time-sensitive). */
+/* ---- Sync likes + punts + never-again from the device to the planner's Google Form ----
+   Payload shape v3: {"v":3,"likes":{slug:title},"punts":{slug:title},"never":{slug:title}}.
+   The reader should: if parsed.v>=3 use likes/punts/never; if v===2 use likes/punts (never={});
+   else treat the whole object as the likes map (back-compat with older bare-likes posts).
+   Likes push at most weekly; a punt or a never force-pushes immediately (time-sensitive). */
 var LIKES_ENDPOINT = "https://docs.google.com/forms/d/e/1FAIpQLSfMMMtBfjUps2tDzBaMx98QPgINR__d39Io9Gh1NlUzZ55KLA/formResponse";
 var LIKES_ENTRY = "entry.1875468196";
 function mpPushPrefs(force){
   if(!LIKES_ENDPOINT || !LIKES_ENTRY) return;            // not configured yet — no-op
-  var likes = mpGetLikes(), punts = mpGetPunts();
-  if(!Object.keys(likes).length && !Object.keys(punts).length) return;
+  var likes = mpGetLikes(), punts = mpGetPunts(), never = mpGetNever();
+  if(!Object.keys(likes).length && !Object.keys(punts).length && !Object.keys(never).length) return;
   var WEEK_MS = 7*24*3600*1000, now = Date.now(), last = 0;
   try{ last = +(localStorage.getItem('mp:push:lastpush')||localStorage.getItem('mp:likes:lastpush')||0); }catch(e){}
-  if(!force && now - last < WEEK_MS) return;             // weekly cadence unless forced (punt)
-  var fd = new FormData(); fd.append(LIKES_ENTRY, JSON.stringify({v:2, likes:likes, punts:punts}));
+  if(!force && now - last < WEEK_MS) return;             // weekly cadence unless forced (punt/never)
+  var fd = new FormData(); fd.append(LIKES_ENTRY, JSON.stringify({v:3, likes:likes, punts:punts, never:never}));
   fetch(LIKES_ENDPOINT, {method:'POST', mode:'no-cors', body:fd})
     .then(function(){ try{ localStorage.setItem('mp:push:lastpush', String(Date.now())); }catch(e){} })
     .catch(function(){});
 }
 mpPushPrefs(false);
+
+/* ---- Pull shared decisions (everyone's likes/punts/never) from the repo JSONs ----
+   These files are refreshed weekly by the planner job from the Google Form responses,
+   so a like/never made on one phone shows on all phones after the next sync. Best-effort:
+   missing files or offline just leave SHARED empty and the UI falls back to this device. */
+function mpLoadShared(){
+  var jobs = [['likes.json','liked','likes'], ['punts.json','punted','punts'], ['never.json','never','never']];
+  Promise.all(jobs.map(function(j){
+    return fetch(j[0]+'?v='+encodeURIComponent(V)).then(function(r){ return r.ok?r.json():null; }).catch(function(){ return null; });
+  })).then(function(res){
+    var changed=false;
+    res.forEach(function(d,i){ if(d && d[jobs[i][1]] && typeof d[jobs[i][1]]==='object'){ SHARED[jobs[i][2]]=d[jobs[i][1]]; changed=true; } });
+    if(changed){ renderPlan(); renderGrocery(); }
+  }).catch(function(){});
+}
 
 /* ---- Punts auto-clear on a new week ---- */
 /* Punts mean "add NEXT week." Once a new week's plan loads (version changed), the punts
@@ -779,6 +829,7 @@ mpPushPrefs(false);
 /* ---- Init ---- */
 document.getElementById('weekof-h').textContent = WEEK.label.indexOf('_')>=0 ? 'this week' : ('Week of '+WEEK.label);
 renderPlan(); renderGrocery();
+mpLoadShared();
 try{var last=localStorage.getItem('mp:lasttab'); if(last&&tabs[last]) showTab(last);}catch(e){}
 </script>
 </body>
