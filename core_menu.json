@@ -1,7 +1,7 @@
 {
   "_note": "Canonical master menu (\"the original menu\") transcribed from the user's Skylight family list on 2026-07-07. The weekly dinner rotation is built from `entrees` (see feedback-meal-planning-rules: 'play the whole deck' rotation + the new-dish cap of 2/full week, 1/short week). A weekly dish may be one of these items exactly OR a specific variation of it (e.g. entree 'Salmon' -> weekly 'Maple-Glazed Salmon'). `protein` is inferred to support the protein-variety rule and is editable. Do not delete this file. `pending_review` items are IN the deck but awaiting the user's confirmation.",
   "source": "Skylight family list (screenshots), transcribed 2026-07-07",
-  "count": 46,
+  "count": 47,
   "entrees": [
     { "title": "BBQ Chicken", "protein": "chicken" },
     { "title": "BBQ Chicken Salad", "protein": "chicken" },
@@ -48,19 +48,22 @@
     { "title": "Tostadas", "protein": "beef" },
     { "title": "Tostadas Salad", "protein": "beef" },
     { "title": "Vegetable Curry", "protein": "veg" },
-    { "title": "Wings", "protein": "chicken" }
+    { "title": "Wings", "protein": "chicken" },
+    { "title": "Wraps", "protein": "chicken" }
   ],
-  "pending_review": [
-    { "item": "RIKIMARU RAMEN", "status": "excluded_pending", "reason": "Looks like a specific ramen restaurant -> likely an 'eat out' entry, not a home-cooked entree. Confirm keep-as-ramen-night vs remove. NOT counted in the 46." },
-    { "item": "Breakfast for Dinner", "status": "included_pending", "reason": "Kept in the deck (you cook BFD). Confirm." },
-    { "item": "Loaded Baked Potato", "status": "included_pending", "reason": "Kept as an entree (loaded = a meal). Say if it should be a side instead." }
-  ],
+  "pending_review": [],
+  "resolved_2026_07_07": {
+    "removed_RIKIMARU_RAMEN": "Confirmed eat-out restaurant, not a home-cooked entree.",
+    "kept_Wraps": "Promoted from lunch-tagged into the dinner deck.",
+    "removed_Grilled_Cheese_Salad_Soup": "Confirmed lunch-only, excluded from the dinner deck.",
+    "kept_BFD_and_Loaded_Baked_Potato": "Confirmed as dinner entrees."
+  },
   "excluded": {
-    "not_a_meal": ["Eat Out", "Leftovers"],
+    "not_a_meal": ["Eat Out", "Leftovers", "RIKIMARU RAMEN (eat-out restaurant)"],
     "side_not_entree": ["Cornbread"],
     "breakfast": ["Bagels", "Eggs", "Milk & Cereal", "Oatmeal", "Omlet", "Pancakes", "Waffles"],
     "snack": ["Carrots and Hummus", "Cheese and Crackers", "Fruit", "Granola Bar"],
-    "lunch_tagged": ["Grilled Cheese", "Salad", "Soup", "Wraps"],
+    "lunch_tagged": ["Grilled Cheese", "Salad", "Soup"],
     "duplicate": ["Pizza (a second, Lunch-tagged entry — kept the Dinner Pizza)"]
   }
 }
