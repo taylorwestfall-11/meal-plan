@@ -1,5 +1,5 @@
 {
   "_note": "Punted dishes (slug -> title) the family chose to SKIP one week but want the NEXT week. The app's '⏭ Punt' button records these on-device and syncs them to the Google Form (combined likes+punts payload, v2 shape). STEP 1c of the Friday meal-plan-weekly-refresh job reads the published Form-responses CSV, and if its latest submission is newer than 'lastIngested', sets 'punted' to that submission's punts and updates 'lastIngested'. STEP 2 force-includes every dish in 'punted' as a DEFAULT next week (overriding the 30-day rotation gap, respecting variety/polo/teen rules), then resets 'punted' to {} while PRESERVING '_note' and 'lastIngested'. Don't delete this file. lastIngested seeded 2026-06-22 to skip pre-launch test rows.",
   "punted": {},
-  "lastIngested": "7/1/2026 22:48:49"
+  "lastIngested": "7/6/2026 21:47:58"
 }

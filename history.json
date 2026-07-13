@@ -1,9 +1,9 @@
 {
-  "_note": "Dish rotation history: dish title -> last-used date (YYYY-MM-DD). The Sunday job avoids repeating a dinner within ~30 days (wider gap when more variety is available), keeps favorites (likes.json) appearing at least ~monthly, and appends each week's default dinners here after publishing.",
+  "_note": "Dish rotation history: dish title -> last-used date (YYYY-MM-DD). Keyed by the matching core_menu.json entree title (a variation records under its core entree); off-menu dishes key by their own title. The weekly job builds the default lineup from the least-recently-served core entrees ('play the whole deck'), keeps favorites (likes.json) appearing at least ~monthly, and appends each week's default dinners here after publishing.",
   "lastUsed": {
-    "Sheet-Pan Kielbasa & Peppers": "2026-06-09",
+    "Sheet-Pan Kielbasa & Peppers": "2026-07-19",
     "Beef & Broccoli Stir-Fry": "2026-07-05",
-    "Garlic Shrimp Tacos": "2026-06-11",
+    "Garlic Shrimp Tacos": "2026-07-19",
     "Breakfast-for-Dinner": "2026-06-16",
     "Cheeseburger Macaroni Skillet": "2026-06-17",
     "Shrimp Fried Rice": "2026-07-05",
@@ -30,6 +30,18 @@
     "Lemon-Herb Baked Salmon": "2026-06-28",
     "Denver Omelet Scramble": "2026-07-05",
     "Grilled Pork Chops": "2026-07-05",
-    "Sheet-Pan Shrimp Boil": "2026-07-05"
+    "Sheet-Pan Shrimp Boil": "2026-07-05",
+    "Bratwurst Sausage": "2026-07-12",
+    "Sloppy Joe": "2026-07-12",
+    "Orange Chicken": "2026-07-12",
+    "Fish Tacos": "2026-07-12",
+    "Pretzel Dogs": "2026-07-12",
+    "Lamb Chops": "2026-07-12",
+    "Ribs": "2026-07-12",
+    "Enchiladas": "2026-07-19",
+    "Quesadillas": "2026-07-19",
+    "Bulgogi": "2026-07-19",
+    "Pizza": "2026-07-19",
+    "Pulled Pork": "2026-07-19"
   }
 }

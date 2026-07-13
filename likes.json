@@ -1,6 +1,8 @@
 {
   "_note": "Liked dishes (slug -> title). The app's Like buttons feed this list; the Sunday auto-job gives these dishes higher odds in the rotation.",
   "liked": {
-    "shrimp-fried-rice": "Shrimp Fried Rice"
+    "shrimp-fried-rice": "Shrimp Fried Rice",
+    "sheet-pan-kielbasa-peppers": "Sheet-Pan Kielbasa & Peppers",
+    "garlic-shrimp-tacos": "Garlic Shrimp Tacos"
   }
 }
