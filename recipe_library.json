@@ -1301,6 +1301,1210 @@
         {"name": "Mini potatoes (red or brown) — 2 lbs", "cat": "Produce"},
         {"name": "Green beans — 1.5 lbs", "cat": "Produce"}
       ]
+    },
+    {
+      "title": "Baked Lemon-Herb Chicken Thighs",
+      "slug": "baked-lemon-herb-chicken-thighs",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "Grilled Chicken",
+      "sides": "roasted potatoes & green beans",
+      "time": "~35 min",
+      "polo": false,
+      "included": "Chicken thighs baked with lemon, garlic and herbs until crisp-skinned and juicy, with roasted potatoes and green beans.",
+      "steps": [
+        {"part": "Potatoes", "do": ["Halve mini potatoes, toss with oil and salt, roast at 425°F ~25 min."]},
+        {"part": "Chicken", "do": ["Rub chicken thighs with lemon zest, garlic, oregano, salt and pepper.", "Bake skin-side up at 425°F ~30 min until crisp and 165°F.", "Squeeze fresh lemon juice over just before serving."]},
+        {"part": "Green beans", "do": ["Steam or sauté green beans 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Lemon Chicken Plate",
+      "lunch": "Reheats well; also good sliced cold over salad greens.",
+      "groceries": [
+        {"name": "Chicken thighs — 2.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Lemons — 2", "cat": "Produce"},
+        {"name": "Mini potatoes (red or brown) — 2 lbs", "cat": "Produce"},
+        {"name": "Green beans — 1.5 lbs", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "BBQ Pulled Pork Sandwiches",
+      "slug": "bbq-pulled-pork-sandwiches",
+      "protein": "pork",
+      "category": "variation",
+      "coreEntree": "Pulled Pork",
+      "sides": "buns & coleslaw",
+      "time": "~30 min (using pre-cooked pork)",
+      "polo": false,
+      "included": "Slow-cooked shredded pork tossed in BBQ sauce, piled onto buns with crunchy coleslaw.",
+      "steps": [
+        {"part": "Coleslaw", "do": ["Toss shredded cabbage and carrot with mayo, vinegar, a little sugar and salt; chill."]},
+        {"part": "Pork", "do": ["Shred slow-cooked or store-bought pulled pork; warm with BBQ sauce in a pot until heated through."]},
+        {"part": "Assemble", "do": ["Toast the buns; pile with pulled pork and top with coleslaw."]}
+      ],
+      "lunchTitle": "Pulled Pork Sandwich",
+      "lunch": "Reheat the pork gently and rebuild the sandwich fresh.",
+      "groceries": [
+        {"name": "Pork shoulder (cooked/shredded) — 3 lbs", "cat": "Meat & Seafood"},
+        {"name": "BBQ sauce — 1 bottle", "cat": "Sauces & Condiments"},
+        {"name": "Hamburger buns — 8", "cat": "Bread & Bakery"},
+        {"name": "Green cabbage — 1 small head", "cat": "Produce"},
+        {"name": "Carrots — 2", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Breakfast for Dinner",
+      "slug": "breakfast-for-dinner",
+      "protein": "eggs",
+      "category": "variation",
+      "coreEntree": "Breakfast for Dinner",
+      "sides": "hash browns & fruit",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Scrambled eggs, bacon and hash browns — a fun, quick breakfast-style dinner.",
+      "steps": [
+        {"part": "Hash browns", "do": ["Pan-fry shredded potatoes in a hot skillet with oil, pressing flat, until crisp and golden, ~12 min."]},
+        {"part": "Bacon & eggs", "do": ["Cook bacon until crisp; drain.", "Scramble eggs gently in butter until just set."]},
+        {"part": "Serve", "do": ["Plate with sliced fruit on the side."]}
+      ],
+      "lunchTitle": "Breakfast Plate",
+      "lunch": "Reheat gently; eggs are best fresh, so consider scrambling a new batch.",
+      "groceries": [
+        {"name": "Eggs — 10", "cat": "Dairy & Eggs"},
+        {"name": "Bacon — 1 lb", "cat": "Meat & Seafood"},
+        {"name": "Shredded hash brown potatoes — 1 bag", "cat": "Freezer"},
+        {"name": "Seasonal fruit", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Cheeseburger Macaroni Skillet",
+      "slug": "cheeseburger-macaroni-skillet",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Burgers",
+      "sides": "",
+      "time": "~25 min",
+      "polo": true,
+      "included": "A one-pan cheeseburger-flavored macaroni skillet — ground beef, elbow macaroni and melted cheddar in a tomato sauce.",
+      "steps": [
+        {"part": "Skillet", "do": ["Brown ground beef with diced onion; drain excess fat.", "Add beef broth, diced tomatoes and elbow macaroni; simmer covered ~12 min until the pasta is tender.", "Stir in shredded cheddar until melted."]}
+      ],
+      "lunchTitle": "Cheeseburger Mac",
+      "lunch": "Reheats well with a splash of milk to loosen the sauce.",
+      "groceries": [
+        {"name": "Ground beef — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Elbow macaroni — 2 cups", "cat": "Pantry"},
+        {"name": "Diced tomatoes — 1 can", "cat": "Pantry"},
+        {"name": "Beef broth — 2 cups", "cat": "Pantry"},
+        {"name": "Cheddar cheese, shredded — 8 oz", "cat": "Dairy & Eggs"}
+      ]
+    },
+    {
+      "title": "Chicken Caesar Wraps",
+      "slug": "chicken-caesar-wraps",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "Wraps",
+      "sides": "chips & side salad",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Grilled chicken, romaine and parmesan tossed in caesar dressing, wrapped in a flour tortilla.",
+      "steps": [
+        {"part": "Chicken", "do": ["Season and grill or sear diced chicken breast 6–7 min until cooked through."]},
+        {"part": "Assemble", "do": ["Toss chopped romaine with caesar dressing and shaved parmesan.", "Fill tortillas with the chicken and salad and roll tightly."]}
+      ],
+      "lunchTitle": "Chicken Caesar Wrap",
+      "lunch": "Keep the salad separate from the tortilla overnight and roll fresh.",
+      "groceries": [
+        {"name": "Chicken breasts — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Large flour tortillas — 6", "cat": "Bread & Bakery"},
+        {"name": "Romaine lettuce — 1 head", "cat": "Produce"},
+        {"name": "Parmesan cheese — 4 oz", "cat": "Dairy & Eggs"},
+        {"name": "Caesar dressing", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Chicken Parmesan",
+      "slug": "chicken-parmesan",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "Chicken Parmesan",
+      "sides": "spaghetti & side salad",
+      "time": "~35 min",
+      "polo": false,
+      "included": "Breaded chicken cutlets topped with marinara and melted mozzarella, served over spaghetti.",
+      "steps": [
+        {"part": "Chicken", "do": ["Bread chicken cutlets in flour, egg and seasoned breadcrumbs.", "Pan-fry 3–4 min per side until golden; top with marinara and mozzarella and broil 3 min to melt."]},
+        {"part": "Spaghetti", "do": ["Boil spaghetti in salted water until al dente; drain and toss with a little marinara."]},
+        {"part": "Salad", "do": ["Toss a simple side salad with dressing."]}
+      ],
+      "lunchTitle": "Chicken Parm Sub",
+      "lunch": "Tuck a reheated cutlet into a roll with marinara and cheese for a sandwich.",
+      "groceries": [
+        {"name": "Chicken breasts — 2.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Marinara sauce — 1 jar", "cat": "Pantry"},
+        {"name": "Breadcrumbs — 1 cup", "cat": "Pantry"},
+        {"name": "Spaghetti — 1 lb", "cat": "Pantry"},
+        {"name": "Mozzarella cheese — 8 oz", "cat": "Dairy & Eggs"},
+        {"name": "Eggs — 2", "cat": "Dairy & Eggs"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Fish Sticks",
+      "slug": "fish-sticks",
+      "protein": "seafood",
+      "category": "variation",
+      "coreEntree": "Fish Sticks",
+      "sides": "oven fries & peas",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Crispy baked fish sticks with oven fries and peas — a teen-friendly, no-fuss night.",
+      "steps": [
+        {"part": "Fries", "do": ["Bake frozen oven fries per package directions."]},
+        {"part": "Fish sticks", "do": ["Bake fish sticks per package directions until golden and crisp."]},
+        {"part": "Peas", "do": ["Steam or microwave peas 4–5 min until tender."]}
+      ],
+      "lunchTitle": "Fish Stick Plate",
+      "lunch": "Reheat in the oven or air fryer, not the microwave, to keep them crisp.",
+      "groceries": [
+        {"name": "Frozen fish sticks — 2 boxes", "cat": "Freezer"},
+        {"name": "Frozen oven fries — 1 bag", "cat": "Freezer"},
+        {"name": "Frozen peas — 2 cups", "cat": "Freezer"}
+      ]
+    },
+    {
+      "title": "Garlic Butter Shrimp & Rice",
+      "slug": "garlic-butter-shrimp-rice",
+      "protein": "seafood",
+      "category": "variation",
+      "coreEntree": "Fish Tacos",
+      "sides": "steamed rice & steamed broccoli",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Garlic butter shrimp over rice with steamed broccoli — quick and rich.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Shrimp", "do": ["Sauté shrimp in butter and garlic 3–4 min until pink; finish with a squeeze of lemon and chopped parsley."]},
+        {"part": "Broccoli", "do": ["Steam broccoli florets 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Garlic Butter Shrimp Bowl",
+      "lunch": "Reheat gently over fresh rice.",
+      "groceries": [
+        {"name": "Shrimp, peeled & deveined — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Broccoli — 1 head", "cat": "Produce"},
+        {"name": "Butter & garlic", "cat": "Dairy & Eggs"}
+      ]
+    },
+    {
+      "title": "Garlic Butter Steak Bites & Potatoes",
+      "slug": "garlic-butter-steak-bites-potatoes",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Steak",
+      "sides": "roasted potatoes & green beans",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Seared sirloin steak bites finished in garlic butter, with roasted mini potatoes and green beans.",
+      "steps": [
+        {"part": "Potatoes", "do": ["Halve mini potatoes, toss with oil and salt, roast at 425°F ~25 min."]},
+        {"part": "Steak bites", "do": ["Cube sirloin steak; sear in a hot skillet 3–4 min until browned.", "Add butter and minced garlic the last minute, spooning over the steak."]},
+        {"part": "Green beans", "do": ["Steam or sauté green beans 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Steak Bites Plate",
+      "lunch": "Reheat gently to avoid overcooking the beef.",
+      "groceries": [
+        {"name": "Sirloin steak, cubed — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Mini potatoes (red or brown) — 2 lbs", "cat": "Produce"},
+        {"name": "Green beans — 1.5 lbs", "cat": "Produce"},
+        {"name": "Butter & garlic", "cat": "Dairy & Eggs"}
+      ]
+    },
+    {
+      "title": "Garlic Shrimp Scampi",
+      "slug": "garlic-shrimp-scampi",
+      "protein": "seafood",
+      "category": "variation",
+      "coreEntree": "Fish Tacos",
+      "sides": "linguine & side salad",
+      "time": "~25 min",
+      "polo": false,
+      "included": "Garlic butter shrimp in a lemon-white wine sauce over linguine, with a side salad.",
+      "steps": [
+        {"part": "Linguine", "do": ["Boil linguine in salted water until al dente; reserve a cup of pasta water and drain."]},
+        {"part": "Shrimp", "do": ["Sauté shrimp in butter and garlic 2–3 min per side until pink; deglaze with white wine or broth and lemon juice.", "Toss with the linguine, thinning with pasta water as needed."]},
+        {"part": "Salad", "do": ["Toss a simple side salad with dressing."]}
+      ],
+      "lunchTitle": "Shrimp Scampi",
+      "lunch": "Reheats gently on the stove with a splash of water or broth.",
+      "groceries": [
+        {"name": "Shrimp, peeled & deveined — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Linguine — 1 lb", "cat": "Pantry"},
+        {"name": "Lemons — 2", "cat": "Produce"},
+        {"name": "Butter & garlic", "cat": "Dairy & Eggs"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Grilled Chicken Pesto Sandwich",
+      "slug": "grilled-chicken-pesto-sandwich",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "Grilled Chicken",
+      "sides": "chips & side salad",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Grilled chicken breast with pesto and melted mozzarella on a toasted roll.",
+      "steps": [
+        {"part": "Chicken", "do": ["Season and grill or sear chicken breast 5–6 min per side until 165°F."]},
+        {"part": "Assemble", "do": ["Spread pesto on toasted rolls; add the chicken and a slice of mozzarella, and warm briefly until the cheese melts."]}
+      ],
+      "lunchTitle": "Pesto Chicken Sandwich",
+      "lunch": "Reheat the chicken and rebuild the sandwich fresh.",
+      "groceries": [
+        {"name": "Chicken breasts — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Pesto — 1 jar", "cat": "Pantry"},
+        {"name": "Mozzarella cheese — 8 oz", "cat": "Dairy & Eggs"},
+        {"name": "Sandwich rolls — 6", "cat": "Bread & Bakery"}
+      ]
+    },
+    {
+      "title": "Grilled Pork Chops",
+      "slug": "grilled-pork-chops",
+      "protein": "pork",
+      "category": "variation",
+      "coreEntree": "Pork Chops",
+      "sides": "roasted potatoes & green beans",
+      "time": "~25 min",
+      "polo": false,
+      "included": "Simple grilled pork chops with roasted potatoes and green beans.",
+      "steps": [
+        {"part": "Potatoes", "do": ["Halve mini potatoes, toss with oil and salt, roast at 425°F ~25 min."]},
+        {"part": "Pork chops", "do": ["Season pork chops with salt, pepper and garlic powder; grill or sear 4–5 min per side to 145°F and rest."]},
+        {"part": "Green beans", "do": ["Steam or sauté green beans 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Pork Chop Plate",
+      "lunch": "Reheat gently to avoid drying out the pork.",
+      "groceries": [
+        {"name": "Bone-in pork chops — 4", "cat": "Meat & Seafood"},
+        {"name": "Mini potatoes (red or brown) — 2 lbs", "cat": "Produce"},
+        {"name": "Green beans — 1.5 lbs", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Ground Beef Tacos",
+      "slug": "ground-beef-tacos",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Tacos",
+      "sides": "tortilla chips",
+      "time": "~18 min",
+      "polo": true,
+      "included": "Classic seasoned ground beef tacos with lettuce, cheese and salsa.",
+      "steps": [
+        {"part": "Beef", "do": ["Brown ground beef with taco seasoning 6–8 min."]},
+        {"part": "Assemble", "do": ["Warm taco shells or tortillas; fill with beef, shredded lettuce, cheese and salsa."]}
+      ],
+      "lunchTitle": "Taco Bowl",
+      "lunch": "Serve the leftover beef over rice with the same toppings.",
+      "groceries": [
+        {"name": "Ground beef — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Taco seasoning", "cat": "Spices"},
+        {"name": "Taco shells or tortillas — 12", "cat": "Bread & Bakery"},
+        {"name": "Romaine lettuce — 1 head", "cat": "Produce"},
+        {"name": "Cheddar cheese, shredded — 8 oz", "cat": "Dairy & Eggs"},
+        {"name": "Tortilla chips — 1 bag", "cat": "Pantry"}
+      ]
+    },
+    {
+      "title": "Hawaiian-Style Smoked Pork Butt with Pineapple",
+      "slug": "hawaiian-style-smoked-pork-butt-with-pineapple",
+      "protein": "pork",
+      "category": "variation",
+      "coreEntree": "Pulled Pork",
+      "sides": "rice & grilled pineapple",
+      "time": "~4 hr (weekend cook)",
+      "polo": false,
+      "included": "Slow-smoked pork butt with a sweet-savory glaze and grilled pineapple, served over rice.",
+      "steps": [
+        {"part": "Pork", "do": ["Rub pork butt with brown sugar, garlic and smoked paprika; smoke or slow-roast at 275°F ~4 hr until fork-tender.", "Shred and toss with a little pineapple juice and BBQ sauce."]},
+        {"part": "Pineapple & rice", "do": ["Grill pineapple rings 2–3 min per side until caramelized.", "Rinse 2 cups jasmine rice, cook in the rice cooker."]}
+      ],
+      "lunchTitle": "Hawaiian Pork Bowl",
+      "lunch": "Reheat the pork and pineapple over fresh rice.",
+      "groceries": [
+        {"name": "Pork butt/shoulder — 4 lbs", "cat": "Meat & Seafood"},
+        {"name": "Fresh or canned pineapple rings — 1", "cat": "Produce"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "BBQ sauce & brown sugar", "cat": "Pantry"}
+      ]
+    },
+    {
+      "title": "Herb-Crusted Pork Loin Roast",
+      "slug": "herb-crusted-pork-loin-roast",
+      "protein": "pork",
+      "category": "variation",
+      "coreEntree": "Pork Chops",
+      "sides": "roasted potatoes & green beans",
+      "time": "~1 hr",
+      "polo": false,
+      "included": "A garlic-herb crusted pork loin roast, sliced, with roasted potatoes and green beans.",
+      "steps": [
+        {"part": "Pork loin", "do": ["Rub pork loin with garlic, rosemary, thyme, salt and pepper.", "Roast at 375°F ~45–55 min to 145°F; rest 10 min before slicing."]},
+        {"part": "Potatoes", "do": ["Halve mini potatoes, toss with oil and salt, roast alongside the pork the last 30 min."]},
+        {"part": "Green beans", "do": ["Steam or sauté green beans 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Pork Loin Plate",
+      "lunch": "Sliced pork also makes a good sandwich.",
+      "groceries": [
+        {"name": "Pork loin roast — 2.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Mini potatoes (red or brown) — 2 lbs", "cat": "Produce"},
+        {"name": "Green beans — 1.5 lbs", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Italian Sausage & Peppers Subs",
+      "slug": "italian-sausage-peppers-subs",
+      "protein": "pork",
+      "category": "variation",
+      "coreEntree": "Bratwurst Sausage",
+      "sides": "chips & side salad",
+      "time": "~30 min",
+      "polo": false,
+      "included": "Italian sausage and peppers piled into a toasted hoagie roll with melted provolone.",
+      "steps": [
+        {"part": "Sausage & peppers", "do": ["Slice bell peppers and onions; sauté 8–10 min until soft.", "Sear Italian sausage links 12–15 min until browned and cooked through; slice."]},
+        {"part": "Assemble", "do": ["Fill toasted hoagie rolls with sausage, peppers and onions; top with provolone and melt under the broiler."]}
+      ],
+      "lunchTitle": "Sausage & Peppers Sub",
+      "lunch": "Reheat the filling and rebuild the sub fresh.",
+      "groceries": [
+        {"name": "Italian sausage — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Bell peppers — 3", "cat": "Produce"},
+        {"name": "Sweet onions — 2", "cat": "Produce"},
+        {"name": "Hoagie rolls — 6", "cat": "Bread & Bakery"},
+        {"name": "Provolone cheese — 8 oz", "cat": "Dairy & Eggs"}
+      ]
+    },
+    {
+      "title": "Lemon Garlic Shrimp Scampi",
+      "slug": "lemon-garlic-shrimp-scampi",
+      "protein": "seafood",
+      "category": "variation",
+      "coreEntree": "Fish Tacos",
+      "sides": "linguine & side salad",
+      "time": "~25 min",
+      "polo": false,
+      "included": "A brighter, more lemon-forward take on shrimp scampi over linguine.",
+      "steps": [
+        {"part": "Linguine", "do": ["Boil linguine in salted water until al dente; reserve pasta water and drain."]},
+        {"part": "Shrimp", "do": ["Sauté shrimp in butter and garlic 2–3 min per side; add lemon zest, juice and a splash of pasta water.", "Toss with the linguine and chopped parsley."]},
+        {"part": "Salad", "do": ["Toss a simple side salad with dressing."]}
+      ],
+      "lunchTitle": "Shrimp Scampi",
+      "lunch": "Reheats gently on the stove with a splash of water.",
+      "groceries": [
+        {"name": "Shrimp, peeled & deveined — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Linguine — 1 lb", "cat": "Pantry"},
+        {"name": "Lemons — 3", "cat": "Produce"},
+        {"name": "Butter & garlic", "cat": "Dairy & Eggs"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Lemon-Herb Baked Salmon",
+      "slug": "lemon-herb-baked-salmon",
+      "protein": "seafood",
+      "category": "variation",
+      "coreEntree": "Salmon",
+      "sides": "rice & roasted broccoli",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Salmon fillets baked with lemon and herbs, served with rice and roasted broccoli.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Salmon", "do": ["Season salmon with lemon slices, dill or parsley, salt and pepper.", "Bake at 400°F 12–15 min until just cooked through."]},
+        {"part": "Broccoli", "do": ["Toss broccoli florets with oil and salt; roast at 425°F 15 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Salmon Rice Bowl",
+      "lunch": "Flake the salmon over fresh rice and broccoli.",
+      "groceries": [
+        {"name": "Salmon fillets — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Lemons — 2", "cat": "Produce"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Broccoli — 1 head", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Orange Chicken",
+      "slug": "orange-chicken",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "Orange Chicken",
+      "sides": "rice & broccoli",
+      "time": "~18 min",
+      "polo": true,
+      "included": "Crispy chicken pieces tossed in a sweet-tangy orange glaze, over rice with broccoli.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Chicken", "do": ["Toss bite-size chicken pieces in cornstarch; pan-fry until golden and cooked through.", "Whisk orange juice, soy sauce, garlic and a little sugar; simmer until thickened and toss with the chicken."]},
+        {"part": "Broccoli", "do": ["Steam broccoli florets 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Orange Chicken Bowl",
+      "lunch": "Reheat the chicken over fresh rice.",
+      "groceries": [
+        {"name": "Chicken breasts — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Oranges or orange juice", "cat": "Produce"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Broccoli — 1 head", "cat": "Produce"},
+        {"name": "Soy sauce", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Sesame Pork & Broccoli Stir-Fry",
+      "slug": "sesame-pork-broccoli-stir-fry",
+      "protein": "pork",
+      "category": "variation",
+      "coreEntree": "Beef Stir Fry",
+      "sides": "steamed rice",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Thin-sliced pork and broccoli stir-fried in a sesame-soy sauce over rice.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Pork & broccoli", "do": ["Slice pork loin thin; sear in a hot wok 3–4 min until browned.", "Add broccoli florets and stir-fry 3–4 min, then toss with soy sauce, sesame oil and a little brown sugar."]}
+      ],
+      "lunchTitle": "Sesame Pork Bowl",
+      "lunch": "Reheat the pork and broccoli over fresh rice.",
+      "groceries": [
+        {"name": "Pork loin, thin-sliced — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Broccoli — 2 heads", "cat": "Produce"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Soy sauce & sesame oil", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Sloppy Joes",
+      "slug": "sloppy-joes",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Sloppy Joe",
+      "sides": "corn & side salad",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Classic sloppy joes — seasoned ground beef in a tangy tomato sauce, piled on a bun.",
+      "steps": [
+        {"part": "Filling", "do": ["Brown ground beef with diced onion and bell pepper.", "Stir in ketchup, tomato sauce, brown sugar, mustard and Worcestershire; simmer 10 min until thickened."]},
+        {"part": "Sides", "do": ["Warm corn on the stove; toss a simple side salad."]}
+      ],
+      "lunchTitle": "Sloppy Joe",
+      "lunch": "Reheats well; rebuild on a fresh bun.",
+      "groceries": [
+        {"name": "Ground beef — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Hamburger buns — 8", "cat": "Bread & Bakery"},
+        {"name": "Ketchup & tomato sauce", "cat": "Sauces & Condiments"},
+        {"name": "Corn — 1.5 cups", "cat": "Freezer"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Smash Burgers & Oven Fries",
+      "slug": "smash-burgers-oven-fries",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Burgers",
+      "sides": "oven fries",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Thin, crispy-edged smash burgers with melted cheese and oven fries.",
+      "steps": [
+        {"part": "Fries", "do": ["Bake frozen oven fries per package directions."]},
+        {"part": "Burgers", "do": ["Form loose beef balls; smash flat on a hot griddle or skillet and sear 2 min per side, adding cheese near the end.", "Toast the buns."]}
+      ],
+      "lunchTitle": "Smash Burger",
+      "lunch": "Reheat the patty briefly and rebuild the burger fresh.",
+      "groceries": [
+        {"name": "Ground beef — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Burger buns — 6", "cat": "Bread & Bakery"},
+        {"name": "American cheese — 6 slices", "cat": "Dairy & Eggs"},
+        {"name": "Frozen oven fries — 1 bag", "cat": "Freezer"}
+      ]
+    },
+    {
+      "title": "Teriyaki Glazed Salmon",
+      "slug": "teriyaki-glazed-salmon",
+      "protein": "seafood",
+      "category": "variation",
+      "coreEntree": "Salmon",
+      "sides": "rice & steamed broccoli",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Salmon fillets glazed in teriyaki sauce, over rice with steamed broccoli.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Salmon", "do": ["Sear salmon skin-side down 4–5 min, flip, and brush with teriyaki sauce; cook 2–3 min more until glazed and just cooked through."]},
+        {"part": "Broccoli", "do": ["Steam broccoli florets 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Teriyaki Salmon Bowl",
+      "lunch": "Flake the salmon over fresh rice and broccoli.",
+      "groceries": [
+        {"name": "Salmon fillets — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Teriyaki sauce", "cat": "Sauces & Condiments"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Broccoli — 1 head", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Maple-Glazed Salmon",
+      "slug": "maple-glazed-salmon",
+      "protein": "seafood",
+      "category": "variation",
+      "coreEntree": "Salmon",
+      "sides": "rice & roasted broccoli",
+      "time": "~20 min",
+      "polo": true,
+      "included": "A previously-loved family variation — salmon glazed in maple syrup and dijon, with rice and roasted broccoli.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Salmon", "do": ["Whisk maple syrup, dijon mustard and a splash of soy sauce.", "Sear salmon skin-side down 4–5 min, flip, brush with the glaze, and cook 2–3 min more until just cooked through."]},
+        {"part": "Broccoli", "do": ["Toss broccoli florets with oil and salt; roast at 425°F 15 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Maple Salmon Bowl",
+      "lunch": "Flake the salmon over fresh rice and broccoli.",
+      "groceries": [
+        {"name": "Salmon fillets — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Maple syrup & dijon mustard", "cat": "Pantry"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Broccoli — 1 head", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Honey-Garlic Glazed Salmon",
+      "slug": "honey-garlic-glazed-salmon",
+      "protein": "seafood",
+      "category": "variation",
+      "coreEntree": "Salmon",
+      "sides": "rice & steamed broccoli",
+      "time": "~20 min",
+      "polo": true,
+      "included": "A previously-loved family variation — salmon in a sticky honey-garlic glaze, over rice with steamed broccoli.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Salmon", "do": ["Whisk honey, soy sauce and minced garlic.", "Sear salmon skin-side down 4–5 min, flip, brush with the glaze, and cook 2–3 min more until glossy and just cooked through."]},
+        {"part": "Broccoli", "do": ["Steam broccoli florets 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Honey-Garlic Salmon Bowl",
+      "lunch": "Flake the salmon over fresh rice and broccoli.",
+      "groceries": [
+        {"name": "Salmon fillets — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Honey & soy sauce", "cat": "Pantry"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Broccoli — 1 head", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Salisbury Steak with Mushroom Gravy",
+      "slug": "salisbury-steak-with-mushroom-gravy",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Meatloaf",
+      "sides": "mashed potatoes & green beans",
+      "time": "~35 min",
+      "polo": false,
+      "included": "A previously-loved family variation on meatloaf — seasoned beef patties smothered in mushroom gravy, with mashed potatoes and green beans.",
+      "steps": [
+        {"part": "Patties", "do": ["Mix ground beef with breadcrumbs, egg and onion powder; shape into oval patties and sear 3–4 min per side; set aside."]},
+        {"part": "Gravy", "do": ["Sauté sliced mushrooms and onion in the same pan; sprinkle with flour, then whisk in beef broth and simmer until thickened.", "Return the patties to the gravy and simmer 8–10 min."]},
+        {"part": "Mashed potatoes", "do": ["Boil peeled, chunked potatoes until fork-tender; mash with butter, milk and salt."]},
+        {"part": "Green beans", "do": ["Steam or sauté green beans 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Salisbury Steak Plate",
+      "lunch": "Reheats well; the gravy keeps it moist.",
+      "groceries": [
+        {"name": "Ground beef — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Mushrooms — 8 oz", "cat": "Produce"},
+        {"name": "Beef broth — 2 cups", "cat": "Pantry"},
+        {"name": "Russet potatoes — 2.5 lbs", "cat": "Produce"},
+        {"name": "Green beans — 1.5 lbs", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Ground Turkey & Zucchini Skillet",
+      "slug": "ground-turkey-zucchini-skillet",
+      "protein": "turkey",
+      "category": "variation",
+      "coreEntree": "Meatloaf",
+      "sides": "",
+      "time": "~20 min",
+      "polo": true,
+      "included": "A previously-loved family variation — a quick one-pan ground turkey and zucchini skillet with tomatoes and melted cheese.",
+      "steps": [
+        {"part": "Skillet", "do": ["Brown ground turkey with garlic and diced onion.", "Add diced zucchini and diced tomatoes; simmer 8–10 min until the zucchini is tender.", "Top with shredded mozzarella and cover until melted."]}
+      ],
+      "lunchTitle": "Turkey & Zucchini Skillet",
+      "lunch": "Reheats well as-is.",
+      "groceries": [
+        {"name": "Ground turkey — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Zucchini — 3", "cat": "Produce"},
+        {"name": "Diced tomatoes — 1 can", "cat": "Pantry"},
+        {"name": "Mozzarella cheese, shredded — 8 oz", "cat": "Dairy & Eggs"}
+      ]
+    },
+    {
+      "title": "Sheet-Pan Chicken Fajitas",
+      "slug": "sheet-pan-chicken-fajitas",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "Grilled Chicken",
+      "sides": "tortillas & rice",
+      "time": "~25 min",
+      "polo": true,
+      "included": "A previously-loved family variation — chicken strips and peppers roasted on one pan with fajita seasoning, wrapped in warm tortillas.",
+      "steps": [
+        {"part": "Sheet pan", "do": ["Toss sliced chicken breast, bell peppers and onion with oil and fajita seasoning; spread on a sheet pan.", "Roast at 425°F ~18–20 min until the chicken is cooked through and vegetables are charred at the edges."]},
+        {"part": "Serve", "do": ["Warm flour tortillas; rinse and cook rice in the rice cooker if serving alongside."]}
+      ],
+      "lunchTitle": "Chicken Fajita Bowl",
+      "lunch": "Serve the leftovers over rice instead of in a tortilla.",
+      "groceries": [
+        {"name": "Chicken breasts — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Bell peppers — 3", "cat": "Produce"},
+        {"name": "Sweet onion — 1", "cat": "Produce"},
+        {"name": "Fajita seasoning", "cat": "Spices"},
+        {"name": "Large flour tortillas — 8", "cat": "Bread & Bakery"},
+        {"name": "Jasmine rice — 1.5 cups dry", "cat": "Pantry"}
+      ]
+    },
+    {
+      "title": "Honey-Garlic Pork Chops",
+      "slug": "honey-garlic-pork-chops",
+      "protein": "pork",
+      "category": "variation",
+      "coreEntree": "Pork Chops",
+      "sides": "rice & steamed broccoli",
+      "time": "~20 min",
+      "polo": true,
+      "included": "A previously-loved family variation — pan-seared pork chops glazed in honey-garlic sauce, with rice and broccoli.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Pork chops", "do": ["Sear pork chops 4–5 min per side until browned and 145°F; set aside.", "Whisk honey, soy sauce and garlic in the same pan; simmer 1–2 min and spoon over the chops."]},
+        {"part": "Broccoli", "do": ["Steam broccoli florets 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Honey-Garlic Pork Chop Plate",
+      "lunch": "Reheat gently to avoid drying out the pork.",
+      "groceries": [
+        {"name": "Boneless pork chops — 4", "cat": "Meat & Seafood"},
+        {"name": "Honey & soy sauce", "cat": "Pantry"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Broccoli — 1 head", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Lemon-Butter Baked Cod",
+      "slug": "lemon-butter-baked-cod",
+      "protein": "seafood",
+      "category": "variation",
+      "coreEntree": "Fish Tacos",
+      "sides": "rice & roasted broccoli",
+      "time": "~20 min",
+      "polo": true,
+      "included": "A previously-loved family variation — flaky baked cod in a lemon-butter sauce, with rice and roasted broccoli.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Cod", "do": ["Season cod fillets with salt, pepper and lemon slices; dot with butter.", "Bake at 400°F 12–15 min until it flakes easily."]},
+        {"part": "Broccoli", "do": ["Toss broccoli florets with oil and salt; roast at 425°F 15 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Cod & Rice Bowl",
+      "lunch": "Flake the cod over fresh rice and broccoli.",
+      "groceries": [
+        {"name": "Cod fillets — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Lemons — 2", "cat": "Produce"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Broccoli — 1 head", "cat": "Produce"},
+        {"name": "Butter", "cat": "Dairy & Eggs"}
+      ]
+    },
+    {
+      "title": "Denver Omelet Scramble",
+      "slug": "denver-omelet-scramble",
+      "protein": "eggs",
+      "category": "variation",
+      "coreEntree": "Breakfast for Dinner",
+      "sides": "hash browns & fruit",
+      "time": "~20 min",
+      "polo": true,
+      "included": "A previously-loved family variation — scrambled eggs with ham, bell pepper, onion and cheddar, Denver-omelet style, with hash browns.",
+      "steps": [
+        {"part": "Hash browns", "do": ["Pan-fry shredded potatoes in a hot skillet with oil, pressing flat, until crisp and golden, ~12 min."]},
+        {"part": "Scramble", "do": ["Sauté diced ham, bell pepper and onion 3–4 min.", "Add whisked eggs and scramble gently; fold in shredded cheddar at the end."]},
+        {"part": "Serve", "do": ["Plate with sliced fruit on the side."]}
+      ],
+      "lunchTitle": "Denver Scramble",
+      "lunch": "Best made fresh; reheat gently if needed.",
+      "groceries": [
+        {"name": "Eggs — 10", "cat": "Dairy & Eggs"},
+        {"name": "Diced ham — 8 oz", "cat": "Meat & Seafood"},
+        {"name": "Bell pepper — 1", "cat": "Produce"},
+        {"name": "Onion — 1", "cat": "Produce"},
+        {"name": "Cheddar cheese, shredded — 4 oz", "cat": "Dairy & Eggs"},
+        {"name": "Shredded hash brown potatoes — 1 bag", "cat": "Freezer"},
+        {"name": "Seasonal fruit", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Sheet-Pan Shrimp Boil",
+      "slug": "sheet-pan-shrimp-boil",
+      "protein": "seafood",
+      "category": "variation",
+      "coreEntree": "Fish Tacos",
+      "sides": "corn, potatoes & sausage",
+      "time": "~35 min",
+      "polo": false,
+      "included": "A previously-loved family variation — a Cajun-seasoned sheet-pan shrimp boil with corn, potatoes and sausage.",
+      "swapNote": "Go light on the Cajun seasoning, or set aside the teen's portion before adding extra spice.",
+      "steps": [
+        {"part": "Potatoes & sausage", "do": ["Toss halved mini potatoes and sliced smoked sausage with oil and Cajun seasoning; roast at 425°F 20 min."]},
+        {"part": "Shrimp & corn", "do": ["Add shrimp and halved corn on the cob to the pan; roast 10–12 more min until the shrimp are pink and corn is tender."]}
+      ],
+      "lunchTitle": "Shrimp Boil Bowl",
+      "lunch": "Reheats well together on a sheet pan or in the microwave.",
+      "groceries": [
+        {"name": "Shrimp, peeled & deveined — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Smoked sausage — 1 lb", "cat": "Meat & Seafood"},
+        {"name": "Mini potatoes (red or brown) — 1.5 lbs", "cat": "Produce"},
+        {"name": "Corn on the cob — 4 ears", "cat": "Produce"},
+        {"name": "Cajun seasoning", "cat": "Spices"}
+      ]
+    },
+    {
+      "title": "Oven BBQ Baby Back Ribs",
+      "slug": "oven-bbq-baby-back-ribs",
+      "protein": "pork",
+      "category": "variation",
+      "coreEntree": "Ribs",
+      "sides": "roasted potatoes & green beans",
+      "time": "~3 hr (weekend cook)",
+      "polo": false,
+      "included": "A previously-loved family variation on ribs — fall-off-the-bone baby back ribs, oven-baked low and slow with BBQ sauce.",
+      "steps": [
+        {"part": "Ribs", "do": ["Season baby back ribs with a dry rub; wrap tightly in foil and bake at 300°F ~2.5 hr until fork-tender.", "Unwrap, brush generously with BBQ sauce, and broil 5 min to caramelize."]},
+        {"part": "Sides", "do": ["Halve mini potatoes, toss with oil and salt, roast at 425°F ~25 min; steam or sauté green beans."]}
+      ],
+      "lunchTitle": "Ribs Plate",
+      "lunch": "Reheat covered so the ribs stay moist.",
+      "groceries": [
+        {"name": "Pork baby back ribs — 2 racks", "cat": "Meat & Seafood"},
+        {"name": "BBQ sauce — 1 bottle", "cat": "Sauces & Condiments"},
+        {"name": "Mini potatoes (red or brown) — 2 lbs", "cat": "Produce"},
+        {"name": "Green beans — 1.5 lbs", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Cajun Shrimp Alfredo",
+      "slug": "cajun-shrimp-alfredo",
+      "protein": "seafood",
+      "category": "variation",
+      "coreEntree": "Chicken Alfredo",
+      "sides": "fettuccine & garlic bread",
+      "time": "~25 min",
+      "polo": false,
+      "swapNote": "Cajun seasoning runs spicy — season the teen's shrimp lightly (or plain) before tossing the rest in the full amount.",
+      "included": "A Cajun-spiced twist on the family's chicken alfredo — blackened shrimp in a creamy parmesan sauce over fettuccine.",
+      "steps": [
+        {"part": "Pasta", "do": ["Boil fettuccine in salted water until al dente; reserve a cup of pasta water and drain."]},
+        {"part": "Shrimp", "do": ["Toss shrimp with Cajun seasoning; sear 2–3 min per side until pink; set aside."]},
+        {"part": "Sauce", "do": ["Melt butter, add garlic, then heavy cream and parmesan; simmer until thickened, thinning with pasta water.", "Toss in the pasta and shrimp."]},
+        {"part": "Garlic bread", "do": ["Broil buttered, garlic-rubbed bread 2–3 min until golden."]}
+      ],
+      "lunchTitle": "Cajun Shrimp Alfredo",
+      "lunch": "Reheats gently on the stove with a splash of milk.",
+      "groceries": [
+        {"name": "Shrimp, peeled & deveined — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Cajun seasoning", "cat": "Spices"},
+        {"name": "Fettuccine — 1 lb", "cat": "Pantry"},
+        {"name": "Heavy cream — 2 cups", "cat": "Dairy & Eggs"},
+        {"name": "Parmesan cheese — 8 oz", "cat": "Dairy & Eggs"},
+        {"name": "French bread — 1 loaf", "cat": "Bread & Bakery"}
+      ]
+    },
+    {
+      "title": "Chicken Caesar Salad",
+      "slug": "chicken-caesar-salad",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "Wraps",
+      "sides": "",
+      "time": "~20 min",
+      "polo": true,
+      "included": "The wrap filling served as a main-dish salad instead — grilled chicken over romaine with parmesan and caesar dressing.",
+      "steps": [
+        {"part": "Chicken", "do": ["Season and grill or sear diced chicken breast 6–7 min until cooked through."]},
+        {"part": "Salad", "do": ["Toss chopped romaine with caesar dressing and shaved parmesan; top with the chicken and croutons."]}
+      ],
+      "lunchTitle": "Chicken Caesar Salad",
+      "lunch": "Keep dressing separate and toss fresh.",
+      "groceries": [
+        {"name": "Chicken breasts — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Romaine lettuce — 2 heads", "cat": "Produce"},
+        {"name": "Parmesan cheese — 4 oz", "cat": "Dairy & Eggs"},
+        {"name": "Croutons — 1 bag", "cat": "Pantry"},
+        {"name": "Caesar dressing", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "BBQ Bacon Cheeseburgers",
+      "slug": "bbq-bacon-cheeseburgers",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Burgers",
+      "sides": "oven fries & side salad",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Beef burgers topped with bacon, cheddar and BBQ sauce, with oven fries and a side salad.",
+      "steps": [
+        {"part": "Fries", "do": ["Bake frozen oven fries per package directions."]},
+        {"part": "Bacon", "do": ["Cook bacon until crisp."]},
+        {"part": "Burgers", "do": ["Form and grill or pan-sear beef patties 4–5 min per side, adding cheddar the last minute.", "Top with bacon and a drizzle of BBQ sauce; toast the buns."]},
+        {"part": "Salad", "do": ["Toss a simple side salad with dressing."]}
+      ],
+      "lunchTitle": "BBQ Bacon Burger",
+      "lunch": "Reheat the patty briefly and rebuild the burger fresh.",
+      "groceries": [
+        {"name": "Ground beef — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Bacon — 8 slices", "cat": "Meat & Seafood"},
+        {"name": "Cheddar cheese — 6 slices", "cat": "Dairy & Eggs"},
+        {"name": "BBQ sauce", "cat": "Sauces & Condiments"},
+        {"name": "Burger buns — 6", "cat": "Bread & Bakery"},
+        {"name": "Frozen oven fries — 1 bag", "cat": "Freezer"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Shredded BBQ Chicken Sandwiches",
+      "slug": "shredded-bbq-chicken-sandwiches",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "BBQ Chicken",
+      "sides": "buns & coleslaw",
+      "time": "~30 min",
+      "polo": false,
+      "included": "Slow-simmered shredded chicken tossed in BBQ sauce, piled onto buns with coleslaw — a lighter take on pulled pork.",
+      "steps": [
+        {"part": "Coleslaw", "do": ["Toss shredded cabbage and carrot with mayo, vinegar, a little sugar and salt; chill."]},
+        {"part": "Chicken", "do": ["Simmer chicken breasts or thighs in broth until cooked through, ~15 min; shred with two forks.", "Toss with BBQ sauce and warm through."]},
+        {"part": "Assemble", "do": ["Toast the buns; pile with chicken and top with coleslaw."]}
+      ],
+      "lunchTitle": "BBQ Chicken Sandwich",
+      "lunch": "Reheat the chicken gently and rebuild the sandwich fresh.",
+      "groceries": [
+        {"name": "Chicken breasts or thighs — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "BBQ sauce — 1 bottle", "cat": "Sauces & Condiments"},
+        {"name": "Hamburger buns — 8", "cat": "Bread & Bakery"},
+        {"name": "Green cabbage — 1 small head", "cat": "Produce"},
+        {"name": "Carrots — 2", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Beef Stroganoff",
+      "slug": "beef-stroganoff",
+      "protein": "beef",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "egg noodles",
+      "time": "~30 min",
+      "polo": false,
+      "included": "Tender beef and mushrooms in a creamy sour cream gravy, over buttered egg noodles.",
+      "steps": [
+        {"part": "Noodles", "do": ["Boil egg noodles in salted water until al dente; drain and toss with butter."]},
+        {"part": "Beef", "do": ["Slice sirloin or stew beef thin; sear in batches 2–3 min until browned; set aside.", "Sauté sliced mushrooms and onion in the same pan; sprinkle with flour, then whisk in beef broth and simmer until thickened.", "Stir in sour cream and return the beef; warm through without boiling."]}
+      ],
+      "lunchTitle": "Beef Stroganoff",
+      "lunch": "Reheats gently on the stove; avoid boiling to keep the sauce smooth.",
+      "groceries": [
+        {"name": "Sirloin or stew beef — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Mushrooms — 8 oz", "cat": "Produce"},
+        {"name": "Sour cream — 1 container", "cat": "Dairy & Eggs"},
+        {"name": "Beef broth — 2 cups", "cat": "Pantry"},
+        {"name": "Egg noodles — 12 oz", "cat": "Pantry"}
+      ]
+    },
+    {
+      "title": "Sweet and Sour Chicken",
+      "slug": "sweet-and-sour-chicken",
+      "protein": "chicken",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "rice & bell peppers",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Crispy chicken pieces tossed in a tangy sweet and sour sauce with pineapple and bell peppers, over rice.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Chicken", "do": ["Toss bite-size chicken pieces in cornstarch; pan-fry until golden and cooked through.", "Whisk pineapple juice, vinegar, ketchup and a little sugar; simmer with bell peppers and pineapple chunks until slightly thickened.", "Toss with the chicken."]}
+      ],
+      "lunchTitle": "Sweet and Sour Chicken Bowl",
+      "lunch": "Reheat the chicken over fresh rice.",
+      "groceries": [
+        {"name": "Chicken breasts — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Bell peppers — 2", "cat": "Produce"},
+        {"name": "Pineapple chunks — 1 can", "cat": "Pantry"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Ketchup & vinegar", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Pork Carnitas Tacos",
+      "slug": "pork-carnitas-tacos",
+      "protein": "pork",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "lime & onion",
+      "time": "~30 min (using pre-cooked pork)",
+      "polo": false,
+      "included": "Crispy-edged shredded pork carnitas in warm tortillas with diced onion and a squeeze of lime.",
+      "steps": [
+        {"part": "Pork", "do": ["Shred slow-cooked pork shoulder (seasoned with cumin, oregano and orange juice while cooking).", "Crisp in a hot skillet with a little of its own fat until the edges caramelize."]},
+        {"part": "Assemble", "do": ["Warm corn tortillas; fill with pork, diced onion and cilantro; finish with a squeeze of lime."]}
+      ],
+      "lunchTitle": "Carnitas Bowl",
+      "lunch": "Serve the leftover pork over rice instead of in tortillas.",
+      "groceries": [
+        {"name": "Pork shoulder (cooked/shredded) — 3 lbs", "cat": "Meat & Seafood"},
+        {"name": "Corn tortillas — 12", "cat": "Bread & Bakery"},
+        {"name": "White onion — 1", "cat": "Produce"},
+        {"name": "Limes — 3", "cat": "Produce"},
+        {"name": "Cilantro — 1 bunch", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Turkey Meatloaf",
+      "slug": "turkey-meatloaf",
+      "protein": "turkey",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "mashed potatoes & green beans",
+      "time": "~1 hr (mostly baking)",
+      "polo": false,
+      "included": "A lighter ground turkey meatloaf glazed with ketchup, with mashed potatoes and green beans.",
+      "steps": [
+        {"part": "Meatloaf", "do": ["Mix ground turkey, breadcrumbs, egg, diced onion, ketchup and Worcestershire; shape into a loaf in a baking dish.", "Brush with a ketchup glaze and bake at 375°F 45–50 min to 165°F."]},
+        {"part": "Mashed potatoes", "do": ["Boil peeled, chunked potatoes until fork-tender; mash with butter, milk and salt."]},
+        {"part": "Green beans", "do": ["Steam or sauté green beans 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Turkey Meatloaf Plate",
+      "lunch": "Reheats well; slices also make a good sandwich.",
+      "groceries": [
+        {"name": "Ground turkey — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Breadcrumbs — 1 cup", "cat": "Pantry"},
+        {"name": "Eggs — 1", "cat": "Dairy & Eggs"},
+        {"name": "Ketchup", "cat": "Sauces & Condiments"},
+        {"name": "Russet potatoes — 2.5 lbs", "cat": "Produce"},
+        {"name": "Green beans — 1.5 lbs", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Steak Fajita Bowls",
+      "slug": "steak-fajita-bowls",
+      "protein": "beef",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "rice, peppers & onions",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Seared steak strips with peppers and onions over rice — fajita flavors without the tortilla.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Steak & veg", "do": ["Slice flank or sirloin thin; toss with fajita seasoning.", "Sear the steak in a hot skillet 2–3 min until browned; set aside.", "Sauté sliced bell peppers and onion in the same pan until charred at the edges; return the steak to warm through."]}
+      ],
+      "lunchTitle": "Steak Fajita Bowl",
+      "lunch": "Reheat the steak and vegetables over fresh rice.",
+      "groceries": [
+        {"name": "Flank or sirloin steak — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Bell peppers — 3", "cat": "Produce"},
+        {"name": "Sweet onion — 1", "cat": "Produce"},
+        {"name": "Fajita seasoning", "cat": "Spices"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"}
+      ]
+    },
+    {
+      "title": "Beef Bibimbap Bowls",
+      "slug": "beef-bibimbap-bowls",
+      "protein": "beef",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "rice, sautéed vegetables & fried egg",
+      "time": "~30 min",
+      "polo": false,
+      "swapNote": "Serve the gochujang sauce on the side rather than mixed in for the teen, so they can control the heat.",
+      "included": "Korean-style rice bowls with seasoned ground beef, sautéed vegetables and a fried egg on top.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Beef", "do": ["Brown ground beef with garlic, soy sauce and a little sesame oil."]},
+        {"part": "Vegetables", "do": ["Sauté julienned carrots, zucchini and spinach separately, each with a pinch of salt and sesame oil, until just tender."]},
+        {"part": "Assemble", "do": ["Fry an egg per person, sunny-side up.", "Layer rice, beef and vegetables in bowls, top with a fried egg, and serve gochujang sauce on the side."]}
+      ],
+      "lunchTitle": "Bibimbap Bowl",
+      "lunch": "Reheat the beef and vegetables over fresh rice; fry a new egg.",
+      "groceries": [
+        {"name": "Ground beef — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Eggs — 3", "cat": "Dairy & Eggs"},
+        {"name": "Carrots — 2", "cat": "Produce"},
+        {"name": "Zucchini — 1", "cat": "Produce"},
+        {"name": "Baby spinach — 1 bag", "cat": "Produce"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Gochujang sauce", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Chicken Parmesan Meatballs",
+      "slug": "chicken-parmesan-meatballs",
+      "protein": "chicken",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "spaghetti & side salad",
+      "time": "~30 min",
+      "polo": false,
+      "included": "Ground chicken meatballs baked in marinara with melted mozzarella, over spaghetti — a lighter twist on chicken parm.",
+      "steps": [
+        {"part": "Meatballs", "do": ["Mix ground chicken, breadcrumbs, egg, garlic and parmesan; roll into balls and bake at 400°F 15–18 min until cooked through."]},
+        {"part": "Sauce", "do": ["Simmer the meatballs in marinara sauce 10 min; top with mozzarella and broil 2–3 min until melted."]},
+        {"part": "Spaghetti", "do": ["Boil spaghetti in salted water until al dente; drain."]},
+        {"part": "Salad", "do": ["Toss a simple side salad with dressing."]}
+      ],
+      "lunchTitle": "Chicken Parm Meatballs",
+      "lunch": "Reheats well covered in the oven or microwave.",
+      "groceries": [
+        {"name": "Ground chicken — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Breadcrumbs — 1 cup", "cat": "Pantry"},
+        {"name": "Eggs — 1", "cat": "Dairy & Eggs"},
+        {"name": "Marinara sauce — 2 jars", "cat": "Pantry"},
+        {"name": "Mozzarella cheese, shredded — 8 oz", "cat": "Dairy & Eggs"},
+        {"name": "Spaghetti — 1 lb", "cat": "Pantry"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Chicken Marsala",
+      "slug": "chicken-marsala",
+      "protein": "chicken",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "mashed potatoes & green beans",
+      "time": "~30 min",
+      "polo": false,
+      "included": "Pan-seared chicken cutlets in a savory mushroom-marsala wine sauce, with mashed potatoes and green beans.",
+      "steps": [
+        {"part": "Chicken", "do": ["Lightly flour chicken cutlets; sear 3–4 min per side until golden; set aside."]},
+        {"part": "Sauce", "do": ["Sauté sliced mushrooms in the same pan; add marsala wine and chicken broth, simmer to reduce slightly, then swirl in a little butter.", "Return the chicken to the sauce and simmer 3–4 min."]},
+        {"part": "Mashed potatoes", "do": ["Boil peeled, chunked potatoes until fork-tender; mash with butter, milk and salt."]},
+        {"part": "Green beans", "do": ["Steam or sauté green beans 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Chicken Marsala Plate",
+      "lunch": "Reheats gently on the stove.",
+      "groceries": [
+        {"name": "Chicken breasts, sliced into cutlets — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Mushrooms — 8 oz", "cat": "Produce"},
+        {"name": "Marsala wine — 1 small bottle", "cat": "Pantry"},
+        {"name": "Chicken broth — 1 cup", "cat": "Pantry"},
+        {"name": "Russet potatoes — 2.5 lbs", "cat": "Produce"},
+        {"name": "Green beans — 1.5 lbs", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Egg Roll Bowl",
+      "slug": "egg-roll-bowl",
+      "protein": "pork",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "",
+      "time": "~20 min",
+      "polo": true,
+      "included": "All the flavors of an egg roll without the wrapper — ground pork stir-fried with cabbage and carrots in a soy-sesame sauce.",
+      "steps": [
+        {"part": "Stir-fry", "do": ["Brown ground pork with garlic and ginger.", "Add shredded cabbage and carrots (coleslaw mix works well); stir-fry 5–6 min until just tender.", "Toss with soy sauce and sesame oil; top with sliced scallions."]}
+      ],
+      "lunchTitle": "Egg Roll Bowl",
+      "lunch": "Reheats well as-is.",
+      "groceries": [
+        {"name": "Ground pork — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Coleslaw mix (cabbage & carrots) — 1 bag", "cat": "Produce"},
+        {"name": "Scallions — 1 bunch", "cat": "Produce"},
+        {"name": "Soy sauce & sesame oil", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Salmon Cakes",
+      "slug": "salmon-cakes",
+      "protein": "seafood",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "side salad",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Pan-fried salmon cakes with a crisp golden crust, served with a side salad and tartar sauce.",
+      "steps": [
+        {"part": "Cakes", "do": ["Flake cooked or canned salmon; mix with breadcrumbs, egg, mayo, mustard and diced scallion.", "Form into patties and pan-fry 3–4 min per side until golden and heated through."]},
+        {"part": "Salad", "do": ["Toss a simple side salad with dressing."]}
+      ],
+      "lunchTitle": "Salmon Cake Plate",
+      "lunch": "Reheat gently in a skillet to keep the crust crisp.",
+      "groceries": [
+        {"name": "Cooked or canned salmon — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Breadcrumbs — 1 cup", "cat": "Pantry"},
+        {"name": "Eggs — 2", "cat": "Dairy & Eggs"},
+        {"name": "Mayo & mustard", "cat": "Sauces & Condiments"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Vegetable Fried Rice",
+      "slug": "vegetable-fried-rice",
+      "protein": "veg",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "",
+      "time": "~18 min",
+      "polo": true,
+      "included": "A meatless fried rice loaded with egg, peas, carrots and scallions — quick, reuses the rice cooker.",
+      "steps": [
+        {"part": "Rice", "do": ["Cook 2 cups jasmine rice in the rice cooker earlier in the day (or the night before) so it's cold and dry for frying."]},
+        {"part": "Fried rice", "do": ["Scramble 2 eggs in a hot wok; set aside.", "Stir-fry diced carrots 2–3 min, then add peas and the cold rice with soy sauce and sesame oil.", "Fold in the egg and scallions at the end."]}
+      ],
+      "lunchTitle": "Vegetable Fried Rice",
+      "lunch": "Reheats perfectly as-is.",
+      "groceries": [
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Eggs — 2", "cat": "Dairy & Eggs"},
+        {"name": "Frozen peas & carrots — 1.5 cups", "cat": "Freezer"},
+        {"name": "Scallions — 1 bunch", "cat": "Produce"},
+        {"name": "Soy sauce & sesame oil", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Black Bean & Sweet Potato Tacos",
+      "slug": "black-bean-sweet-potato-tacos",
+      "protein": "veg",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "lime & cilantro",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Roasted sweet potato and black bean tacos with a squeeze of lime — a meatless night that's still hearty.",
+      "steps": [
+        {"part": "Sweet potatoes", "do": ["Dice sweet potatoes, toss with oil, cumin and chili powder, and roast at 425°F ~20 min until tender."]},
+        {"part": "Black beans", "do": ["Warm black beans with a pinch of cumin on the stove."]},
+        {"part": "Assemble", "do": ["Warm corn tortillas; fill with sweet potato, black beans, cheese and cilantro; finish with lime."]}
+      ],
+      "lunchTitle": "Sweet Potato Taco Bowl",
+      "lunch": "Serve the leftovers over rice instead of in tortillas.",
+      "groceries": [
+        {"name": "Sweet potatoes — 3", "cat": "Produce"},
+        {"name": "Black beans — 2 cans", "cat": "Pantry"},
+        {"name": "Corn tortillas — 12", "cat": "Bread & Bakery"},
+        {"name": "Cheddar or jack cheese, shredded — 8 oz", "cat": "Dairy & Eggs"},
+        {"name": "Limes — 2", "cat": "Produce"},
+        {"name": "Cilantro — 1 bunch", "cat": "Produce"}
+      ]
     }
   ]
 }
