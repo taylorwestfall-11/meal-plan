@@ -1,0 +1,1306 @@
+{
+  "_note": "Full recipe library — the goal is 200 ready-to-use dinners (steps + grocery list already written) so the weekly job can pull-and-rotate instead of inventing a plan from scratch each week. Built in chunks of 50: ~25% brand-new dishes, ~75% variations/full write-ups of dishes the family already knows or has liked (drawn from core_menu.json, likes.json, and history.json). Each recipe's `slug` must exactly match its photo filename in images/ (lowercase title, non-alphanumeric runs -> single hyphen) — keep `title` and `slug` in sync if either is edited. `category` is 'new' or 'variation'; `coreEntree` links a variation back to its core_menu.json title where applicable (null for dishes not on the original 47). `polo` = true means ≤20 min, eat-then-go, suitable for a polo/quick weeknight. `swapNote` appears only on dishes at kielbasa-level spice or higher, per household rule. Groceries omit day-specific `det` since these aren't week-scheduled — quantities assume ~1.5-1.7x scaling for a next-day lunch per household default. Don't delete this file.",
+  "target_count": 200,
+  "chunk_size": 50,
+  "chunks_completed": 1,
+  "recipes": [
+    {
+      "title": "Bratwurst Sausage",
+      "slug": "bratwurst-sausage",
+      "protein": "pork",
+      "category": "variation",
+      "coreEntree": "Bratwurst Sausage",
+      "sides": "peppers, onions & roasted mini potatoes",
+      "time": "~30 min",
+      "polo": false,
+      "included": "Grilled bratwurst with sauteed peppers and onions and roasted mini potatoes.",
+      "steps": [
+        {"part": "Mini potatoes", "do": ["Halve the mini potatoes, toss with oil and salt, roast at 425°F ~25 min, flipping once."]},
+        {"part": "Peppers & onions", "do": ["Slice the bell peppers and onions; sauté in oil 8–10 min until soft and browned at the edges."]},
+        {"part": "Bratwurst", "do": ["Grill or pan-sear the brats 12–15 min, turning, until browned and 160°F inside.", "Nestle the brats into the peppers and onions to finish."]}
+      ],
+      "lunchTitle": "Brat & Peppers Bowl",
+      "lunch": "Slice a brat over the peppers, onions and potatoes; reheat together.",
+      "groceries": [
+        {"name": "Bratwurst sausages — 8 links", "cat": "Meat & Seafood"},
+        {"name": "Mini potatoes (red or brown) — 2 lbs", "cat": "Produce"},
+        {"name": "Bell peppers (any color) — 3", "cat": "Produce"},
+        {"name": "Sweet onions — 2", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Sheet-Pan Kielbasa & Peppers",
+      "slug": "sheet-pan-kielbasa-peppers",
+      "protein": "pork",
+      "category": "variation",
+      "coreEntree": "Kalabasa",
+      "sides": "peppers, onions & roasted mini potatoes",
+      "time": "~30 min",
+      "polo": false,
+      "swapNote": "Kielbasa carries a little kick — for the teen, swap in bratwurst (a couple links) for a milder sausage.",
+      "included": "Smoked kielbasa roasted on a sheet pan with bell peppers, sweet onions and mini potatoes. A family favorite — keep this in heavy rotation.",
+      "steps": [
+        {"part": "Mini potatoes", "do": ["Halve the mini potatoes, toss with oil and salt, spread on a sheet pan and roast at 425°F ~15 min to get a head start."]},
+        {"part": "Kielbasa & peppers", "do": ["Slice the kielbasa into coins and the bell peppers and onions into strips; toss with oil and salt.", "Add to the sheet pan with the potatoes and roast another 15–18 min until the peppers soften and the kielbasa browns."]},
+        {"part": "Assemble", "do": ["Toss everything together on the pan and serve hot."]}
+      ],
+      "lunchTitle": "Kielbasa & Peppers Bowl",
+      "lunch": "Reheat the kielbasa, peppers and potatoes together in a bowl.",
+      "groceries": [
+        {"name": "Smoked kielbasa — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Bratwurst — 2 links", "cat": "Meat & Seafood"},
+        {"name": "Mini potatoes (red or brown) — 2 lbs", "cat": "Produce"},
+        {"name": "Bell peppers (any color) — 3", "cat": "Produce"},
+        {"name": "Sweet onions — 2", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Garlic Shrimp Tacos",
+      "slug": "garlic-shrimp-tacos",
+      "protein": "seafood",
+      "category": "variation",
+      "coreEntree": "Fish Tacos",
+      "sides": "cabbage slaw & lime crema",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Garlic butter shrimp in warm tortillas with crunchy cabbage slaw and a lime crema drizzle. Another proven family favorite.",
+      "steps": [
+        {"part": "Slaw", "do": ["Toss shredded cabbage with lime juice, a pinch of salt and a spoon of mayo; chill while the shrimp cooks."]},
+        {"part": "Shrimp", "do": ["Season shrimp with garlic, chili powder and salt.", "Sauté in butter 3–4 min until pink and just cooked through."]},
+        {"part": "Assemble", "do": ["Warm the tortillas, fill with shrimp and slaw, and finish with a drizzle of lime crema (sour cream + lime juice)."]}
+      ],
+      "lunchTitle": "Shrimp Taco Bowl",
+      "lunch": "Skip the tortilla and serve the shrimp and slaw over rice for lunch.",
+      "groceries": [
+        {"name": "Shrimp, peeled & deveined — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Corn or flour tortillas — 12", "cat": "Bread & Bakery"},
+        {"name": "Green cabbage — 1 small head", "cat": "Produce"},
+        {"name": "Limes — 3", "cat": "Produce"},
+        {"name": "Sour cream — 1 container", "cat": "Dairy & Eggs"}
+      ]
+    },
+    {
+      "title": "Shrimp Fried Rice",
+      "slug": "shrimp-fried-rice",
+      "protein": "seafood",
+      "category": "variation",
+      "coreEntree": null,
+      "sides": "",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Classic shrimp fried rice with egg, peas, carrots and scallions. A liked favorite — give this extra rotation.",
+      "steps": [
+        {"part": "Rice", "do": ["Cook 2 cups jasmine rice in the rice cooker earlier in the day (or the night before) so it's cold and dry for frying."]},
+        {"part": "Fried rice", "do": ["Scramble 2 eggs in a hot wok or large skillet; set aside.", "Sauté shrimp with diced carrots until shrimp is pink; add peas and scallions.", "Add the cold rice, soy sauce and sesame oil; stir-fry 4–5 min, folding in the egg at the end."]}
+      ],
+      "lunchTitle": "Shrimp Fried Rice",
+      "lunch": "Reheats perfectly as-is for next-day lunch.",
+      "groceries": [
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Shrimp, peeled & deveined — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Eggs — 2", "cat": "Dairy & Eggs"},
+        {"name": "Frozen peas & carrots — 1.5 cups", "cat": "Freezer"},
+        {"name": "Scallions — 1 bunch", "cat": "Produce"},
+        {"name": "Soy sauce", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Beef & Broccoli Stir-Fry",
+      "slug": "beef-broccoli-stir-fry",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Beef Stir Fry",
+      "sides": "steamed rice",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Thin-sliced beef and broccoli in a glossy garlic-soy sauce over rice. A go-to quick weeknight stir-fry.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Beef & broccoli", "do": ["Slice flank or sirloin thin against the grain; toss with cornstarch and a splash of soy sauce.", "Sear the beef in a hot wok 2–3 min until browned; set aside.", "Stir-fry broccoli florets with garlic and ginger 3–4 min, then return the beef with soy sauce, oyster sauce and a splash of water; toss until glossy."]}
+      ],
+      "lunchTitle": "Beef & Broccoli Bowl",
+      "lunch": "Reheat the beef and broccoli over fresh rice.",
+      "groceries": [
+        {"name": "Flank or sirloin steak — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Broccoli — 2 heads", "cat": "Produce"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Soy sauce", "cat": "Sauces & Condiments"},
+        {"name": "Oyster sauce", "cat": "Sauces & Condiments"},
+        {"name": "Garlic & fresh ginger", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Honey-Soy Chicken Stir-Fry",
+      "slug": "honey-soy-chicken-stir-fry",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "Grilled Chicken",
+      "sides": "steamed rice & bell peppers",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Diced chicken thighs stir-fried with bell peppers in a sweet-savory honey-soy glaze.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Chicken", "do": ["Cut chicken thighs into bite-size pieces; sear in a hot skillet 5–6 min until browned and cooked through.", "Add sliced bell peppers and stir-fry 2–3 min.", "Whisk honey, soy sauce, garlic and a splash of rice vinegar; pour over and toss until glazed and glossy."]}
+      ],
+      "lunchTitle": "Honey-Soy Chicken Bowl",
+      "lunch": "Reheat the chicken and peppers over fresh rice.",
+      "groceries": [
+        {"name": "Chicken thighs — 2.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Bell peppers (any color) — 3", "cat": "Produce"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Honey", "cat": "Pantry"},
+        {"name": "Soy sauce", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "BBQ Chicken",
+      "slug": "bbq-chicken",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "BBQ Chicken",
+      "sides": "corn on the cob & coleslaw",
+      "time": "~35 min",
+      "polo": false,
+      "included": "Grilled BBQ chicken thighs with corn on the cob and a crunchy coleslaw side.",
+      "steps": [
+        {"part": "Coleslaw", "do": ["Toss shredded cabbage and carrot with mayo, vinegar, a little sugar and salt; chill."]},
+        {"part": "Corn", "do": ["Boil or grill the corn 8–10 min until tender; brush with butter."]},
+        {"part": "Chicken", "do": ["Season chicken thighs with salt and pepper; grill or bake at 400°F ~25 min, basting with BBQ sauce the last 10 min until 165°F."]}
+      ],
+      "lunchTitle": "BBQ Chicken Sandwich",
+      "lunch": "Shred the leftover chicken, toss with extra BBQ sauce, and pile onto a bun with coleslaw.",
+      "groceries": [
+        {"name": "Chicken thighs — 2.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "BBQ sauce — 1 bottle", "cat": "Sauces & Condiments"},
+        {"name": "Corn on the cob — 6 ears", "cat": "Produce"},
+        {"name": "Green cabbage — 1 small head", "cat": "Produce"},
+        {"name": "Carrots — 2", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "BBQ Chicken Salad",
+      "slug": "bbq-chicken-salad",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "BBQ Chicken Salad",
+      "sides": "",
+      "time": "~20 min",
+      "polo": true,
+      "included": "A hearty main-dish salad — mixed greens topped with BBQ chicken, corn, black beans and cheddar.",
+      "steps": [
+        {"part": "Chicken", "do": ["Sear or grill diced chicken breast 6–7 min until cooked through; toss with a couple spoons of BBQ sauce."]},
+        {"part": "Salad", "do": ["Layer mixed greens with corn, black beans, diced tomato and shredded cheddar.", "Top with the BBQ chicken and a drizzle of ranch."]}
+      ],
+      "lunchTitle": "BBQ Chicken Salad",
+      "lunch": "Keep dressing separate and reassemble fresh for lunch.",
+      "groceries": [
+        {"name": "Chicken breasts — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "BBQ sauce — 1 bottle", "cat": "Sauces & Condiments"},
+        {"name": "Mixed salad greens — 2 bags", "cat": "Produce"},
+        {"name": "Corn — 1.5 cups", "cat": "Freezer"},
+        {"name": "Black beans — 1 can", "cat": "Pantry"},
+        {"name": "Cheddar cheese, shredded — 8 oz", "cat": "Dairy & Eggs"}
+      ]
+    },
+    {
+      "title": "Bulgogi",
+      "slug": "bulgogi",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Bulgogi",
+      "sides": "steamed rice & sautéed vegetables",
+      "time": "~25 min (plus marinate)",
+      "polo": false,
+      "included": "Korean-style marinated beef, thin-sliced and seared, with rice and quick-sautéed vegetables.",
+      "steps": [
+        {"part": "Marinade", "do": ["Whisk soy sauce, brown sugar, sesame oil, garlic and grated pear or apple; marinate thin-sliced ribeye or sirloin at least 30 min."]},
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Bulgogi", "do": ["Sear the marinated beef in a hot skillet in batches, 2–3 min per side.", "Sauté sliced zucchini and carrots in the same pan until just tender-crisp."]}
+      ],
+      "lunchTitle": "Bulgogi Bowl",
+      "lunch": "Reheat the beef and vegetables over fresh rice.",
+      "groceries": [
+        {"name": "Ribeye or sirloin, thin-sliced — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Zucchini — 2", "cat": "Produce"},
+        {"name": "Carrots — 2", "cat": "Produce"},
+        {"name": "Soy sauce, brown sugar, sesame oil", "cat": "Pantry"}
+      ]
+    },
+    {
+      "title": "Burritos",
+      "slug": "burritos",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Burritos",
+      "sides": "rice & beans",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Seasoned ground beef burritos with rice, beans and cheese, wrapped in a warm flour tortilla.",
+      "steps": [
+        {"part": "Rice & beans", "do": ["Rinse 1.5 cups rice, add to the rice cooker with water to the line, and start it first.", "Warm a can of refried or black beans in a small pot."]},
+        {"part": "Beef", "do": ["Brown ground beef with taco seasoning 6–8 min."]},
+        {"part": "Assemble", "do": ["Warm the tortillas; fill with beef, rice, beans and shredded cheese, and roll tightly."]}
+      ],
+      "lunchTitle": "Burrito Bowl",
+      "lunch": "Skip the tortilla and layer the leftover fillings over rice for a bowl.",
+      "groceries": [
+        {"name": "Ground beef — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Taco seasoning — 1 packet", "cat": "Spices"},
+        {"name": "Large flour tortillas — 8", "cat": "Bread & Bakery"},
+        {"name": "White rice — 1.5 cups dry", "cat": "Pantry"},
+        {"name": "Refried or black beans — 1 can", "cat": "Pantry"},
+        {"name": "Cheddar cheese, shredded — 8 oz", "cat": "Dairy & Eggs"}
+      ]
+    },
+    {
+      "title": "Chicken Alfredo",
+      "slug": "chicken-alfredo",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "Chicken Alfredo",
+      "sides": "fettuccine & garlic bread",
+      "time": "~30 min",
+      "polo": false,
+      "included": "Creamy parmesan alfredo sauce tossed with fettuccine and seared chicken, with garlic bread on the side.",
+      "steps": [
+        {"part": "Pasta", "do": ["Boil the fettuccine in salted water until al dente; reserve a cup of pasta water and drain."]},
+        {"part": "Chicken", "do": ["Season and sear sliced chicken breast 5–6 min until cooked through; set aside."]},
+        {"part": "Sauce", "do": ["Melt butter, add garlic, then heavy cream and parmesan; simmer until thickened, thinning with pasta water as needed.", "Toss in the pasta and chicken."]},
+        {"part": "Garlic bread", "do": ["Broil buttered, garlic-rubbed bread 2–3 min until golden."]}
+      ],
+      "lunchTitle": "Chicken Alfredo",
+      "lunch": "Reheats gently on the stove with a splash of milk to loosen the sauce.",
+      "groceries": [
+        {"name": "Chicken breasts — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Fettuccine — 1 lb", "cat": "Pantry"},
+        {"name": "Heavy cream — 2 cups", "cat": "Dairy & Eggs"},
+        {"name": "Parmesan cheese — 8 oz", "cat": "Dairy & Eggs"},
+        {"name": "French bread — 1 loaf", "cat": "Bread & Bakery"}
+      ]
+    },
+    {
+      "title": "Chicken Taco Soup",
+      "slug": "chicken-taco-soup",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "Chicken Taco Soup",
+      "sides": "tortilla strips & lime",
+      "time": "~30 min",
+      "polo": false,
+      "swapNote": "Keep the taco seasoning mild — set aside a milder, less-spiced portion for the teen before adding extra chili powder.",
+      "included": "Hearty chicken taco soup with beans, corn and tomatoes, topped with crispy tortilla strips.",
+      "steps": [
+        {"part": "Soup", "do": ["Sauté diced onion and garlic; add shredded or diced chicken, black beans, corn, diced tomatoes, taco seasoning and chicken broth.", "Simmer 20 min."]},
+        {"part": "Tortilla strips", "do": ["Slice corn tortillas into strips and bake or fry until crisp."]},
+        {"part": "Serve", "do": ["Ladle into bowls, top with tortilla strips, shredded cheese and a lime wedge."]}
+      ],
+      "lunchTitle": "Chicken Taco Soup",
+      "lunch": "Reheats well on the stove; add fresh tortilla strips before serving.",
+      "groceries": [
+        {"name": "Chicken breasts or thighs — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Black beans — 1 can", "cat": "Pantry"},
+        {"name": "Corn — 1 can", "cat": "Pantry"},
+        {"name": "Diced tomatoes — 1 can", "cat": "Pantry"},
+        {"name": "Chicken broth — 4 cups", "cat": "Pantry"},
+        {"name": "Corn tortillas — 6", "cat": "Bread & Bakery"},
+        {"name": "Taco seasoning", "cat": "Spices"}
+      ]
+    },
+    {
+      "title": "Chili",
+      "slug": "chili",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Chili",
+      "sides": "cornbread & shredded cheese",
+      "time": "~35 min",
+      "polo": false,
+      "swapNote": "Keep the chili powder moderate and offer extra hot sauce at the table rather than making the whole pot spicy.",
+      "included": "Classic ground beef chili with beans, simmered until thick, served with warm cornbread.",
+      "steps": [
+        {"part": "Chili", "do": ["Brown ground beef with diced onion; drain excess fat.", "Add kidney beans, diced tomatoes, tomato paste, chili powder, cumin and beef broth.", "Simmer 25–30 min, stirring occasionally."]},
+        {"part": "Cornbread", "do": ["Bake cornbread from a mix or scratch batter per package directions."]}
+      ],
+      "lunchTitle": "Chili",
+      "lunch": "Reheats beautifully — even better the next day.",
+      "groceries": [
+        {"name": "Ground beef — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Kidney beans — 2 cans", "cat": "Pantry"},
+        {"name": "Diced tomatoes — 1 can", "cat": "Pantry"},
+        {"name": "Tomato paste — 1 small can", "cat": "Pantry"},
+        {"name": "Chili powder & cumin", "cat": "Spices"},
+        {"name": "Cornbread mix — 1 box", "cat": "Pantry"},
+        {"name": "Cheddar cheese, shredded — 8 oz", "cat": "Dairy & Eggs"}
+      ]
+    },
+    {
+      "title": "Enchiladas",
+      "slug": "enchiladas",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Enchiladas",
+      "sides": "rice & beans",
+      "time": "~40 min",
+      "polo": false,
+      "swapNote": "Use a mild red enchilada sauce, or set aside the teen's portion before adding extra hot sauce.",
+      "included": "Ground beef and cheese enchiladas rolled in corn tortillas, baked in red sauce.",
+      "steps": [
+        {"part": "Filling", "do": ["Brown ground beef with onion and taco seasoning."]},
+        {"part": "Assemble", "do": ["Warm the corn tortillas so they roll without cracking.", "Fill each with beef and shredded cheese, roll, and place seam-down in a baking dish.", "Pour enchilada sauce over the top and sprinkle with more cheese."]},
+        {"part": "Bake", "do": ["Bake at 375°F ~20 min until bubbly."]},
+        {"part": "Rice & beans", "do": ["Rinse 1.5 cups rice, cook in the rice cooker; warm a can of beans on the stove."]}
+      ],
+      "lunchTitle": "Enchiladas",
+      "lunch": "Reheats well covered in the oven or microwave.",
+      "groceries": [
+        {"name": "Ground beef — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Corn tortillas — 12", "cat": "Bread & Bakery"},
+        {"name": "Red enchilada sauce — 2 cans", "cat": "Pantry"},
+        {"name": "Cheddar cheese, shredded — 12 oz", "cat": "Dairy & Eggs"},
+        {"name": "White rice — 1.5 cups dry", "cat": "Pantry"},
+        {"name": "Refried or black beans — 1 can", "cat": "Pantry"}
+      ]
+    },
+    {
+      "title": "Fish Tacos",
+      "slug": "fish-tacos",
+      "protein": "seafood",
+      "category": "variation",
+      "coreEntree": "Fish Tacos",
+      "sides": "cabbage slaw",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Pan-seared white fish (cod or tilapia) in warm tortillas with crunchy cabbage slaw and a lime crema.",
+      "steps": [
+        {"part": "Slaw", "do": ["Toss shredded cabbage with lime juice, salt and a spoon of mayo."]},
+        {"part": "Fish", "do": ["Season cod or tilapia with chili powder, cumin and salt; pan-sear 3–4 min per side until flaky.", "Break into large pieces."]},
+        {"part": "Assemble", "do": ["Warm tortillas, fill with fish and slaw, drizzle with lime crema."]}
+      ],
+      "lunchTitle": "Fish Taco Bowl",
+      "lunch": "Serve the leftover fish and slaw over rice instead of in a tortilla.",
+      "groceries": [
+        {"name": "Cod or tilapia fillets — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Corn tortillas — 10", "cat": "Bread & Bakery"},
+        {"name": "Green cabbage — 1 small head", "cat": "Produce"},
+        {"name": "Limes — 3", "cat": "Produce"},
+        {"name": "Sour cream — 1 container", "cat": "Dairy & Eggs"}
+      ]
+    },
+    {
+      "title": "Flautas",
+      "slug": "flautas",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "Flautas",
+      "sides": "rice, beans & guacamole",
+      "time": "~30 min",
+      "polo": false,
+      "included": "Shredded chicken rolled tight in corn tortillas and fried crisp, served with rice, beans and guacamole.",
+      "steps": [
+        {"part": "Filling", "do": ["Shred cooked or rotisserie chicken; mix with a little taco seasoning and shredded cheese."]},
+        {"part": "Flautas", "do": ["Warm tortillas so they roll without cracking; fill and roll tight, securing with a toothpick if needed.", "Pan-fry in a shallow layer of oil, turning, until golden and crisp on all sides."]},
+        {"part": "Sides", "do": ["Rinse 1.5 cups rice and cook in the rice cooker; warm a can of beans; mash avocado with lime and salt for guacamole."]}
+      ],
+      "lunchTitle": "Flautas",
+      "lunch": "Reheat in the oven or air fryer to keep them crisp, not the microwave.",
+      "groceries": [
+        {"name": "Cooked or rotisserie chicken — 3 cups shredded", "cat": "Meat & Seafood"},
+        {"name": "Corn tortillas — 12", "cat": "Bread & Bakery"},
+        {"name": "Cheddar or jack cheese, shredded — 8 oz", "cat": "Dairy & Eggs"},
+        {"name": "White rice — 1.5 cups dry", "cat": "Pantry"},
+        {"name": "Refried beans — 1 can", "cat": "Pantry"},
+        {"name": "Avocados — 3", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Grilled Chicken",
+      "slug": "grilled-chicken",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "Grilled Chicken",
+      "sides": "roasted potatoes & green beans",
+      "time": "~30 min",
+      "polo": false,
+      "included": "Garlic-herb grilled chicken breasts with roasted potatoes and green beans.",
+      "steps": [
+        {"part": "Potatoes", "do": ["Halve mini potatoes, toss with oil and salt, roast at 425°F ~25 min."]},
+        {"part": "Chicken", "do": ["Rub chicken breasts with garlic, herbs, salt and pepper; grill or sear 5–6 min per side to 165°F and rest."]},
+        {"part": "Green beans", "do": ["Trim and steam or sauté green beans 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Chicken & Veg Plate",
+      "lunch": "Slice the chicken over the potatoes and green beans; reheat gently.",
+      "groceries": [
+        {"name": "Chicken breasts — 2.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Mini potatoes (red or brown) — 2 lbs", "cat": "Produce"},
+        {"name": "Green beans — 1.5 lbs", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Hot Dogs",
+      "slug": "hot-dogs",
+      "protein": "pork",
+      "category": "variation",
+      "coreEntree": "Hot Dogs",
+      "sides": "chips & baked beans",
+      "time": "~15 min",
+      "polo": true,
+      "included": "Classic grilled hot dogs on buns with chips and baked beans.",
+      "steps": [
+        {"part": "Beans", "do": ["Warm a can of baked beans on the stove."]},
+        {"part": "Hot dogs", "do": ["Grill or pan-sear hot dogs until browned and heated through, ~8 min.", "Toast the buns lightly."]}
+      ],
+      "lunchTitle": "Hot Dog Bar",
+      "lunch": "Reheat leftover dogs and beans; keep toppings on the side.",
+      "groceries": [
+        {"name": "Hot dogs — 10", "cat": "Meat & Seafood"},
+        {"name": "Hot dog buns — 10", "cat": "Bread & Bakery"},
+        {"name": "Baked beans — 1 can", "cat": "Pantry"},
+        {"name": "Potato chips — 1 bag", "cat": "Pantry"}
+      ]
+    },
+    {
+      "title": "Kalabasa",
+      "slug": "kalabasa",
+      "protein": "pork",
+      "category": "variation",
+      "coreEntree": "Kalabasa",
+      "sides": "steamed rice",
+      "time": "~35 min",
+      "polo": false,
+      "included": "Filipino-style pork and squash stew (ginisang kalabasa) simmered until tender, served over rice.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Stew", "do": ["Sauté diced pork with garlic and onion until browned.", "Add cubed calabaza (or butternut) squash, fish sauce, and water or broth; simmer 20 min until the squash is tender.", "Stir in a handful of green beans or spinach in the last 5 min."]}
+      ],
+      "lunchTitle": "Kalabasa Bowl",
+      "lunch": "Reheats well over fresh rice.",
+      "groceries": [
+        {"name": "Pork shoulder or belly, cubed — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Calabaza or butternut squash — 2 lbs", "cat": "Produce"},
+        {"name": "Green beans — 1 cup", "cat": "Produce"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Fish sauce", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Lamb Chops",
+      "slug": "lamb-chops",
+      "protein": "lamb",
+      "category": "variation",
+      "coreEntree": "Lamb Chops",
+      "sides": "roasted asparagus & red potatoes",
+      "time": "~30 min",
+      "polo": false,
+      "included": "Pan-seared lamb chops with roasted asparagus and red potatoes.",
+      "steps": [
+        {"part": "Potatoes", "do": ["Quarter red potatoes, toss with oil and salt, roast at 425°F ~25 min."]},
+        {"part": "Lamb", "do": ["Season lamb chops with garlic, rosemary, salt and pepper; sear 3–4 min per side to medium and rest 5 min."]},
+        {"part": "Asparagus", "do": ["Toss trimmed asparagus with oil and salt; roast the last 10–12 min alongside the potatoes."]}
+      ],
+      "lunchTitle": "Lamb & Veg Plate",
+      "lunch": "Slice the lamb over the potatoes and asparagus; reheat gently.",
+      "groceries": [
+        {"name": "Lamb chops — 8", "cat": "Meat & Seafood"},
+        {"name": "Red potatoes — 2 lbs", "cat": "Produce"},
+        {"name": "Asparagus — 2 bunches", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Lasagna",
+      "slug": "lasagna",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Lasagna",
+      "sides": "garlic bread & side salad",
+      "time": "~1 hr (mostly baking)",
+      "polo": false,
+      "included": "Layered beef and cheese lasagna with marinara, baked until bubbly, with garlic bread and salad.",
+      "steps": [
+        {"part": "Filling", "do": ["Brown ground beef with garlic; stir in marinara sauce.", "Mix ricotta with an egg and a handful of parmesan."]},
+        {"part": "Assemble", "do": ["Layer noodles, meat sauce, ricotta mixture and mozzarella in a baking dish; repeat, finishing with cheese on top."]},
+        {"part": "Bake", "do": ["Cover with foil and bake at 375°F 35 min; uncover and bake 10 more min until golden."]},
+        {"part": "Sides", "do": ["Broil buttered garlic bread; toss a simple side salad."]}
+      ],
+      "lunchTitle": "Lasagna",
+      "lunch": "Reheats beautifully — even better the next day.",
+      "groceries": [
+        {"name": "Ground beef — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Lasagna noodles — 1 box", "cat": "Pantry"},
+        {"name": "Marinara sauce — 2 jars", "cat": "Pantry"},
+        {"name": "Ricotta cheese — 15 oz", "cat": "Dairy & Eggs"},
+        {"name": "Mozzarella cheese, shredded — 16 oz", "cat": "Dairy & Eggs"},
+        {"name": "French bread — 1 loaf", "cat": "Bread & Bakery"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Loaded Baked Potato",
+      "slug": "loaded-baked-potato",
+      "protein": "pork",
+      "category": "variation",
+      "coreEntree": "Loaded Baked Potato",
+      "sides": "side salad",
+      "time": "~1 hr (mostly baking)",
+      "polo": false,
+      "included": "A loaded baked potato bar — bacon, cheese, sour cream and chives — with a side salad.",
+      "steps": [
+        {"part": "Potatoes", "do": ["Scrub russet potatoes, pierce with a fork, rub with oil and salt, and bake at 400°F ~50–60 min until tender."]},
+        {"part": "Toppings", "do": ["Cook bacon until crisp and crumble.", "Set out shredded cheddar, sour cream, chives and butter for everyone to build their own."]},
+        {"part": "Salad", "do": ["Toss a simple side salad with dressing."]}
+      ],
+      "lunchTitle": "Loaded Potato",
+      "lunch": "Reheat a potato in the microwave and re-top fresh.",
+      "groceries": [
+        {"name": "Russet potatoes — 6 large", "cat": "Produce"},
+        {"name": "Bacon — 1 lb", "cat": "Meat & Seafood"},
+        {"name": "Cheddar cheese, shredded — 8 oz", "cat": "Dairy & Eggs"},
+        {"name": "Sour cream — 1 container", "cat": "Dairy & Eggs"},
+        {"name": "Chives", "cat": "Produce"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Meatball Sandwiches",
+      "slug": "meatball-sandwiches",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Meatball Sandwiches",
+      "sides": "chips & side salad",
+      "time": "~30 min",
+      "polo": false,
+      "included": "Meatballs simmered in marinara, piled into toasted rolls with melted mozzarella.",
+      "steps": [
+        {"part": "Meatballs", "do": ["Mix ground beef, breadcrumbs, egg, garlic and parmesan; roll into balls and bake at 400°F 18–20 min, or brown in a skillet.", "Simmer the cooked meatballs in marinara sauce 10 min."]},
+        {"part": "Assemble", "do": ["Split and toast the rolls; fill with meatballs and sauce, top with mozzarella and broil 2–3 min until melted."]}
+      ],
+      "lunchTitle": "Meatball Sandwich",
+      "lunch": "Reheat meatballs and sauce, then rebuild the sandwich fresh.",
+      "groceries": [
+        {"name": "Ground beef — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Breadcrumbs — 1 cup", "cat": "Pantry"},
+        {"name": "Eggs — 1", "cat": "Dairy & Eggs"},
+        {"name": "Marinara sauce — 2 jars", "cat": "Pantry"},
+        {"name": "Hoagie rolls — 6", "cat": "Bread & Bakery"},
+        {"name": "Mozzarella cheese, shredded — 8 oz", "cat": "Dairy & Eggs"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Meatloaf",
+      "slug": "meatloaf",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Meatloaf",
+      "sides": "mashed potatoes & green beans",
+      "time": "~1 hr (mostly baking)",
+      "polo": false,
+      "included": "Classic ground beef meatloaf glazed with ketchup, with mashed potatoes and green beans.",
+      "steps": [
+        {"part": "Meatloaf", "do": ["Mix ground beef, breadcrumbs, egg, diced onion, ketchup and Worcestershire; shape into a loaf in a baking dish.", "Brush with a ketchup glaze and bake at 375°F 50–55 min to 160°F."]},
+        {"part": "Mashed potatoes", "do": ["Boil peeled, chunked potatoes until fork-tender; mash with butter, milk and salt."]},
+        {"part": "Green beans", "do": ["Steam or sauté green beans 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Meatloaf Plate",
+      "lunch": "Reheats well; slices also make a good sandwich.",
+      "groceries": [
+        {"name": "Ground beef — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Breadcrumbs — 1 cup", "cat": "Pantry"},
+        {"name": "Eggs — 1", "cat": "Dairy & Eggs"},
+        {"name": "Ketchup", "cat": "Sauces & Condiments"},
+        {"name": "Russet potatoes — 2.5 lbs", "cat": "Produce"},
+        {"name": "Green beans — 1.5 lbs", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Nachos",
+      "slug": "nachos",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Nachos",
+      "sides": "",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Loaded beef nachos with melted cheese, jalapeños, salsa and sour cream.",
+      "steps": [
+        {"part": "Beef", "do": ["Brown ground beef with taco seasoning 6–8 min."]},
+        {"part": "Nachos", "do": ["Spread tortilla chips on a sheet pan, top with beef and shredded cheese, and broil 2–3 min until melted.", "Top with jalapeños, salsa and sour cream."]}
+      ],
+      "lunchTitle": "Nacho Bowl",
+      "lunch": "Rebuild fresh with new chips so they don't go soggy reheated.",
+      "groceries": [
+        {"name": "Ground beef — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Taco seasoning", "cat": "Spices"},
+        {"name": "Tortilla chips — 1 large bag", "cat": "Pantry"},
+        {"name": "Cheddar or jack cheese, shredded — 12 oz", "cat": "Dairy & Eggs"},
+        {"name": "Jalapeños — 1 jar", "cat": "Pantry"},
+        {"name": "Salsa & sour cream", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Pizza",
+      "slug": "pizza",
+      "protein": "other",
+      "category": "variation",
+      "coreEntree": "Pizza",
+      "sides": "side salad",
+      "time": "~30 min",
+      "polo": false,
+      "included": "Homemade pizza on store-bought or homemade dough, with sauce, mozzarella and toppings of choice.",
+      "steps": [
+        {"part": "Dough", "do": ["Stretch pizza dough onto a floured pan or pizza stone."]},
+        {"part": "Build", "do": ["Spread pizza sauce, top with shredded mozzarella and toppings (pepperoni, sausage, peppers, etc.)."]},
+        {"part": "Bake", "do": ["Bake at 475°F 12–15 min until the crust is golden and cheese is bubbly."]},
+        {"part": "Salad", "do": ["Toss a simple side salad with dressing."]}
+      ],
+      "lunchTitle": "Pizza",
+      "lunch": "Reheats well in a skillet or air fryer to keep the crust crisp.",
+      "groceries": [
+        {"name": "Pizza dough — 2 balls", "cat": "Bread & Bakery"},
+        {"name": "Pizza sauce — 1 jar", "cat": "Pantry"},
+        {"name": "Mozzarella cheese, shredded — 16 oz", "cat": "Dairy & Eggs"},
+        {"name": "Pepperoni or sausage — 1 package", "cat": "Meat & Seafood"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Pretzel Dogs",
+      "slug": "pretzel-dogs",
+      "protein": "pork",
+      "category": "variation",
+      "coreEntree": "Pretzel Dogs",
+      "sides": "carrot & cucumber sticks & fruit",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Hot dogs wrapped in soft pretzel dough with mustard for dipping, plus veggie sticks and fruit.",
+      "steps": [
+        {"part": "Assemble", "do": ["Wrap store-bought or homemade pretzel dough around each hot dog; brush with an egg wash and sprinkle with pretzel salt."]},
+        {"part": "Bake", "do": ["Bake at 425°F 12–15 min until golden brown."]},
+        {"part": "Sides", "do": ["Cut carrot and cucumber sticks; slice fruit."]}
+      ],
+      "lunchTitle": "Pretzel Dogs",
+      "lunch": "Reheat in the oven or air fryer to keep the pretzel crust from going soft.",
+      "groceries": [
+        {"name": "Hot dogs — 8", "cat": "Meat & Seafood"},
+        {"name": "Pretzel or pizza dough — 1 package", "cat": "Bread & Bakery"},
+        {"name": "Yellow mustard", "cat": "Sauces & Condiments"},
+        {"name": "Carrots & cucumbers", "cat": "Produce"},
+        {"name": "Seasonal fruit", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Protein Bowls",
+      "slug": "protein-bowls",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "Protein Bowls",
+      "sides": "",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Build-your-own bowls with rice, grilled chicken and roasted vegetables.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Chicken & veg", "do": ["Season and grill or sear diced chicken breast 6–7 min until cooked through.", "Roast broccoli and bell peppers tossed in oil and salt at 425°F 15–18 min."]},
+        {"part": "Assemble", "do": ["Layer rice, chicken and roasted vegetables in bowls; drizzle with a soy-sesame or yogurt sauce."]}
+      ],
+      "lunchTitle": "Protein Bowl",
+      "lunch": "Reheats well as-is.",
+      "groceries": [
+        {"name": "Chicken breasts — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Broccoli — 1 head", "cat": "Produce"},
+        {"name": "Bell peppers — 2", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Quesadillas",
+      "slug": "quesadillas",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "Quesadillas",
+      "sides": "salsa & chips",
+      "time": "~18 min",
+      "polo": true,
+      "included": "Crispy chicken and cheese quesadillas with salsa and chips.",
+      "steps": [
+        {"part": "Chicken", "do": ["Sear or use leftover shredded chicken, seasoned lightly with taco seasoning."]},
+        {"part": "Quesadillas", "do": ["Fill flour tortillas with chicken and shredded cheese; fold and cook in a dry skillet 2–3 min per side until golden and the cheese melts."]}
+      ],
+      "lunchTitle": "Quesadilla",
+      "lunch": "Reheat in a skillet, not the microwave, to keep the tortilla crisp.",
+      "groceries": [
+        {"name": "Chicken breasts — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Large flour tortillas — 8", "cat": "Bread & Bakery"},
+        {"name": "Cheddar or jack cheese, shredded — 12 oz", "cat": "Dairy & Eggs"},
+        {"name": "Salsa — 1 jar", "cat": "Sauces & Condiments"},
+        {"name": "Tortilla chips — 1 bag", "cat": "Pantry"}
+      ]
+    },
+    {
+      "title": "Ravioli",
+      "slug": "ravioli",
+      "protein": "other",
+      "category": "variation",
+      "coreEntree": "Ravioli",
+      "sides": "garlic bread & side salad",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Cheese ravioli tossed in marinara, with garlic bread and a side salad.",
+      "steps": [
+        {"part": "Ravioli", "do": ["Boil cheese ravioli per package directions until they float; drain gently."]},
+        {"part": "Sauce", "do": ["Warm marinara sauce; toss with the ravioli."]},
+        {"part": "Sides", "do": ["Broil buttered garlic bread; toss a simple side salad."]}
+      ],
+      "lunchTitle": "Ravioli",
+      "lunch": "Reheat gently on the stove or microwave, covered.",
+      "groceries": [
+        {"name": "Cheese ravioli — 2 packages", "cat": "Freezer"},
+        {"name": "Marinara sauce — 1 jar", "cat": "Pantry"},
+        {"name": "French bread — 1 loaf", "cat": "Bread & Bakery"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Ribs",
+      "slug": "ribs",
+      "protein": "pork",
+      "category": "variation",
+      "coreEntree": "Ribs",
+      "sides": "roasted potatoes & green beans",
+      "time": "~3 hr (weekend cook)",
+      "polo": false,
+      "included": "Oven-baked BBQ pork ribs, low and slow until tender, with roasted potatoes and green beans.",
+      "steps": [
+        {"part": "Ribs", "do": ["Season pork ribs with a dry rub; wrap tightly in foil and bake at 300°F ~2.5 hr until fork-tender.", "Unwrap, brush with BBQ sauce, and broil or grill 5 min to caramelize."]},
+        {"part": "Potatoes", "do": ["Halve mini potatoes, toss with oil and salt, roast at 425°F ~25 min."]},
+        {"part": "Green beans", "do": ["Steam or sauté green beans 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Ribs Plate",
+      "lunch": "Reheat covered so the ribs stay moist.",
+      "groceries": [
+        {"name": "Pork baby back ribs — 2 racks", "cat": "Meat & Seafood"},
+        {"name": "BBQ sauce — 1 bottle", "cat": "Sauces & Condiments"},
+        {"name": "Mini potatoes (red or brown) — 2 lbs", "cat": "Produce"},
+        {"name": "Green beans — 1.5 lbs", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Shabu Shabu",
+      "slug": "shabu-shabu",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Shabu Shabu",
+      "sides": "steamed rice & dipping sauces",
+      "time": "~30 min",
+      "polo": false,
+      "included": "Japanese hot pot — thin-sliced beef and vegetables swished in simmering broth, served with rice and dipping sauces.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Broth & prep", "do": ["Bring a light kombu or chicken broth to a gentle simmer in a pot at the table (or on the stove).", "Slice napa cabbage, mushrooms and tofu; arrange with the thin-sliced beef on a platter."]},
+        {"part": "Cook", "do": ["Swish beef and vegetables in the simmering broth a few seconds to a couple minutes until just cooked.", "Dip in ponzu or sesame sauce before eating."]}
+      ],
+      "lunchTitle": "Shabu Shabu Bowl",
+      "lunch": "Simmer any leftover meat and vegetables briefly in broth and serve over rice.",
+      "groceries": [
+        {"name": "Ribeye or sirloin, thin-sliced — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Napa cabbage — 1 head", "cat": "Produce"},
+        {"name": "Mushrooms — 8 oz", "cat": "Produce"},
+        {"name": "Firm tofu — 1 block", "cat": "Dairy & Eggs"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Ponzu or sesame dipping sauce", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Spaghetti",
+      "slug": "spaghetti",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Spaghetti",
+      "sides": "garlic bread & side salad",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Classic spaghetti with a simple ground beef meat sauce, garlic bread and side salad.",
+      "steps": [
+        {"part": "Pasta", "do": ["Boil spaghetti in salted water until al dente; drain."]},
+        {"part": "Sauce", "do": ["Brown ground beef with garlic and onion; stir in marinara sauce and simmer 10 min."]},
+        {"part": "Sides", "do": ["Broil buttered garlic bread; toss a simple side salad."]}
+      ],
+      "lunchTitle": "Spaghetti",
+      "lunch": "Reheats well on the stove or microwave.",
+      "groceries": [
+        {"name": "Ground beef — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Spaghetti — 1 lb", "cat": "Pantry"},
+        {"name": "Marinara sauce — 2 jars", "cat": "Pantry"},
+        {"name": "French bread — 1 loaf", "cat": "Bread & Bakery"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Stuffed Shells",
+      "slug": "stuffed-shells",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Stuffed Shells",
+      "sides": "garlic bread & side salad",
+      "time": "~40 min",
+      "polo": false,
+      "included": "Jumbo pasta shells stuffed with a ricotta-beef filling, baked in marinara with melted mozzarella.",
+      "steps": [
+        {"part": "Shells & filling", "do": ["Boil jumbo shells until just shy of al dente; drain.", "Brown ground beef; mix with ricotta, an egg and parmesan."]},
+        {"part": "Assemble", "do": ["Stuff each shell with the filling, arrange in a baking dish over a layer of marinara, and top with more sauce and mozzarella."]},
+        {"part": "Bake", "do": ["Bake at 375°F ~25 min until bubbly."]},
+        {"part": "Sides", "do": ["Broil buttered garlic bread; toss a simple side salad."]}
+      ],
+      "lunchTitle": "Stuffed Shells",
+      "lunch": "Reheats well covered in the oven or microwave.",
+      "groceries": [
+        {"name": "Ground beef — 1 lb", "cat": "Meat & Seafood"},
+        {"name": "Jumbo pasta shells — 1 box", "cat": "Pantry"},
+        {"name": "Ricotta cheese — 15 oz", "cat": "Dairy & Eggs"},
+        {"name": "Marinara sauce — 2 jars", "cat": "Pantry"},
+        {"name": "Mozzarella cheese, shredded — 12 oz", "cat": "Dairy & Eggs"},
+        {"name": "French bread — 1 loaf", "cat": "Bread & Bakery"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Tostadas",
+      "slug": "tostadas",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Tostadas",
+      "sides": "refried beans & lettuce",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Crispy tostada shells topped with seasoned beef, refried beans, lettuce and cheese.",
+      "steps": [
+        {"part": "Beef & beans", "do": ["Brown ground beef with taco seasoning.", "Warm refried beans on the stove."]},
+        {"part": "Assemble", "do": ["Spread beans on each tostada shell, top with beef, shredded lettuce, cheese and salsa."]}
+      ],
+      "lunchTitle": "Tostada",
+      "lunch": "Keep shells separate and assemble fresh so they stay crisp.",
+      "groceries": [
+        {"name": "Ground beef — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Tostada shells — 12", "cat": "Bread & Bakery"},
+        {"name": "Refried beans — 1 can", "cat": "Pantry"},
+        {"name": "Romaine lettuce — 1 head", "cat": "Produce"},
+        {"name": "Cheddar cheese, shredded — 8 oz", "cat": "Dairy & Eggs"},
+        {"name": "Salsa", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Tostadas Salad",
+      "slug": "tostadas-salad",
+      "protein": "beef",
+      "category": "variation",
+      "coreEntree": "Tostadas Salad",
+      "sides": "",
+      "time": "~25 min",
+      "polo": true,
+      "included": "A taco salad served in a crispy tortilla bowl with seasoned beef, lettuce, cheese and salsa.",
+      "steps": [
+        {"part": "Tortilla bowls", "do": ["Bake large flour tortillas pressed into oven-safe bowls at 375°F ~10 min until crisp."]},
+        {"part": "Beef", "do": ["Brown ground beef with taco seasoning."]},
+        {"part": "Assemble", "do": ["Fill each tortilla bowl with shredded lettuce, beef, black beans, cheese and salsa."]}
+      ],
+      "lunchTitle": "Taco Salad",
+      "lunch": "Keep the tortilla bowls separate and assemble fresh.",
+      "groceries": [
+        {"name": "Ground beef — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Large flour tortillas — 6", "cat": "Bread & Bakery"},
+        {"name": "Romaine lettuce — 1 head", "cat": "Produce"},
+        {"name": "Black beans — 1 can", "cat": "Pantry"},
+        {"name": "Cheddar cheese, shredded — 8 oz", "cat": "Dairy & Eggs"},
+        {"name": "Salsa", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Vegetable Curry",
+      "slug": "vegetable-curry",
+      "protein": "veg",
+      "category": "variation",
+      "coreEntree": "Vegetable Curry",
+      "sides": "steamed rice & naan",
+      "time": "~30 min",
+      "polo": false,
+      "swapNote": "Use a mild curry powder, or hold back the chili/cayenne and let everyone spice their own bowl at the table.",
+      "included": "A mild vegetable curry with potatoes, carrots and peas in a coconut-tomato sauce, with rice and naan.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Curry", "do": ["Sauté onion, garlic and ginger; add curry powder and cook 1 min.", "Add diced potatoes, carrots, diced tomatoes and coconut milk; simmer 20 min until vegetables are tender.", "Stir in peas the last 3 min."]},
+        {"part": "Naan", "do": ["Warm store-bought naan in a dry skillet or oven."]}
+      ],
+      "lunchTitle": "Vegetable Curry",
+      "lunch": "Reheats well over fresh rice.",
+      "groceries": [
+        {"name": "Yukon gold potatoes — 1.5 lbs", "cat": "Produce"},
+        {"name": "Carrots — 3", "cat": "Produce"},
+        {"name": "Frozen peas — 1 cup", "cat": "Freezer"},
+        {"name": "Coconut milk — 1 can", "cat": "Pantry"},
+        {"name": "Diced tomatoes — 1 can", "cat": "Pantry"},
+        {"name": "Curry powder", "cat": "Spices"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Naan bread — 4 pieces", "cat": "Bread & Bakery"}
+      ]
+    },
+    {
+      "title": "Wings",
+      "slug": "wings",
+      "protein": "chicken",
+      "category": "variation",
+      "coreEntree": "Wings",
+      "sides": "carrot sticks & ranch",
+      "time": "~35 min",
+      "polo": false,
+      "swapNote": "Buffalo sauce runs spicy — toss the teen's portion in BBQ or honey-garlic sauce instead.",
+      "included": "Crispy baked chicken wings tossed in buffalo sauce, with carrot sticks and ranch for dipping.",
+      "steps": [
+        {"part": "Wings", "do": ["Pat wings dry, toss with baking powder and salt, and bake at 425°F ~40 min, flipping halfway, until crisp."]},
+        {"part": "Sauce", "do": ["Toss the crispy wings in buffalo sauce (and a separate batch in BBQ or honey-garlic for the teen)."]},
+        {"part": "Sides", "do": ["Cut carrot sticks and set out ranch for dipping."]}
+      ],
+      "lunchTitle": "Wings Plate",
+      "lunch": "Reheat in the oven or air fryer, not the microwave, to keep them crisp.",
+      "groceries": [
+        {"name": "Chicken wings — 3 lbs", "cat": "Meat & Seafood"},
+        {"name": "Buffalo sauce", "cat": "Sauces & Condiments"},
+        {"name": "BBQ or honey-garlic sauce", "cat": "Sauces & Condiments"},
+        {"name": "Carrots — 4", "cat": "Produce"},
+        {"name": "Ranch dressing", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Honey Garlic Meatballs",
+      "slug": "honey-garlic-meatballs",
+      "protein": "beef",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "steamed rice & broccoli",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Pan-seared beef meatballs glazed in a sticky honey-garlic sauce, over rice with steamed broccoli.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Meatballs", "do": ["Mix ground beef, breadcrumbs, egg and garlic; roll into balls and pan-sear or bake at 400°F until browned and cooked through, ~15 min."]},
+        {"part": "Glaze", "do": ["Whisk honey, soy sauce, garlic and a splash of rice vinegar in a saucepan; simmer 2–3 min until slightly thickened, then toss with the meatballs."]},
+        {"part": "Broccoli", "do": ["Steam broccoli florets 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Honey Garlic Meatball Bowl",
+      "lunch": "Reheat the meatballs and broccoli over fresh rice.",
+      "groceries": [
+        {"name": "Ground beef — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Breadcrumbs — 1 cup", "cat": "Pantry"},
+        {"name": "Eggs — 1", "cat": "Dairy & Eggs"},
+        {"name": "Broccoli — 1 head", "cat": "Produce"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Honey & soy sauce", "cat": "Pantry"}
+      ]
+    },
+    {
+      "title": "Chicken Fried Rice",
+      "slug": "chicken-fried-rice",
+      "protein": "chicken",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Diced chicken fried rice with egg, peas, carrots and scallions — a weeknight staple that reuses the rice cooker.",
+      "steps": [
+        {"part": "Rice", "do": ["Cook 2 cups jasmine rice in the rice cooker earlier in the day (or the night before) so it's cold and dry for frying."]},
+        {"part": "Fried rice", "do": ["Sauté diced chicken thigh until browned and cooked through; push to one side.", "Scramble 2 eggs in the same pan.", "Add diced carrots and peas, then the cold rice, soy sauce and sesame oil; stir-fry 4–5 min, tossing everything together."]}
+      ],
+      "lunchTitle": "Chicken Fried Rice",
+      "lunch": "Reheats perfectly as-is.",
+      "groceries": [
+        {"name": "Chicken thighs — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Eggs — 2", "cat": "Dairy & Eggs"},
+        {"name": "Frozen peas & carrots — 1.5 cups", "cat": "Freezer"},
+        {"name": "Scallions — 1 bunch", "cat": "Produce"},
+        {"name": "Soy sauce", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Sheet-Pan Sausage & Veggies",
+      "slug": "sheet-pan-sausage-veggies",
+      "protein": "pork",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "zucchini, peppers & potatoes",
+      "time": "~30 min",
+      "polo": false,
+      "included": "Italian sausage roasted on a sheet pan with zucchini, bell peppers and mini potatoes — one pan, minimal cleanup.",
+      "steps": [
+        {"part": "Potatoes", "do": ["Halve mini potatoes, toss with oil and salt, spread on a sheet pan and roast at 425°F ~15 min to get a head start."]},
+        {"part": "Sausage & veg", "do": ["Slice Italian sausage into thick coins; toss with sliced zucchini and bell peppers in oil and Italian seasoning.", "Add to the sheet pan and roast another 15–18 min until the sausage browns and vegetables are tender."]}
+      ],
+      "lunchTitle": "Sausage & Veggie Bowl",
+      "lunch": "Reheats well together on a sheet pan or in the microwave.",
+      "groceries": [
+        {"name": "Italian sausage — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Zucchini — 2", "cat": "Produce"},
+        {"name": "Bell peppers — 2", "cat": "Produce"},
+        {"name": "Mini potatoes (red or brown) — 2 lbs", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Korean Beef Rice Bowls",
+      "slug": "korean-beef-rice-bowls",
+      "protein": "beef",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "steamed rice & cucumber salad",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Quick ground beef bulgogi-style bowls with a savory-sweet glaze and a cool cucumber salad, over rice.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Beef", "do": ["Brown ground beef with garlic and ginger; drain excess fat.", "Stir in soy sauce, brown sugar and a little sesame oil; simmer 3–4 min until glossy."]},
+        {"part": "Cucumber salad", "do": ["Toss thin-sliced cucumber with rice vinegar, a pinch of sugar and salt."]}
+      ],
+      "lunchTitle": "Korean Beef Bowl",
+      "lunch": "Reheat the beef over fresh rice; keep the cucumber salad cold.",
+      "groceries": [
+        {"name": "Ground beef — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Cucumbers — 2", "cat": "Produce"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Soy sauce, brown sugar, sesame oil", "cat": "Pantry"},
+        {"name": "Garlic & fresh ginger", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Turkey Chili",
+      "slug": "turkey-chili",
+      "protein": "turkey",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "cornbread & shredded cheese",
+      "time": "~35 min",
+      "polo": false,
+      "included": "A lighter chili made with ground turkey and beans, served with warm cornbread.",
+      "steps": [
+        {"part": "Chili", "do": ["Brown ground turkey with diced onion and bell pepper.", "Add kidney beans, diced tomatoes, tomato paste, chili powder and cumin, and chicken broth.", "Simmer 25 min, stirring occasionally."]},
+        {"part": "Cornbread", "do": ["Bake cornbread from a mix or scratch batter per package directions."]}
+      ],
+      "lunchTitle": "Turkey Chili",
+      "lunch": "Reheats beautifully — even better the next day.",
+      "groceries": [
+        {"name": "Ground turkey — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Kidney beans — 2 cans", "cat": "Pantry"},
+        {"name": "Diced tomatoes — 1 can", "cat": "Pantry"},
+        {"name": "Bell pepper — 1", "cat": "Produce"},
+        {"name": "Chili powder & cumin", "cat": "Spices"},
+        {"name": "Cornbread mix — 1 box", "cat": "Pantry"},
+        {"name": "Cheddar cheese, shredded — 8 oz", "cat": "Dairy & Eggs"}
+      ]
+    },
+    {
+      "title": "Beef & Broccoli Lo Mein",
+      "slug": "beef-broccoli-lo-mein",
+      "protein": "beef",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "",
+      "time": "~25 min",
+      "polo": true,
+      "included": "A noodle twist on the family's beef and broccoli stir-fry — lo mein noodles tossed in the same garlic-soy sauce.",
+      "steps": [
+        {"part": "Noodles", "do": ["Boil lo mein noodles per package directions; drain and toss with a little sesame oil so they don't stick."]},
+        {"part": "Beef & broccoli", "do": ["Slice flank or sirloin thin against the grain; toss with cornstarch and a splash of soy sauce.", "Sear the beef in a hot wok 2–3 min until browned; set aside.", "Stir-fry broccoli florets with garlic and ginger 3–4 min, then return the beef and add the noodles with soy sauce, oyster sauce and a splash of water; toss until glossy."]}
+      ],
+      "lunchTitle": "Beef Lo Mein",
+      "lunch": "Reheats well in a skillet with a splash of water to loosen the noodles.",
+      "groceries": [
+        {"name": "Flank or sirloin steak — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Lo mein noodles — 1 lb", "cat": "Pantry"},
+        {"name": "Broccoli — 2 heads", "cat": "Produce"},
+        {"name": "Soy sauce & oyster sauce", "cat": "Sauces & Condiments"},
+        {"name": "Garlic & fresh ginger", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Chicken Tikka Masala",
+      "slug": "chicken-tikka-masala",
+      "protein": "chicken",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "steamed rice & naan",
+      "time": "~35 min",
+      "polo": false,
+      "swapNote": "Keep the garam masala and chili moderate — this can run spicy at full strength; taste and adjust before serving the teen.",
+      "included": "Chicken simmered in a creamy, mildly spiced tomato sauce, served with rice and warm naan.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Chicken", "do": ["Sear diced chicken thigh 5–6 min until browned; set aside."]},
+        {"part": "Sauce", "do": ["Sauté onion, garlic and ginger; add garam masala and cook 1 min.", "Stir in diced tomatoes and simmer 10 min, then blend or mash smooth.", "Return the chicken, add cream, and simmer 8–10 min until cooked through."]},
+        {"part": "Naan", "do": ["Warm store-bought naan in a dry skillet or oven."]}
+      ],
+      "lunchTitle": "Chicken Tikka Masala",
+      "lunch": "Reheats well over fresh rice.",
+      "groceries": [
+        {"name": "Chicken thighs — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Diced tomatoes — 1 can", "cat": "Pantry"},
+        {"name": "Heavy cream — 1 cup", "cat": "Dairy & Eggs"},
+        {"name": "Garam masala", "cat": "Spices"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Naan bread — 4 pieces", "cat": "Bread & Bakery"}
+      ]
+    },
+    {
+      "title": "Zucchini Boats with Ground Turkey",
+      "slug": "zucchini-boats-with-ground-turkey",
+      "protein": "turkey",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "side salad",
+      "time": "~35 min",
+      "polo": false,
+      "included": "Zucchini halves stuffed with seasoned ground turkey, marinara and mozzarella, baked until tender.",
+      "steps": [
+        {"part": "Zucchini", "do": ["Halve zucchini lengthwise and scoop out the centers, leaving a sturdy shell.", "Brush with oil, season, and pre-bake at 400°F 10 min."]},
+        {"part": "Filling", "do": ["Brown ground turkey with garlic and the chopped zucchini centers; stir in marinara and Italian seasoning."]},
+        {"part": "Bake", "do": ["Fill each zucchini boat with the turkey mixture, top with mozzarella, and bake 15–18 min until the cheese is golden and zucchini is tender."]}
+      ],
+      "lunchTitle": "Zucchini Boats",
+      "lunch": "Reheats well covered in the oven or microwave.",
+      "groceries": [
+        {"name": "Ground turkey — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Zucchini — 4 large", "cat": "Produce"},
+        {"name": "Marinara sauce — 1 jar", "cat": "Pantry"},
+        {"name": "Mozzarella cheese, shredded — 8 oz", "cat": "Dairy & Eggs"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Seared Salmon Rice Bowls",
+      "slug": "seared-salmon-rice-bowls",
+      "protein": "seafood",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "rice, cucumber & avocado",
+      "time": "~20 min",
+      "polo": true,
+      "included": "Seared salmon flaked over rice with cucumber, avocado and a soy-sesame drizzle — a poke-bowl-style dinner, fully cooked for the family.",
+      "steps": [
+        {"part": "Rice", "do": ["Rinse 2 cups jasmine rice, add to the rice cooker with water to the line, and start it first."]},
+        {"part": "Salmon", "do": ["Season salmon fillets with salt and pepper; sear skin-side down 4–5 min, flip, and cook 2–3 min more until just cooked through.", "Flake into large pieces."]},
+        {"part": "Bowl", "do": ["Slice cucumber and avocado.", "Whisk soy sauce, rice vinegar, sesame oil and a little honey for the drizzle.", "Layer rice, salmon, cucumber and avocado in bowls; drizzle with sauce and a sprinkle of sesame seeds."]}
+      ],
+      "lunchTitle": "Salmon Rice Bowl",
+      "lunch": "Reheat the salmon gently and rebuild the bowl with fresh cucumber and avocado.",
+      "groceries": [
+        {"name": "Salmon fillets — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Cucumbers — 2", "cat": "Produce"},
+        {"name": "Avocados — 2", "cat": "Produce"},
+        {"name": "Jasmine rice — 2 cups dry", "cat": "Pantry"},
+        {"name": "Soy sauce, rice vinegar, sesame oil", "cat": "Pantry"},
+        {"name": "Sesame seeds", "cat": "Spices"}
+      ]
+    },
+    {
+      "title": "Chicken Caesar Pasta Salad",
+      "slug": "chicken-caesar-pasta-salad",
+      "protein": "chicken",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "",
+      "time": "~20 min",
+      "polo": true,
+      "included": "A cold pasta twist on the family's chicken caesar wraps — great for a quick, no-reheat polo night.",
+      "steps": [
+        {"part": "Pasta", "do": ["Boil short pasta (rotini or penne) until al dente; drain and rinse under cold water to stop cooking."]},
+        {"part": "Chicken", "do": ["Sear or use leftover diced chicken breast, seasoned with salt and pepper."]},
+        {"part": "Assemble", "do": ["Toss the cold pasta with chopped romaine, shaved parmesan and caesar dressing.", "Top with the chicken and a little extra parmesan."]}
+      ],
+      "lunchTitle": "Chicken Caesar Pasta Salad",
+      "lunch": "Keep dressing separate overnight and toss fresh before eating.",
+      "groceries": [
+        {"name": "Chicken breasts — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Rotini or penne pasta — 12 oz", "cat": "Pantry"},
+        {"name": "Romaine lettuce — 1 head", "cat": "Produce"},
+        {"name": "Parmesan cheese — 4 oz", "cat": "Dairy & Eggs"},
+        {"name": "Caesar dressing", "cat": "Sauces & Condiments"}
+      ]
+    },
+    {
+      "title": "Teriyaki Turkey Burgers",
+      "slug": "teriyaki-turkey-burgers",
+      "protein": "turkey",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "sweet potato fries & side salad",
+      "time": "~25 min",
+      "polo": true,
+      "included": "Ground turkey burgers glazed with teriyaki sauce, with sweet potato fries and a side salad.",
+      "steps": [
+        {"part": "Sweet potato fries", "do": ["Cut sweet potatoes into fries, toss with oil and salt, and roast at 425°F ~25 min, flipping once."]},
+        {"part": "Burgers", "do": ["Mix ground turkey with a splash of teriyaki sauce, garlic and scallions; form into patties.", "Grill or pan-sear 5–6 min per side to 165°F, brushing with more teriyaki sauce near the end."]},
+        {"part": "Salad", "do": ["Toss a simple side salad with dressing."]}
+      ],
+      "lunchTitle": "Teriyaki Turkey Burger",
+      "lunch": "Reheat the patty and rebuild the burger fresh.",
+      "groceries": [
+        {"name": "Ground turkey — 2 lbs", "cat": "Meat & Seafood"},
+        {"name": "Burger buns — 6", "cat": "Bread & Bakery"},
+        {"name": "Teriyaki sauce", "cat": "Sauces & Condiments"},
+        {"name": "Sweet potatoes — 3", "cat": "Produce"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Baked Ziti",
+      "slug": "baked-ziti",
+      "protein": "beef",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "garlic bread & side salad",
+      "time": "~40 min",
+      "polo": false,
+      "included": "A simpler, family-style spin on lasagna — ziti pasta baked with beef, marinara and three cheeses.",
+      "steps": [
+        {"part": "Pasta", "do": ["Boil ziti until just shy of al dente; drain."]},
+        {"part": "Sauce", "do": ["Brown ground beef with garlic; stir in marinara sauce."]},
+        {"part": "Assemble", "do": ["Mix the ziti with the meat sauce and half the mozzarella and ricotta; transfer to a baking dish and top with remaining cheese."]},
+        {"part": "Bake", "do": ["Bake at 375°F ~25 min until bubbly and golden."]},
+        {"part": "Sides", "do": ["Broil buttered garlic bread; toss a simple side salad."]}
+      ],
+      "lunchTitle": "Baked Ziti",
+      "lunch": "Reheats beautifully covered in the oven or microwave.",
+      "groceries": [
+        {"name": "Ground beef — 1.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Ziti pasta — 1 lb", "cat": "Pantry"},
+        {"name": "Marinara sauce — 2 jars", "cat": "Pantry"},
+        {"name": "Ricotta cheese — 15 oz", "cat": "Dairy & Eggs"},
+        {"name": "Mozzarella cheese, shredded — 12 oz", "cat": "Dairy & Eggs"},
+        {"name": "French bread — 1 loaf", "cat": "Bread & Bakery"},
+        {"name": "Salad greens — 1 bag", "cat": "Produce"}
+      ]
+    },
+    {
+      "title": "Honey Mustard Chicken Thighs",
+      "slug": "honey-mustard-chicken-thighs",
+      "protein": "chicken",
+      "category": "new",
+      "coreEntree": null,
+      "sides": "roasted potatoes & green beans",
+      "time": "~35 min",
+      "polo": false,
+      "included": "Baked chicken thighs glazed in honey mustard, with roasted potatoes and green beans.",
+      "steps": [
+        {"part": "Potatoes", "do": ["Halve mini potatoes, toss with oil and salt, roast at 425°F ~25 min."]},
+        {"part": "Chicken", "do": ["Whisk honey, dijon mustard, garlic and a little olive oil; toss with chicken thighs.", "Bake at 400°F ~25 min, basting once, until 165°F and glazed."]},
+        {"part": "Green beans", "do": ["Steam or sauté green beans 5–6 min until tender-crisp."]}
+      ],
+      "lunchTitle": "Honey Mustard Chicken Plate",
+      "lunch": "Reheats well; also good sliced cold over salad greens.",
+      "groceries": [
+        {"name": "Chicken thighs — 2.5 lbs", "cat": "Meat & Seafood"},
+        {"name": "Dijon mustard & honey", "cat": "Sauces & Condiments"},
+        {"name": "Mini potatoes (red or brown) — 2 lbs", "cat": "Produce"},
+        {"name": "Green beans — 1.5 lbs", "cat": "Produce"}
+      ]
+    }
+  ]
+}
