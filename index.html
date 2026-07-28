@@ -41,11 +41,15 @@
   body{background:var(--bg);color:var(--ink);
     font:1rem/1.62 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;padding-bottom:48px}
   .wrap{max-width:760px;margin:0 auto;padding:0 14px}
+  /* Header + tabs are frozen together as one unit (see .topbar) so the header's safe-area
+     padding stays permanently above the tabs — without it, the tabs alone snap to the very
+     top of the viewport on scroll and land under the iPhone Pro's dynamic island. */
+  .topbar{position:sticky;top:0;z-index:20}
   header{background:var(--header-bg);color:#fff;padding:calc(18px + env(safe-area-inset-top,0)) 14px 16px}
   header .wrap{padding:0 4px}
   header h1{margin:0;font-size:1.5rem;line-height:1.25;letter-spacing:.2px}
   header .sub{opacity:.9;font-size:.9rem;margin-top:4px}
-  .tabs{position:sticky;top:0;z-index:10;background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:6px;padding:8px 14px}
+  .tabs{background:var(--bg);border-bottom:1px solid var(--line);display:flex;gap:6px;padding:8px 14px}
   .tabs button{flex:1;appearance:none;border:1px solid var(--line);background:var(--card);color:var(--muted);font-size:.98rem;font-weight:600;padding:11px 8px;border-radius:12px;cursor:pointer;transition:.15s}
   .tabs button .count{font-weight:600;opacity:.75;font-size:.82em}
   .tabs button[aria-selected="true"]{background:var(--accent);color:var(--tab-on);border-color:var(--accent);box-shadow:0 2px 8px rgba(47,125,91,.25)}
@@ -139,6 +143,7 @@
 </style>
 </head>
 <body>
+<div class="topbar">
 <header><div class="wrap">
   <div class="header-row">
     <div class="header-text">
@@ -159,6 +164,7 @@
   <button id="tab-plan" role="tab" aria-selected="true">📅 Meal Plan</button>
   <button id="tab-grocery" role="tab" aria-selected="false">🛒 Groceries <span class="count" id="grocery-count"></span></button>
 </nav>
+</div>
 
 <main class="wrap">
   <section class="panel active" id="panel-plan" role="tabpanel"></section>
