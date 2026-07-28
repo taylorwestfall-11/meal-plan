@@ -117,21 +117,19 @@
   .toolbar .progress{font-size:.85rem;color:var(--muted)}
   .btn{appearance:none;border:1px solid var(--line);background:var(--card);color:var(--accent);font-weight:600;font-size:.85rem;padding:8px 14px;border-radius:10px;cursor:pointer}
   .btn:active{transform:scale(.97)}
-  .hcontrols{display:flex;justify-content:center;gap:8px;margin-top:12px}
+  /* Header row: title+date on the left, the two controls stacked in a column on the right —
+     keeps the header to one row's height instead of a title row plus a full controls row. */
+  .header-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .header-text{min-width:0}
+  .hcontrols{display:flex;flex-direction:column;gap:6px;flex:0 0 auto}
   .hmenu-wrap{position:relative}
-  .hbtn{appearance:none;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.16);color:#fff;font-size:1rem;font-weight:700;min-width:42px;height:42px;padding:0 11px;border-radius:12px;cursor:pointer;line-height:1}
+  .hbtn{appearance:none;border:1px solid rgba(255,255,255,.55);background:rgba(255,255,255,.16);color:#fff;font-size:.92rem;font-weight:700;min-width:40px;height:36px;padding:0 10px;border-radius:11px;cursor:pointer;line-height:1}
   .hbtn:active{transform:scale(.95)}
   .hbtn[aria-pressed="true"]{background:#fff;color:var(--accent)}
-  .apptitle{text-align:center;margin:0}
-  header .sub{text-align:center}
+  .apptitle{text-align:left;margin:0}
+  header .sub{text-align:left}
   .sizemark{font-size:.72em;vertical-align:super;margin-left:1px;letter-spacing:-.5px}
-  /* Easy-read mode: dyslexia / ADHD-friendly typography */
-  body.easyread{font-family:"Atkinson Hyperlegible","Verdana","Tahoma","Segoe UI",sans-serif;line-height:1.9;letter-spacing:.02em;word-spacing:.06em}
-  body.easyread .card p,body.easyread .card li,body.easyread .lunch,body.easyread .swap,body.easyread .item .txt .name{font-size:1.06rem}
-  body.easyread em{font-style:normal;font-weight:600}
-  body.easyread .card ol,body.easyread .card ul{padding-left:24px}
-  body.easyread .card li{margin:6px 0}
-  .theme-menu{position:absolute;right:0;top:48px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 28px rgba(0,0,0,.2);padding:8px;z-index:30;min-width:180px}
+  .theme-menu{position:absolute;right:0;top:42px;background:var(--card);border:1px solid var(--line);border-radius:14px;box-shadow:0 10px 28px rgba(0,0,0,.2);padding:8px;z-index:30;min-width:180px}
   .theme-menu .theme-opt{display:flex;align-items:center;gap:11px;width:100%;appearance:none;border:none;background:transparent;color:var(--ink);font-size:.95rem;font-weight:600;padding:11px 10px;border-radius:10px;cursor:pointer;text-align:left}
   .theme-menu .theme-opt:active{background:var(--accent-soft)}
   .theme-menu .dot{width:18px;height:18px;border-radius:50%;flex:0 0 auto;border:1px solid rgba(0,0,0,.15)}
@@ -142,14 +140,17 @@
 </head>
 <body>
 <header><div class="wrap">
-  <h1 class="apptitle">🍽️ Weekly Meal Plan &amp; Groceries</h1>
-  <div class="sub">Family of 3 · <span id="weekof-h">this week</span></div>
-  <div class="hcontrols">
-    <button id="sizeBtn" class="hbtn" aria-label="Text size" title="Text size">A</button>
-    <button id="easyBtn" class="hbtn" aria-label="Easy-read mode" aria-pressed="false" title="Easy-read mode (dyslexia / ADHD friendly)">Aa</button>
-    <div class="hmenu-wrap">
-      <button id="themeBtn" class="hbtn" aria-label="Change color theme" title="Change color theme">🎨</button>
-      <div id="themeMenu" class="theme-menu" hidden></div>
+  <div class="header-row">
+    <div class="header-text">
+      <h1 class="apptitle">🍽️ Weekly Meal Plan &amp; Groceries</h1>
+      <div class="sub">Family of 3 · <span id="weekof-h">this week</span></div>
+    </div>
+    <div class="hcontrols">
+      <button id="sizeBtn" class="hbtn" aria-label="Text size" title="Text size">A</button>
+      <div class="hmenu-wrap">
+        <button id="themeBtn" class="hbtn" aria-label="Change color theme" title="Change color theme">🎨</button>
+        <div id="themeMenu" class="theme-menu" hidden></div>
+      </div>
     </div>
   </div>
 </div></header>
@@ -731,15 +732,6 @@ function applyTheme(name){
   var cur=0; try{ cur=+(localStorage.getItem("mp:fsize")||0)||0; }catch(e){}
   cur=apply(cur);
   b.addEventListener("click", function(){ cur=apply(cur+1); });
-})();
-
-/* ---- Easy-read mode (dyslexia / ADHD-friendly) ---- */
-(function initEasy(){
-  var b=document.getElementById("easyBtn");
-  function applyEasy(on){ document.body.classList.toggle("easyread",!!on); b.setAttribute("aria-pressed",on?"true":"false"); try{localStorage.setItem("mp:easyread",on?"1":"0");}catch(e){} }
-  b.addEventListener("click",function(){ applyEasy(!document.body.classList.contains("easyread")); });
-  var on=false; try{ on=localStorage.getItem("mp:easyread")==="1"; }catch(e){}
-  applyEasy(on);
 })();
 /* ---- Sync likes + punts + never-again from the device to the planner's Google Form ----
    Payload shape v3: {"v":3,"likes":{slug:title},"punts":{slug:title},"never":{slug:title}}.
