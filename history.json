@@ -1,9 +1,9 @@
 {
   "_note": "Dish rotation history: dish title -> last-used date (YYYY-MM-DD). Keyed by the matching core_menu.json entree title (a variation records under its core entree); off-menu dishes key by their own title. The weekly job builds the default lineup from the least-recently-served core entrees ('play the whole deck'), keeps favorites (likes.json) appearing at least ~monthly, and appends each week's default dinners here after publishing.",
   "lastUsed": {
-    "Sheet-Pan Kielbasa & Peppers": "2026-07-19",
+    "Sheet-Pan Kielbasa & Peppers": "2026-09-05",
     "Beef & Broccoli Stir-Fry": "2026-07-05",
-    "Garlic Shrimp Tacos": "2026-07-19",
+    "Garlic Shrimp Tacos": "2026-09-01",
     "Breakfast-for-Dinner": "2026-07-30",
     "Cheeseburger Macaroni Skillet": "2026-07-29",
     "Shrimp Fried Rice": "2026-08-11",
@@ -12,16 +12,16 @@
     "Salisbury Steak with Mushroom Gravy": "2026-08-21",
     "Honey-Garlic Pork Chops": "2026-08-13",
     "Lemon-Butter Baked Cod": "2026-08-09",
-    "Sheet-Pan Chicken Fajitas": "2026-06-21",
+    "Sheet-Pan Chicken Fajitas": "2026-09-03",
     "Ground Turkey & Zucchini Skillet": "2026-08-12",
     "Smash Burgers with Oven Fries": "2026-06-21",
     "Maple-Glazed Salmon": "2026-08-19",
     "Garlic Butter Steak Bites & Potatoes": "2026-08-01",
     "Honey-Soy Chicken Stir-Fry": "2026-07-27",
     "Italian Sausage & Peppers Subs": "2026-08-16",
-    "Lemon Garlic Shrimp Scampi": "2026-06-28",
+    "Lemon Garlic Shrimp Scampi": "2026-08-30",
     "Honey-Garlic Glazed Salmon": "2026-08-22",
-    "Oven BBQ Baby Back Ribs": "2026-06-22",
+    "Oven BBQ Baby Back Ribs": "2026-08-31",
     "Smash Burgers & Oven Fries": "2026-07-05",
     "Sesame Pork & Broccoli Stir-Fry": "2026-06-28",
     "Ground Beef Tacos": "2026-08-17",
@@ -50,6 +50,8 @@
     "BBQ Chicken": "2026-08-14",
     "BBQ Bacon Cheeseburgers": "2026-08-15",
     "BBQ Chicken Salad": "2026-08-18",
-    "BBQ Pulled Pork Sandwiches": "2026-08-20"
+    "BBQ Pulled Pork Sandwiches": "2026-08-20",
+    "Black Bean & Sweet Potato Tacos": "2026-09-02",
+    "Baked Ziti": "2026-09-04"
   }
 }
